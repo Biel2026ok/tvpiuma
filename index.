@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>TV Piúma — A Cidade ao Vivo · Guia de Negócios · Piúma ES</title>
+<meta name="description" content="Assista à TV Piúma ao vivo. Portal com guia de restaurantes, pousadas, farmácias, turismo e serviços em Piúma — Cidade das Conchas, Sul do Espírito Santo." />
+<meta name="theme-color" content="#000" />
+<style>
+:root{--bg:#050D1A;--fg:#fff;--card:#0D1B3E;--line:#1a2a4a;--accent:#00AEEF;--accent2:#00AEEF;--max:1320px;}
+*{box-sizing:border-box}
+html,body{margin:0;background:#050D1A;color:#fff;font-family:system-ui,Arial,sans-serif}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+header{text-align:center;padding:14px;font-weight:800;}
+.player-outer{max-width:var(--max);margin:0 auto;padding:0 14px;}
+.player{aspect-ratio:16/9;background:#000;border-radius:14px;overflow:hidden;}
+.player iframe{width:100%;height:100%;border:0}
+section{max-width:var(--max);margin:30px auto;padding:0 14px}
+.btn{display:inline-block;background:#00AEEF;color:#fff;padding:12px 18px;border-radius:30px;font-weight:700;}
+.cta{position:fixed;bottom:20px;right:20px;background:#00AEEF;color:#fff;padding:14px 18px;border-radius:40px;font-weight:800;}
+footer{text-align:center;padding:40px 20px;font-size:14px;color:#ccc;}
+.gp-featured{max-width:var(--max);margin:0 auto;padding:0 14px 30px;}
+.gp-featured h2{font-size:18px;font-weight:800;color:#fff;margin-bottom:16px;padding-left:2px;}
+.gp-row-wrap{position:relative;}
+.gp-row{display:flex;gap:12px;overflow-x:auto;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none;padding-bottom:4px;}
+.gp-row::-webkit-scrollbar{display:none;}
+.gp-card{flex:0 0 220px;border-radius:10px;overflow:hidden;cursor:pointer;position:relative;transition:transform .2s,box-shadow .2s;border:1px solid #1a1a1a;background:#000;}
+.gp-card:hover{transform:scale(1.04);box-shadow:0 8px 28px rgba(0,0,0,.8);z-index:2;}
+.gp-card-thumb{position:relative;aspect-ratio:16/9;overflow:hidden;}
+.gp-card-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s;}
+.gp-card:hover .gp-card-thumb img{transform:scale(1.06);}
+.gp-card-thumb::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom, rgba(0,0,0,0) 30%, rgba(0,0,0,0.85) 100%);pointer-events:none;}
+.gp-card-overlay{position:absolute;bottom:0;left:0;right:0;padding:8px 10px 10px;z-index:2;}
+.gp-card-title{font-size:12px;font-weight:800;color:#fff;line-height:1.3;margin-bottom:6px;text-shadow:0 1px 4px rgba(0,0,0,.8);}
+.gp-card-btn{display:inline-block;background:#00AEEF;color:#fff;padding:5px 12px;border-radius:20px;font-size:10px;font-weight:700;text-decoration:none;}
+.gp-card-btn:hover{opacity:.85;}
+.gp-arrow{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:56px;background:rgba(0,0,0,.75);border:none;border-radius:4px;color:#fff;font-size:20px;cursor:pointer;z-index:10;display:flex;align-items:center;justify-content:center;transition:background .15s,opacity .15s;opacity:0;}
+.gp-row-wrap:hover .gp-arrow{opacity:1;}
+.gp-arrow:hover{background:rgba(0,0,0,.95);}
+.gp-arrow.prev{left:-8px;}
+.gp-arrow.next{right:-8px;}
+@media(max-width:600px){.gp-card{flex:0 0 160px;}.gp-arrow{display:none;}}
+/* Guia */
+.box{background:#0D1B3E;border-radius:12px;padding:20px;margin-bottom:16px;border:1px solid #1a2a4a;}
+.sh{display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line);}
+.sh h2{font-size:16px;font-weight:800;margin:0;}
+.neg-list{display:flex;flex-direction:column;gap:8px;}
+.neg-item{display:flex;gap:12px;padding:12px;background:#0D1B3E;border-radius:8px;border:1px solid #1a2a4a;transition:border-color .2s;}
+.neg-item:hover{border-color:#333;}
+.neg-ico{font-size:26px;flex-shrink:0;width:36px;text-align:center;}
+.neg-info{flex:1;min-width:0;}
+.neg-name{font-size:14px;font-weight:700;color:#fff;margin-bottom:3px;}
+.neg-desc{font-size:12px;color:#888;line-height:1.5;margin-bottom:4px;}
+.neg-link{font-size:11px;font-weight:700;color:#00AEEF;}
+.neg-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;margin-left:6px;}
+.nb-g{background:#003322;color:#00cc77;}
+.nb-a{background:#1a1200;color:#00AEEF;}
+.nb-b{background:#001833;color:#00AEEF;}
+.card-agenciado{display:block;background:linear-gradient(135deg,0D1B3E 0%,#07101F 100%);border-radius:8px;padding:20px;margin-bottom:8px;text-decoration:none;border:2px solid #00AEEF;position:relative;overflow:hidden;}
+.card-agenciado::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent));}
+.badge-ag{position:absolute;top:0;right:0;background:#00AEEF;color:#fff;font-size:10px;font-weight:900;padding:4px 12px;border-radius:0 6px 0 8px;letter-spacing:.5px;text-transform:uppercase;}
+.card-agenciado .inner{display:flex;gap:14px;align-items:flex-start;margin-top:8px}
+.card-agenciado .ico{font-size:36px;flex-shrink:0}
+.card-agenciado .nome{font-size:15px;font-weight:900;color:#fff;margin-bottom:4px}
+.card-agenciado .desc{font-size:12px;color:rgba(255,255,255,.8);margin-bottom:10px;line-height:1.6}
+.card-agenciado .btn-zap{display:inline-flex;align-items:center;gap:6px;background:#00AEEF;color:#fff;font-size:11px;font-weight:800;padding:6px 14px;border-radius:4px}
+.cta-guia{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,0D1B3E,#07101F);border:1px solid #00AEEF;border-radius:10px;padding:16px;margin-top:12px;cursor:pointer;text-decoration:none;}
+.cta-guia .txt-main{font-size:14px;font-weight:800;color:#fff;margin-bottom:3px;}
+.cta-guia .txt-sub{font-size:11px;color:#888;}
+.cta-guia .btn-fire{margin-left:auto;background:#00AEEF;color:#fff;font-size:11px;font-weight:800;padding:8px 14px;border-radius:6px;white-space:nowrap;flex-shrink:0;}
+/* Turismo */
+.turismo-wrap{max-width:var(--max);margin:0 auto;padding:0 14px;}
+.divider{height:1px;background:var(--line);margin:32px 0;}
+.cidade-header{margin-bottom:20px;}
+.cidade-nome{font-size:28px;font-weight:900;color:#fff;line-height:1.2;}
+.cidade-nome em{color:#00AEEF;font-style:normal;}
+.cidade-intro{font-size:14px;color:#888;margin-top:8px;line-height:1.6;max-width:680px;}
+.section-label{display:inline-block;font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#00AEEF;margin-bottom:12px;}
+.praias-grid{display:grid;gap:16px;margin-bottom:24px;}
+.g3{grid-template-columns:repeat(3,1fr);}
+@media(max-width:900px){.g3{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.g3{grid-template-columns:1fr;}}
+.card{background:#0D1B3E;border-radius:10px;overflow:hidden;border:1px solid #1a2a4a;text-decoration:none;}
+.span2{grid-column:span 2;}
+@media(max-width:600px){.span2{grid-column:span 1;}}
+.card-img{width:100%;aspect-ratio:16/9;object-fit:cover;}
+.card-body{padding:14px;}
+.card-nome{font-size:15px;font-weight:800;color:#fff;margin-bottom:6px;}
+.card-texto{font-size:12px;color:#888;line-height:1.6;margin-bottom:6px;}
+.card-tag{font-size:10px;color:#555;font-weight:600;}
+.trilhas-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-bottom:24px;}
+.trilha-card{background:#0D1B3E;border-radius:8px;padding:16px;border:1px solid #1a2a4a;}
+.trilha-nome{font-size:14px;font-weight:800;color:#fff;margin-bottom:4px;}
+.trilha-meta{font-size:11px;color:#00AEEF;margin-bottom:8px;font-weight:600;}
+.trilha-texto{font-size:12px;color:#888;line-height:1.6;}
+.pontos-dark{background:#07101F;padding:40px 0;margin-top:32px;}
+.pontos-inner{max-width:var(--max);margin:0 auto;padding:0 14px;}
+.pontos-label{display:inline-block;font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#00AEEF;margin-bottom:12px;}
+.pontos-titulo{font-size:24px;font-weight:900;color:#fff;margin-bottom:20px;line-height:1.3;}
+.pontos-titulo em{color:#00AEEF;font-style:normal;}
+.pontos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-bottom:32px;}
+.ponto-card{background:#0D1B3E;border-radius:10px;overflow:hidden;border:1px solid #1a2a4a;text-decoration:none;display:block;}
+.ponto-img{width:100%;aspect-ratio:4/3;object-fit:cover;}
+.ponto-body{padding:14px;}
+.ponto-nome{font-size:14px;font-weight:800;color:#fff;margin-bottom:6px;}
+.ponto-texto{font-size:12px;color:#888;line-height:1.6;}
+.tv-banner{background:linear-gradient(135deg,0D1B3E,#07101F);border-top:2px solid var(--accent);padding:24px;text-align:center;margin-top:32px;}
+.tv-banner p{font-size:12px;color:#888;margin:0 0 6px;}
+.tv-banner h3{font-size:18px;font-weight:900;color:#fff;margin:0 0 10px;}
+.tv-banner a{display:inline-block;background:#00AEEF;color:#fff;padding:8px 20px;border-radius:20px;font-size:13px;font-weight:700;}
+</style>
+<meta name="keywords" content="Piúma ES, TV Piúma, portal Piúma, notícias Piúma, restaurantes Piúma, pousadas Piúma, Cidade das Conchas, praias Piúma, Ilha do Gambá, turismo Piúma, sul Espírito Santo">
+<meta name="geo.region" content="BR-ES">
+<meta name="geo.placename" content="Piúma, Espírito Santo">
+<meta name="geo.position" content="-20.8333;-40.7333">
+<meta name="ICBM" content="-20.8333, -40.7333">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.tvpiuma.digital/">
+<meta property="og:title" content="TV Piúma — A Cidade ao Vivo · Guia de Negócios de Piúma ES">
+<meta property="og:description" content="Portal de notícias, guia de negócios e turismo de Piúma — Cidade das Conchas, Sul do Espírito Santo.">
+<meta property="og:site_name" content="TV Piúma">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TV Piúma — A Cidade ao Vivo">
+<meta name="twitter:description" content="Portal de notícias e guia de negócios de Piúma ES — Cidade das Conchas.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="canonical" href="https://www.tvpiuma.digital/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"NewsMediaOrganization","@id":"https://www.tvpiuma.digital/#organization","name":"TV Piúma","url":"https://www.tvpiuma.digital","telephone":"+55-28-99903-6141","areaServed":["Piúma"]},{"@type":"WebSite","@id":"https://www.tvpiuma.digital/#website","url":"https://www.tvpiuma.digital","name":"TV Piúma"}]}
+</script>
+</head>
+<body>
+
+<header style="background:#0D1B3E;color:#fff;font-weight:900;padding:14px;letter-spacing:1px;border-bottom:2px solid #00AEEF;">
+  TV PIÚMA — A CIDADE AO VIVO
+  <span style="display:inline-block;margin-left:10px;font-size:11px;font-weight:600;color:#00AEEF;letter-spacing:2px;">🐚 CIDADE DAS CONCHAS</span>
+</header>
+
+<div class="player-outer">
+  <div class="player" id="player-wrapper" style="position:relative;cursor:pointer;" onclick="loadLivePlayer()">
+    <div id="player-overlay" style="position:absolute;inset:0;z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(ellipse at center, #0D1B3E 0%, #050D1A 100%);border-radius:14px;">
+      <div style="width:80px;height:80px;border-radius:50%;background:#00AEEF;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 0 rgba(0,174,239,.5);animation:livepulse 1.8s ease-in-out infinite;margin-bottom:18px;">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="#fff"><polygon points="6,3 20,12 6,21"/></svg>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+        <span style="width:10px;height:10px;border-radius:50%;background:#00AEEF;display:inline-block;animation:blinklive 1.2s ease-in-out infinite;"></span>
+        <span style="color:#00AEEF;font-size:13px;font-weight:800;letter-spacing:2px;text-transform:uppercase;">Ao Vivo</span>
+      </div>
+      <p style="color:rgba(255,255,255,.75);font-size:14px;margin:0;">Clique para assistir</p>
+    </div>
+  </div>
+</div>
+<style>
+@keyframes livepulse{0%,100%{box-shadow:0 0 0 0 rgba(0,174,239,.5);}60%{box-shadow:0 0 0 22px rgba(0,174,239,0);}}
+@keyframes blinklive{0%,100%{opacity:1;}50%{opacity:.2;}}
+</style>
+<script>
+function loadLivePlayer(){
+  var wrapper=document.getElementById('player-wrapper');
+  var overlay=document.getElementById('player-overlay');
+  if(!overlay||overlay.style.display==='none')return;
+  var iframe=document.createElement('iframe');
+  iframe.id='castr-player';
+  iframe.src='https://player.castr.com/live_809e4d1087af11f092f8f727f1f0bfd4?autoplay=on&muted=on';
+  iframe.allow='autoplay; fullscreen';
+  iframe.allowFullscreen=true;
+  iframe.style.cssText='width:100%;height:100%;border:0;';
+  wrapper.appendChild(iframe);
+  overlay.style.display='none';
+  wrapper.style.cursor='default';
+  wrapper.onclick=null;
+}
+</script>
+
+<div id="vod-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.92);align-items:center;justify-content:center;">
+  <div style="position:relative;width:90%;max-width:960px;aspect-ratio:16/9;">
+    <button onclick="closeVodModal()" style="position:absolute;top:-44px;right:0;background:none;border:none;color:#fff;font-size:32px;cursor:pointer;line-height:1;opacity:0.85;">✕</button>
+    <div id="vod-player-wrap" style="width:100%;height:100%;"></div>
+  </div>
+</div>
+
+<!-- GUIA DE PIÚMA -->
+<div id="tvmz-portal" style="max-width:var(--max);margin:32px auto 0;padding:0 14px;">
+  <h2 style="font-size:22px;font-weight:900;color:#fff;margin-bottom:4px;">🐚 Guia de Piúma</h2>
+  <p style="font-size:13px;color:#888;margin:0 0 24px;">Restaurantes, pousadas, farmácias e serviços — tudo de Piúma em um só lugar.</p>
+
+  <section class="box" id="restaurantes-piuma">
+    <div class="sh"><h2>🍽️ Restaurantes e Gastronomia em Piúma</h2></div>
+    <div class="neg-list">
+      <a class="neg-item" href="https://wa.me/5528999036141?text=Quero+entrar+no+guia+-+Restaurante+Piuma" target="_blank" rel="noopener" style="display:flex"><div class="neg-ico">📲</div><div class="neg-info"><div class="neg-name">Seu restaurante aqui — Piúma <span class="neg-badge nb-a">Vaga disponível</span></div><div class="neg-desc">Piúma · Seja o primeiro agenciado de gastronomia na TV Piúma</div><span class="neg-link">Fale pelo WhatsApp →</span></div></a>
+      <a class="neg-item" href="https://wa.me/5528999036141?text=Quero+entrar+no+guia+-+Restaurante+Piuma" target="_blank" rel="noopener" style="display:flex"><div class="neg-ico">🦐</div><div class="neg-info"><div class="neg-name">Frutos do Mar em Piúma <span class="neg-badge nb-a">Vaga disponível</span></div><div class="neg-desc">Piúma · Restaurante especializado em frutos do mar, peixes e culinária capixaba</div><span class="neg-link">Fale pelo WhatsApp →</span></div></a>
+    </div>
+    <a href="https://wa.me/5528999036141?text=Quero+anunciar+meu+restaurante+na+TV+Piuma" target="_blank" rel="noopener" class="cta-guia"><span style="font-size:26px;flex-shrink:0">🍽️</span><div><div class="txt-main">Tem restaurante ou delivery em Piúma? Entre para o guia</div><div class="txt-sub">Vagas limitadas por segmento</div></div><span class="btn-fire">🔥 Faça parte</span></a>
+  </section>
+
+  <section class="box" id="hospedagem-piuma">
+    <div class="sh"><h2>🛏️ Pousadas e Hotéis em Piúma</h2></div>
+    <div class="neg-list">
+      <a class="neg-item" href="https://wa.me/5528999036141?text=Quero+entrar+no+guia+-+Pousada+Piuma" target="_blank" rel="noopener" style="display:flex"><div class="neg-ico">🌊</div><div class="neg-info"><div class="neg-name">Pousada em Piúma <span class="neg-badge nb-a">Vaga disponível</span></div><div class="neg-desc">Piúma · Seja o primeiro agenciado de hospedagem na TV Piúma</div><span class="neg-link">Fale pelo WhatsApp →</span></div></a>
+    </div>
+  </section>
+
+  <section class="box" id="farmacias-piuma">
+    <div class="sh"><h2>💊 Farmácias em Piúma</h2></div>
+    <div class="neg-list">
+      <a class="neg-item" href="https://wa.me/5528999036141?text=Quero+entrar+no+guia+-+Farmacia+Piuma" target="_blank" rel="noopener" style="display:flex"><div class="neg-ico">📲</div><div class="neg-info"><div class="neg-name">Farmácia em Piúma <span class="neg-badge nb-a">Vaga disponível</span></div><div class="neg-desc">Piúma · Farmácias, drogarias e produtos de saúde</div><span class="neg-link">Fale pelo WhatsApp →</span></div></a>
+    </div>
+  </section>
+
+  <section class="box" id="imoveis-piuma">
+    <div class="sh"><h2>🏠 Imóveis em Piúma</h2></div>
+    <div class="neg-list">
+      <a class="neg-item" href="https://wa.me/5528999036141?text=Quero+entrar+no+guia+-+Imoveis+Piuma" target="_blank" rel="noopener" style="display:flex"><div class="neg-ico">🏡</div><div class="neg-info"><div class="neg-name">Imóveis em Piúma <span class="neg-badge nb-a">Vaga disponível</span></div><div class="neg-desc">Piúma · Venda, aluguel e temporada na Cidade das Conchas</div><span class="neg-link">Fale pelo WhatsApp →</span></div></a>
+    </div>
+  </section>
+
+  <section class="box" id="conchas-piuma">
+    <div class="sh"><h2>🐚 Artesanato de Conchas em Piúma</h2></div>
+    <div class="neg-list">
+      <a class="neg-item" href="https://wa.me/5528999036141?text=Quero+entrar+no+guia+-+Artesanato+Piuma" target="_blank" rel="noopener" style="display:flex"><div class="neg-ico">🐚</div><div class="neg-info"><div class="neg-name">Artesanato de Conchas — Piúma <span class="neg-badge nb-a">Vaga disponível</span></div><div class="neg-desc">Piúma é a Cidade das Conchas · Artesanato único no Brasil · Lojas, feiras e ateliês</div><span class="neg-link">Fale pelo WhatsApp →</span></div></a>
+    </div>
+  </section>
+
+  <section class="box" id="servicos-piuma">
+    <div class="sh"><h2>🔧 Serviços em Piúma</h2></div>
+    <div class="neg-list">
+      <a class="neg-item" href="https://wa.me/5528999036141?text=Quero+entrar+no+guia+-+Servicos+Piuma" target="_blank" rel="noopener" style="display:flex"><div class="neg-ico">📲</div><div class="neg-info"><div class="neg-name">Seu serviço aqui — Piúma <span class="neg-badge nb-a">Vaga disponível</span></div><div class="neg-desc">Piúma · Qualquer segmento de serviços para a cidade</div><span class="neg-link">Fale pelo WhatsApp →</span></div></a>
+    </div>
+  </section>
+
+</div>
+
+<!-- TURISMO PIÚMA -->
+<div class="turismo-wrap" style="margin-top:48px;">
+  <h2 style="font-size:22px;font-weight:900;color:#fff;margin-bottom:4px;">🌊 Turismo em Piúma</h2>
+  <p style="font-size:13px;color:#888;margin:0 0 24px;">Praias, ilha, conchas e natureza — a Cidade das Conchas do Sul do ES.</p>
+
+  <div class="cidade-header">
+    <div class="cidade-nome">Praias de <em>Piúma</em></div>
+    <p class="cidade-intro">Mar calmo, água cristalina e a famosa Ilha do Gambá. Piúma é destino certo para famílias e quem busca tranquilidade no litoral sul capixaba.</p>
+  </div>
+
+  <span class="section-label">Praias · Piúma</span>
+  <div class="praias-grid g3">
+    <a href="/praias/ilha-do-gamba" class="card span2">
+      <img class="card-img" src="https://raw.githubusercontent.com/Raulgrecco/twitch-marataizes/main/clima/Ilha%20dos%20Franceses.png" alt="Ilha do Gambá — Piúma">
+      <div class="card-body">
+        <div class="card-nome">Ilha do Gambá</div>
+        <p class="card-texto">O cartão-postal de Piúma. A Ilha do Gambá fica a apenas 200 metros da orla e pode ser acessada a pé durante a maré baixa. Águas calmas, natureza preservada e visual de tirar o fôlego — destino obrigatório para quem visita a Cidade das Conchas.</p>
+        <span class="card-tag">Turismo · Natureza · Família · Foto</span>
+        <span style="display:inline-block;margin-top:10px;font-size:11px;font-weight:700;color:#00AEEF;">Ver guia da Ilha do Gambá →</span>
+      </div>
+    </a>
+    <a href="/praias/praia-de-piuma" class="card">
+      <img class="card-img" src="https://raw.githubusercontent.com/Raulgrecco/twitch-marataizes/main/clima/PRAIA%20DE%20ITAOCA.png" alt="Praia de Piúma">
+      <div class="card-body">
+        <div class="card-nome">Praia de Piúma</div>
+        <p class="card-texto">Orla extensa com águas calmas, propícia para famílias e crianças. Infraestrutura completa com quiosques, calçadão e gastronomia.</p>
+        <span class="card-tag">Família · Infraestrutura · Gastronomia</span>
+        <span style="display:inline-block;margin-top:10px;font-size:11px;font-weight:700;color:#00AEEF;">Descobrir a Praia de Piúma →</span>
+      </div>
+    </a>
+    <a href="/praias/praia-do-portinho" class="card">
+      <img class="card-img" src="https://raw.githubusercontent.com/Raulgrecco/twitch-marataizes/main/clima/Praia%20da%20Gamboa.png" alt="Praia do Portinho">
+      <div class="card-body">
+        <div class="card-nome">Praia do Portinho</div>
+        <p class="card-texto">Praia tranquila no lado norte de Piúma. Águas calmas com muito verde ao redor. Ponto de encontro dos moradores locais.</p>
+        <span class="card-tag">Tranquila · Local · Natureza</span>
+        <span style="display:inline-block;margin-top:10px;font-size:11px;font-weight:700;color:#00AEEF;">Ver Praia do Portinho →</span>
+      </div>
+    </a>
+    <a href="/praias/praia-de-acaiaca" class="card">
+      <img class="card-img" src="https://raw.githubusercontent.com/Raulgrecco/twitch-marataizes/main/clima/PRAIA%20DE%20ITAIPAVA.png" alt="Praia de Acaiaca">
+      <div class="card-body">
+        <div class="card-nome">Praia de Acaiaca</div>
+        <p class="card-texto">Prainha mais afastada do centro, com ambiente mais reservado. Ideal para quem busca sossego e contato com a natureza.</p>
+        <span class="card-tag">Sossego · Natureza · Pesca</span>
+        <span style="display:inline-block;margin-top:10px;font-size:11px;font-weight:700;color:#00AEEF;">Descobrir Acaiaca →</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="pontos-dark" style="margin:0;border-radius:12px;">
+    <div class="pontos-inner">
+      <span class="pontos-label">Pontos Turísticos · Piúma</span>
+      <div class="pontos-titulo">Cultura e <em>identidade piumense</em></div>
+      <div class="pontos-grid">
+        <a href="/pontos/ilha-do-gamba" class="ponto-card">
+          <img class="ponto-img" src="https://raw.githubusercontent.com/Raulgrecco/twitch-marataizes/main/clima/Ilha%20dos%20Franceses.png" alt="Ilha do Gambá">
+          <div class="ponto-body">
+            <div class="ponto-nome">Ilha do Gambá</div>
+            <p class="ponto-texto">Ícone natural de Piúma. A ilha mais famosa do sul capixaba, acessível a pé na maré baixa. Patrimônio natural e turístico da Cidade das Conchas.</p>
+            <span style="display:inline-block;margin-top:10px;font-size:11px;font-weight:700;color:#00AEEF;">Conhecer a Ilha do Gambá →</span>
+          </div>
+        </a>
+        <a href="/pontos/artesanato-conchas" class="ponto-card">
+          <img class="ponto-img" src="https://raw.githubusercontent.com/Raulgrecco/twitch-marataizes/main/clima/plantacaoabacaxi.png" alt="Artesanato de Conchas">
+          <div class="ponto-body">
+            <div class="ponto-nome">Artesanato de Conchas</div>
+            <p class="ponto-texto">Piúma é a Cidade das Conchas. O artesanato local é único no Brasil — peças feitas à mão com conchas coletadas na região. Feiras, lojas e ateliês espalhados pela cidade.</p>
+            <span style="display:inline-block;margin-top:10px;font-size:11px;font-weight:700;color:#00AEEF;">Descobrir o artesanato →</span>
+          </div>
+        </a>
+        <a href="/pontos/orla-de-piuma" class="ponto-card">
+          <img class="ponto-img" src="https://raw.githubusercontent.com/Raulgrecco/twitch-marataizes/main/clima/Porto%20da%20Barra%20do%20Rio%20Itapemirim.png" alt="Orla de Piúma">
+          <div class="ponto-body">
+            <div class="ponto-nome">Orla e Praça Dona Carmem</div>
+            <p class="ponto-texto">Centro de eventos e encontros em Piúma. A Praça Dona Carmem é palco da Festa dos Pescadores, festivais gastronômicos e da vida cultural da cidade.</p>
+            <span style="display:inline-block;margin-top:10px;font-size:11px;font-weight:700;color:#00AEEF;">Ver a Orla de Piúma →</span>
+          </div>
+        </a>
+        <a href="/pontos/festa-dos-pescadores" class="ponto-card">
+          <img class="ponto-img" src="https://raw.githubusercontent.com/Raulgrecco/twitch-marataizes/main/clima/Igreja%20Nossa%20Senhora%20dos%20Navegantes.png" alt="Festa dos Pescadores">
+          <div class="ponto-body">
+            <div class="ponto-nome">Festa dos Pescadores — São Pedro</div>
+            <p class="ponto-texto">A maior festa de Piúma. Procissão marítima com dezenas de embarcações, shows nacionais, quadrilhas e homenagem aos pescadores. Toda virada de junho para julho.</p>
+            <span style="display:inline-block;margin-top:10px;font-size:11px;font-weight:700;color:#00AEEF;">Ver a Festa dos Pescadores →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="tv-banner" style="margin-top:32px;">
+  <p>Conteúdo produzido e distribuído por</p>
+  <h3>TV Piúma — A Cidade ao Vivo</h3>
+  <a href="https://tvpiuma.digital">Acesse o portal completo</a>
+</div>
+
+<footer style="text-align:center;padding:48px 20px 40px;background:#07101F;border-top:1px solid #1a2a4a;">
+  <p style="font-size:22px;font-weight:900;color:#fff;margin:0 0 10px;line-height:1.3;max-width:640px;margin-left:auto;margin-right:auto;">
+    Quem assiste à TV Piúma já sabe onde ir.<br>
+    <span style="color:#00AEEF;">O seu negócio já está aqui?</span>
+  </p>
+  <p style="font-size:14px;color:#888;margin:0 0 24px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.6;">
+    Moradores e turistas de Piúma pesquisam e decidem onde gastar — todos os dias. As vagas por segmento são limitadas.
+  </p>
+  <a href="https://wa.me/5528999036141?text=Quero+anunciar+na+TV+Piuma" target="_blank" style="display:inline-block;background:#00AEEF;color:#fff;font-size:14px;font-weight:800;padding:14px 28px;border-radius:30px;text-decoration:none;letter-spacing:.3px;">
+    🐚 Quero aparecer na TV Piúma
+  </a>
+  <br><br>
+  <a href="https://www.macucaproducoes.com.br" target="_blank" style="display:inline-block;background:transparent;color:#00AEEF;font-size:12px;font-weight:700;padding:8px 20px;border-radius:30px;text-decoration:none;border:1px solid var(--accent2);">
+    🚀 Conheça a Macuca Produções →
+  </a>
+  <div style="max-width:960px;margin:28px auto;padding:0 20px">
+    <p style="font-size:11px;color:#555;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px">📍 Rede TV Sul Capixaba</p>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center">
+      <a href="https://tvmarataizes.digital" style="background:#0D1B3E;color:#fff;padding:9px 18px;border-radius:20px;font-size:13px;font-weight:700;text-decoration:none">📺 TV Marataízes</a>
+      <a href="https://tvsulcapixaba.com.br" style="background:#0D1B3E;color:#fff;padding:9px 18px;border-radius:20px;font-size:13px;font-weight:700;text-decoration:none">🌊 TV Sul Capixaba</a>
+    </div>
+    <p style="font-size:11px;color:#444;margin-top:14px;line-height:1.6">
+      TV Piúma faz parte da rede de comunicação do Sul do Espírito Santo — operada pela <a href="https://www.macucaproducoes.com.br" style="color:#00AEEF;font-weight:600">Macuca Produções</a>.
+    </p>
+  </div>
+  <p style="font-size:11px;color:#444;margin:28px 0 0;">TV Piúma · A Cidade das Conchas ao Vivo · Piúma/ES</p>
+</footer>
+
+<a href="#tvmz-portal" id="btn-guia-float"
+   style="position:fixed;bottom:80px;left:16px;z-index:999;background:#00AEEF;color:#fff;padding:10px 16px;border-radius:24px;font-size:13px;font-weight:800;box-shadow:0 4px 16px rgba(0,0,0,.4);display:flex;align-items:center;gap:6px;border:1px solid rgba(255,255,255,.2);text-decoration:none;transition:opacity .3s"
+   aria-label="Ir para o Guia de Piúma">
+  🐚 Guia de Piúma
+</a>
+<script>
+(function(){
+  var btn=document.getElementById('btn-guia-float');
+  var portal=document.getElementById('tvmz-portal');
+  if(!btn||!portal)return;
+  window.addEventListener('scroll',function(){
+    var portalTop=portal.getBoundingClientRect().top;
+    btn.style.opacity=portalTop>window.innerHeight?'1':'0';
+    btn.style.pointerEvents=portalTop>window.innerHeight?'auto':'none';
+  },{passive:true});
+})();
+function openVodModal(src){var m=document.getElementById('vod-modal');var w=document.getElementById('vod-player-wrap');if(!m||!w)return;w.innerHTML='<iframe src="'+src+'" allow="autoplay;fullscreen" allowfullscreen style="width:100%;height:100%;border:0;"></iframe>';m.style.display='flex';}
+function closeVodModal(){var m=document.getElementById('vod-modal');var w=document.getElementById('vod-player-wrap');if(m)m.style.display='none';if(w)w.innerHTML='';}
+</script>
+</body>
+</html>
