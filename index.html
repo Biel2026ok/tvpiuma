@@ -3,156 +3,127 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>TV Piúma — A Cidade ao Vivo | Portal de Notícias de Piúma ES</title>
-<meta name="description" content="TV Piúma — portal de notícias, cultura, esporte e agenda de Piúma ES. A cidade ao vivo 24 horas."/>
+<title>TV Piúma — A Cidade ao Vivo · Piúma ES</title>
+<meta name="description" content="Assista à TV Piúma ao vivo. Cobertura local, eventos, cultura e turismo de Piúma — Cidade das Conchas, Sul do Espírito Santo."/>
 <meta name="theme-color" content="#0B1829"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TVPIUMA2026"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TVPIUMA2026');</script>
 <style>
-:root{
-  --bg:#0B1829;
-  --bg2:#0f1e33;
-  --card:#112240;
-  --line:#1e3a5f;
-  --accent:#00AEEF;
-  --accent2:#0077b6;
-  --white:#fff;
-  --muted:#8899aa;
-  --max:1280px;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{background:var(--bg);color:var(--white);font-family:system-ui,-apple-system,Arial,sans-serif;font-size:16px;line-height:1.5}
-a{color:inherit;text-decoration:none}
+:root{--bg:#000;--fg:#fff;--card:#0e0e0e;--line:#1a2a3a;--accent:#00AEEF;--accent2:#0077b6;--max:1320px;}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,Arial,sans-serif}
 img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
 
 /* HEADER */
-.site-header{background:#07101F;border-bottom:2px solid var(--accent);position:sticky;top:0;z-index:100;}
-.header-inner{max-width:var(--max);margin:0 auto;padding:0 16px;height:56px;display:flex;align-items:center;gap:20px;}
+header{background:#07101F;border-bottom:2px solid var(--accent);padding:0 14px;}
+.header-inner{max-width:var(--max);margin:0 auto;height:54px;display:flex;align-items:center;gap:14px;}
 .logo-wrap{display:flex;align-items:center;gap:10px;}
-.logo-wrap img{height:40px;width:40px;border-radius:50%;object-fit:cover;}
-.logo-text{display:flex;flex-direction:column;line-height:1.1;}
-.logo-text strong{font-size:18px;font-weight:900;color:#fff;letter-spacing:.5px;}
-.logo-text span{font-size:9px;color:var(--accent);letter-spacing:2px;text-transform:uppercase;font-weight:700;}
-.live-badge{display:flex;align-items:center;gap:5px;background:rgba(0,174,239,.12);border:1px solid var(--accent);border-radius:20px;padding:4px 10px;font-size:11px;font-weight:800;color:var(--accent);letter-spacing:1px;margin-left:auto;}
-.live-dot{width:7px;height:7px;border-radius:50%;background:#ff3b30;animation:blink 1.2s infinite;}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
-.nav-links{display:flex;gap:20px;margin-left:20px;}
-.nav-links a{font-size:13px;font-weight:600;color:var(--muted);transition:color .2s;}
-.nav-links a:hover{color:#fff;}
-@media(max-width:700px){.nav-links{display:none}.logo-text strong{font-size:15px}}
+.logo-wrap img{height:38px;width:38px;border-radius:50%;object-fit:cover;}
+.logo-text strong{font-size:17px;font-weight:900;color:#fff;}
+.logo-text span{font-size:9px;color:var(--accent);letter-spacing:2px;text-transform:uppercase;display:block;font-weight:700;}
+.nav{display:flex;gap:18px;margin-left:16px;}
+.nav a{font-size:13px;font-weight:600;color:#778;transition:color .2s;}
+.nav a:hover{color:#fff;}
+.live-pill{display:flex;align-items:center;gap:5px;background:rgba(0,174,239,.1);border:1px solid var(--accent);border-radius:20px;padding:4px 12px;font-size:11px;font-weight:800;color:var(--accent);letter-spacing:1px;margin-left:auto;white-space:nowrap;}
+.live-dot{width:7px;height:7px;border-radius:50%;background:#ff3b30;flex-shrink:0;animation:blink 1.2s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.15}}
+@media(max-width:680px){.nav{display:none}}
 
 /* BREAKING */
-.breaking{background:var(--accent);color:#07101F;font-size:12px;font-weight:800;padding:6px 0;overflow:hidden;}
-.breaking-inner{max-width:var(--max);margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:12px;}
-.breaking-label{background:#07101F;color:var(--accent);padding:2px 10px;border-radius:3px;font-size:10px;font-weight:900;letter-spacing:1px;white-space:nowrap;}
-.breaking-text{white-space:nowrap;animation:ticker 30s linear infinite;}
-@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.breaking{background:var(--accent);overflow:hidden;padding:5px 0;}
+.breaking-inner{max-width:var(--max);margin:0 auto;padding:0 14px;display:flex;align-items:center;gap:10px;}
+.brk-label{background:#07101F;color:var(--accent);font-size:9px;font-weight:900;padding:2px 8px;border-radius:2px;letter-spacing:1px;flex-shrink:0;}
+.brk-scroll{overflow:hidden;flex:1;}
+.brk-text{display:inline-block;white-space:nowrap;font-size:12px;font-weight:800;color:#07101F;animation:ticker 40s linear infinite;}
+@keyframes ticker{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}
 
 /* PLAYER */
-.player-section{background:#07101F;padding:16px 0 0;}
-.player-wrap{max-width:var(--max);margin:0 auto;padding:0 16px;}
-.player-label{font-size:11px;font-weight:800;color:var(--accent);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:8px;}
-.player-label::before{content:'';width:8px;height:8px;border-radius:50%;background:#ff3b30;animation:blink 1.2s infinite;flex-shrink:0;}
-.player-box{aspect-ratio:16/9;background:#000;border-radius:10px;overflow:hidden;position:relative;cursor:pointer;border:1px solid var(--line);}
-.player-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(ellipse at center,#0D1B3E 0%,#07101F 100%);border-radius:10px;}
-.play-btn{width:72px;height:72px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;margin-bottom:14px;box-shadow:0 0 0 0 rgba(0,174,239,.4);animation:pulse 2s infinite;}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(0,174,239,.4)}60%{box-shadow:0 0 0 20px rgba(0,174,239,0)}}
-.play-btn svg{margin-left:4px;}
+.player-outer{max-width:var(--max);margin:0 auto;padding:14px 14px 0;}
+.player-label{font-size:11px;font-weight:800;color:var(--accent);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:7px;}
+.player-label::before{content:'';width:8px;height:8px;border-radius:50%;background:#ff3b30;animation:blink 1.2s infinite;}
+.player{aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden;position:relative;cursor:pointer;border:1px solid #1a2a3a;}
+.player-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(ellipse at center,#0D1B3E 0%,#07101F 100%);border-radius:12px;}
+.play-btn{width:76px;height:76px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;margin-bottom:16px;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(0,174,239,.45)}60%{box-shadow:0 0 0 22px rgba(0,174,239,0)}}
 .player-overlay h2{font-size:18px;font-weight:900;color:#fff;margin-bottom:4px;}
-.player-overlay p{font-size:13px;color:var(--muted);}
+.player-overlay p{font-size:13px;color:#778;}
+@keyframes livepulse{0%,100%{box-shadow:0 0 0 0 rgba(0,174,239,.5)}60%{box-shadow:0 0 0 22px rgba(0,174,239,0)}}
 
-/* CONTAINER */
-.container{max-width:var(--max);margin:0 auto;padding:0 16px;}
+/* VOD SECTION */
+.vod-section{max-width:var(--max);margin:28px auto 0;padding:0 14px;}
+.sec-title{font-size:17px;font-weight:900;color:#fff;margin-bottom:4px;display:flex;align-items:center;gap:10px;}
+.sec-title .badge{font-size:10px;font-weight:800;color:var(--accent);background:rgba(0,174,239,.1);border:1px solid rgba(0,174,239,.3);padding:3px 10px;border-radius:3px;letter-spacing:1px;text-transform:uppercase;}
+.sec-sub{font-size:13px;color:#556;margin-bottom:14px;}
+.vod-row-wrap{position:relative;}
+.vod-row{display:flex;gap:12px;overflow-x:auto;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none;padding-bottom:4px;}
+.vod-row::-webkit-scrollbar{display:none;}
+.vod-card{flex:0 0 220px;border-radius:10px;overflow:hidden;cursor:pointer;position:relative;transition:transform .2s,box-shadow .2s;border:1px solid #1a2a3a;background:#000;}
+.vod-card:hover{transform:scale(1.04);box-shadow:0 8px 28px rgba(0,0,0,.8);z-index:2;}
+.vod-thumb{position:relative;aspect-ratio:16/9;overflow:hidden;}
+.vod-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .3s;}
+.vod-card:hover .vod-thumb img{transform:scale(1.06);}
+.vod-thumb::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0) 30%,rgba(0,0,0,.85) 100%);pointer-events:none;}
+.vod-overlay{position:absolute;bottom:0;left:0;right:0;padding:8px 10px 10px;z-index:2;}
+.vod-title{font-size:12px;font-weight:800;color:#fff;line-height:1.3;margin-bottom:6px;text-shadow:0 1px 4px rgba(0,0,0,.8);}
+.vod-btn{display:inline-block;background:var(--accent);color:#fff;padding:5px 12px;border-radius:20px;font-size:10px;font-weight:700;}
+.vod-arrow{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:56px;background:rgba(0,0,0,.75);border:none;border-radius:4px;color:#fff;font-size:20px;cursor:pointer;z-index:10;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .15s;}
+.vod-row-wrap:hover .vod-arrow{opacity:1;}
+.vod-arrow.prev{left:-8px;}
+.vod-arrow.next{right:-8px;}
+@media(max-width:600px){.vod-card{flex:0 0 160px;}.vod-arrow{display:none;}}
 
-/* SECTION TITLES */
-.sec-head{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--line);}
-.sec-head h2{font-size:18px;font-weight:900;color:#fff;}
-.sec-head .sec-tag{font-size:10px;font-weight:800;color:var(--accent);letter-spacing:2px;text-transform:uppercase;background:rgba(0,174,239,.1);padding:3px 10px;border-radius:3px;}
-.sec-head a{margin-left:auto;font-size:12px;font-weight:700;color:var(--accent);}
-
-/* NOTICIAS GRID */
-.news-section{padding:32px 0 0;}
-.news-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;}
-.news-grid .main{grid-column:1/3;}
-@media(max-width:900px){.news-grid{grid-template-columns:1fr 1fr;}.news-grid .main{grid-column:1/3;}}
-@media(max-width:600px){.news-grid{grid-template-columns:1fr;}.news-grid .main{grid-column:1;}}
-
-.news-card{background:var(--card);border-radius:10px;overflow:hidden;border:1px solid var(--line);transition:transform .2s,border-color .2s;}
-.news-card:hover{transform:translateY(-3px);border-color:var(--accent);}
-.news-card .thumb{position:relative;overflow:hidden;}
-.news-card .thumb img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform .3s;}
-.news-card:hover .thumb img{transform:scale(1.04);}
-.news-card .thumb .cat{position:absolute;top:10px;left:10px;background:var(--accent);color:#07101F;font-size:10px;font-weight:900;padding:3px 10px;border-radius:3px;letter-spacing:.5px;text-transform:uppercase;}
-.news-card .body{padding:14px;}
-.news-card .body h3{font-size:15px;font-weight:800;color:#fff;margin-bottom:6px;line-height:1.35;}
-.news-card.main .body h3{font-size:20px;}
-.news-card .body p{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:8px;}
-.news-card .body .meta{font-size:11px;color:#556;display:flex;gap:10px;}
-.news-card .body .meta span{color:var(--accent);}
-
-/* DESTAQUES */
-.dest-section{padding:32px 0 0;}
-.dest-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
-@media(max-width:900px){.dest-grid{grid-template-columns:1fr 1fr;}}
-@media(max-width:600px){.dest-grid{grid-template-columns:1fr;}}
-.dest-card{background:var(--card);border-radius:10px;padding:20px;border:1px solid var(--line);display:flex;flex-direction:column;gap:8px;transition:border-color .2s,transform .2s;}
-.dest-card:hover{border-color:var(--accent);transform:translateY(-2px);}
-.dest-icon{font-size:28px;}
-.dest-cat{font-size:10px;font-weight:800;color:var(--accent);letter-spacing:2px;text-transform:uppercase;}
-.dest-title{font-size:15px;font-weight:800;color:#fff;line-height:1.3;}
-.dest-text{font-size:12px;color:var(--muted);line-height:1.6;}
-.dest-link{font-size:11px;font-weight:700;color:var(--accent);margin-top:auto;}
+/* VOD MODAL */
+#vod-modal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.94);align-items:center;justify-content:center;}
+#vod-modal .modal-inner{position:relative;width:90%;max-width:960px;aspect-ratio:16/9;}
+#vod-modal .close-btn{position:absolute;top:-44px;right:0;background:none;border:none;color:#fff;font-size:32px;cursor:pointer;opacity:.85;}
 
 /* AGENDA */
-.agenda-section{padding:32px 0 0;}
-.agenda-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;}
-.agenda-card{background:var(--card);border-radius:10px;padding:16px;border:1px solid var(--line);display:flex;gap:14px;transition:border-color .2s;}
-.agenda-card:hover{border-color:var(--accent);}
-.agenda-date{display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--accent);color:#07101F;border-radius:8px;min-width:52px;padding:8px;text-align:center;flex-shrink:0;}
-.agenda-date .day{font-size:24px;font-weight:900;line-height:1;}
-.agenda-date .month{font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;}
-.agenda-info{flex:1;min-width:0;}
-.agenda-title{font-size:14px;font-weight:800;color:#fff;margin-bottom:4px;line-height:1.3;}
-.agenda-local{font-size:11px;color:var(--muted);}
-.agenda-tag{display:inline-block;margin-top:6px;font-size:10px;font-weight:700;color:var(--accent);background:rgba(0,174,239,.1);padding:2px 8px;border-radius:3px;}
+.agenda-section{max-width:var(--max);margin:32px auto 0;padding:0 14px;}
+.agenda-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;}
+.agenda-card{background:#07101F;border-radius:10px;padding:16px;border:1px solid #1a2a3a;display:flex;gap:14px;align-items:flex-start;}
+.ag-date{display:flex;flex-direction:column;align-items:center;background:var(--accent);color:#07101F;border-radius:8px;min-width:50px;padding:8px 6px;text-align:center;flex-shrink:0;}
+.ag-date .day{font-size:24px;font-weight:900;line-height:1;}
+.ag-date .month{font-size:9px;font-weight:800;letter-spacing:1px;text-transform:uppercase;}
+.ag-info .ag-title{font-size:14px;font-weight:800;color:#fff;margin-bottom:4px;line-height:1.3;}
+.ag-info .ag-local{font-size:11px;color:#556;}
+.ag-tag{display:inline-block;margin-top:6px;font-size:10px;font-weight:700;color:var(--accent);background:rgba(0,174,239,.1);padding:2px 8px;border-radius:3px;}
 
-/* GALERIA */
-.gallery-section{padding:32px 0 0;}
-.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
-@media(max-width:800px){.gallery-grid{grid-template-columns:repeat(2,1fr);}}
-.gallery-item{border-radius:8px;overflow:hidden;aspect-ratio:4/3;position:relative;}
-.gallery-item.tall{grid-row:span 2;aspect-ratio:auto;}
-.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .3s;}
-.gallery-item:hover img{transform:scale(1.05);}
-.gallery-item .caption{position:absolute;bottom:0;left:0;right:0;padding:8px 10px;background:linear-gradient(transparent,rgba(0,0,0,.8));font-size:11px;font-weight:700;color:#fff;}
-
-/* GUIA SECUNDARIO */
-.guia-section{padding:32px 0 0;}
-.guia-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;}
-.guia-btn{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px;display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;color:var(--muted);transition:all .2s;}
-.guia-btn:hover{border-color:var(--accent);color:#fff;background:#0D1B3E;}
+/* GUIA */
+.guia-section{max-width:var(--max);margin:32px auto 0;padding:0 14px;}
+.guia-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;}
+.guia-btn{background:#07101F;border:1px solid #1a2a3a;border-radius:8px;padding:14px;display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;color:#556;transition:all .2s;}
+.guia-btn:hover{border-color:var(--accent);color:#fff;}
 .guia-btn .ico{font-size:20px;}
 
 /* FOOTER */
-.site-footer{background:#07101F;border-top:1px solid var(--line);padding:40px 16px 30px;margin-top:48px;text-align:center;}
-.footer-logo{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:14px;}
-.footer-logo img{height:48px;width:48px;border-radius:50%;}
-.footer-logo strong{font-size:22px;font-weight:900;}
-.footer-tagline{font-size:13px;color:var(--muted);margin-bottom:20px;}
-.footer-links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:20px;}
-.footer-links a{font-size:12px;font-weight:700;color:var(--muted);background:var(--card);border:1px solid var(--line);padding:6px 14px;border-radius:20px;transition:all .2s;}
+footer{text-align:center;padding:48px 20px 36px;background:#07101F;border-top:1px solid #1a2a3a;margin-top:48px;}
+.footer-logo{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:10px;}
+.footer-logo img{height:44px;width:44px;border-radius:50%;}
+.footer-logo strong{font-size:20px;font-weight:900;}
+.footer-tagline{font-size:13px;color:#556;margin-bottom:18px;}
+.footer-links{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:18px;}
+.footer-links a{font-size:12px;font-weight:700;color:#556;background:#0e0e0e;border:1px solid #1a2a3a;padding:7px 16px;border-radius:20px;transition:all .2s;}
 .footer-links a:hover{color:#fff;border-color:var(--accent);}
-.footer-copy{font-size:11px;color:#445;}
+.footer-copy{font-size:11px;color:#334;}
 
 /* FLOAT */
-.float-btn{position:fixed;bottom:20px;right:20px;background:var(--accent);color:#07101F;padding:12px 18px;border-radius:30px;font-size:13px;font-weight:800;box-shadow:0 4px 20px rgba(0,174,239,.3);z-index:99;display:flex;align-items:center;gap:6px;transition:opacity .3s;opacity:0;pointer-events:none;}
-
-/* SPACER */
-.spacer{height:32px;}
+#float-btn{position:fixed;bottom:80px;left:16px;z-index:999;background:#07101F;color:#fff;padding:10px 16px;border-radius:24px;font-size:13px;font-weight:800;box-shadow:0 4px 16px rgba(0,0,0,.5);display:flex;align-items:center;gap:6px;border:1px solid var(--accent);text-decoration:none;transition:opacity .3s;opacity:0;pointer-events:none;}
 </style>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.tvpiuma.digital/">
+<meta property="og:title" content="TV Piúma — A Cidade ao Vivo">
+<meta property="og:description" content="Portal de notícias, TV ao vivo e cobertura local de Piúma ES — Cidade das Conchas.">
+<meta property="og:site_name" content="TV Piúma">
+<link rel="canonical" href="https://www.tvpiuma.digital/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"NewsMediaOrganization","@id":"https://www.tvpiuma.digital/#organization","name":"TV Piúma","url":"https://www.tvpiuma.digital","telephone":"+55-28-99903-6141","areaServed":["Piúma"]},{"@type":"WebSite","@id":"https://www.tvpiuma.digital/#website","url":"https://www.tvpiuma.digital","name":"TV Piúma"}]}
+</script>
 </head>
 <body>
 
 <!-- HEADER -->
-<header class="site-header">
+<header>
   <div class="header-inner">
     <div class="logo-wrap">
       <img src="Logo_Tv_Piuma.png" alt="TV Piúma" onerror="this.style.display='none'"/>
@@ -161,332 +132,330 @@ img{max-width:100%;display:block}
         <span>A CIDADE AO VIVO</span>
       </div>
     </div>
-    <nav class="nav-links">
-      <a href="#noticias">Notícias</a>
+    <nav class="nav">
+      <a href="#programas">Programas</a>
       <a href="#agenda">Agenda</a>
-      <a href="#destaques">Destaques</a>
-      <a href="#galeria">Fotos</a>
       <a href="#guia">Guia</a>
     </nav>
-    <div class="live-badge">
+    <div class="live-pill">
       <span class="live-dot"></span>
       AO VIVO
     </div>
   </div>
 </header>
 
-<!-- BREAKING NEWS -->
+<!-- BREAKING -->
 <div class="breaking">
   <div class="breaking-inner">
-    <span class="breaking-label">URGENTE</span>
-    <span class="breaking-text">
-      Festa dos Pescadores 2026 confirmada de 26 a 29 de junho na Praça Oenes Taylor · Brenno e Matheus no dia 27 e Danilo e Davi no dia 28 · Câmara Municipal realiza sessão especial dia 25 de junho · Piúma recebe turistas de todo o ES no feriado de São Pedro · Inscrições para barracas da Festa dos Pescadores encerradas · &nbsp;&nbsp;&nbsp; Festa dos Pescadores 2026 confirmada de 26 a 29 de junho na Praça Oenes Taylor · Brenno e Matheus no dia 27 e Danilo e Davi no dia 28 · Câmara Municipal realiza sessão especial dia 25 de junho · Piúma recebe turistas de todo o ES no feriado de São Pedro ·
-    </span>
+    <span class="brk-label">AGORA</span>
+    <div class="brk-scroll">
+      <span class="brk-text">Festa dos Pescadores 2026 · 26 a 29 de junho · Brenno e Matheus dia 27 · Danilo e Davi dia 28 · Câmara Municipal sessão especial dia 25 · Procissão Marítima de São Pedro 29/jun às 10h · Piúma — Cidade das Conchas — Sul do Espírito Santo &nbsp;&nbsp;&nbsp; Festa dos Pescadores 2026 · 26 a 29 de junho · Brenno e Matheus dia 27 · Danilo e Davi dia 28 · Câmara Municipal sessão especial dia 25</span>
+    </div>
   </div>
 </div>
 
-<!-- PLAYER -->
-<section class="player-section">
-  <div class="player-wrap">
-    <div class="player-label">Transmissão ao vivo</div>
-    <div class="player-box" id="player-wrapper" onclick="loadPlayer()">
-      <div class="player-overlay" id="player-overlay">
-        <div class="play-btn">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="#07101F"><polygon points="6,3 20,12 6,21"/></svg>
-        </div>
-        <h2>TV Piúma — Ao Vivo</h2>
-        <p>Clique para assistir</p>
+<!-- PLAYER AO VIVO -->
+<div class="player-outer">
+  <div class="player-label">Transmissão ao vivo</div>
+  <div class="player" id="player-wrapper" onclick="loadLivePlayer()">
+    <div class="player-overlay" id="player-overlay">
+      <div class="play-btn">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="#07101F"><polygon points="6,3 20,12 6,21"/></svg>
       </div>
+      <h2>TV Piúma — Ao Vivo</h2>
+      <p>Clique para assistir</p>
     </div>
   </div>
-</section>
-<style>
-@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(0,174,239,.4)}60%{box-shadow:0 0 0 20px rgba(0,174,239,0)}}
-</style>
+</div>
 <script>
-function loadPlayer(){
-  var w=document.getElementById('player-wrapper');
-  var o=document.getElementById('player-overlay');
+function loadLivePlayer(){
+  var w=document.getElementById('player-wrapper'),o=document.getElementById('player-overlay');
   if(!o||o.style.display==='none')return;
   var f=document.createElement('iframe');
   f.src='https://player.castr.com/live_809e4d1087af11f092f8f727f1f0bfd4?autoplay=on&muted=on';
   f.allow='autoplay;fullscreen';f.allowFullscreen=true;
-  f.style.cssText='width:100%;height:100%;border:0;position:absolute;inset:0;';
-  w.appendChild(f);o.style.display='none';w.onclick=null;w.style.cursor='default';
+  f.style.cssText='width:100%;height:100%;border:0;position:absolute;inset:0;border-radius:12px;';
+  w.appendChild(f);o.style.display='none';w.style.cursor='default';w.onclick=null;
 }
 </script>
 
-<!-- ÚLTIMAS NOTÍCIAS -->
-<section class="news-section" id="noticias">
-  <div class="container">
-    <div class="sec-head">
-      <h2>Últimas Notícias</h2>
-      <span class="sec-tag">Piúma ES</span>
-      <a href="#">Ver tudo →</a>
-    </div>
-    <div class="news-grid">
+<!-- VOD MODAL -->
+<div id="vod-modal">
+  <div class="modal-inner">
+    <button class="close-btn" onclick="closeVod()">✕</button>
+    <div id="vod-player-wrap" style="width:100%;height:100%;"></div>
+  </div>
+</div>
+<script>
+function openVod(src){
+  var m=document.getElementById('vod-modal');
+  var w=document.getElementById('vod-player-wrap');
+  w.innerHTML='<iframe src="'+src+'" allow="autoplay;fullscreen" allowfullscreen style="width:100%;height:100%;border:0;border-radius:8px;"></iframe>';
+  m.style.display='flex';
+}
+function closeVod(){
+  document.getElementById('vod-modal').style.display='none';
+  document.getElementById('vod-player-wrap').innerHTML='';
+}
+document.getElementById('vod-modal').addEventListener('click',function(e){if(e.target===this)closeVod();});
+</script>
 
-      <!-- DESTAQUE PRINCIPAL -->
-      <a href="#" class="news-card main">
-        <div class="thumb">
-          <img src="https://raw.githubusercontent.com/Raulgrecco/twitch-marataizes/main/clima/Ilha%20dos%20Franceses.png" alt="Festa dos Pescadores 2026"/>
-          <span class="cat">Evento</span>
-        </div>
-        <div class="body">
-          <h3>Festa dos Pescadores 2026 promete ser a maior da história de Piúma com shows nacionais</h3>
-          <p>De 26 a 29 de junho, a Praça Oenes Taylor recebe a tradicional celebração em homenagem a São Pedro. Brenno e Matheus e Danilo e Davi confirmados. Procissão marítima no domingo reúne dezenas de embarcações.</p>
-          <div class="meta"><span>Hoje</span> · TV Piúma</div>
-        </div>
-      </a>
+<!-- PROGRAMAS VOD -->
+<div class="vod-section" id="programas">
+  <div class="sec-title">
+    Programas da TV Piúma
+    <span class="badge">VOD · Vídeo On Demand</span>
+  </div>
+  <p class="sec-sub">Assista aos programas e coberturas da TV Piúma quando quiser.</p>
+  <div class="vod-row-wrap">
+    <button class="vod-arrow prev" id="vod-prev1">&#8249;</button>
+    <div class="vod-row" id="vod-row1">
 
-      <!-- LATERAL -->
-      <div style="display:flex;flex-direction:column;gap:16px;">
-        <a href="#" class="news-card">
-          <div class="thumb">
-            <img src="https://raw.githubusercontent.com/Raulgrecco/twitch-marataizes/main/clima/PRAIA%20DE%20ITAOCA.png" alt="Câmara Municipal"/>
-            <span class="cat">Política</span>
+      <div class="vod-card" onclick="openVod('https://player.castr.com/vod/WKrOtRolJ34I50iz')">
+        <div class="vod-thumb">
+          <img src="https://raw.githubusercontent.com/Raulgrecco/twitch-marataizes/main/clima/Ilha%20dos%20Franceses.png" alt="Festa dos Pescadores"/>
+          <div class="vod-overlay">
+            <div class="vod-title">Festa dos Pescadores 2026 — Cobertura completa</div>
+            <span class="vod-btn">▶ Assistir</span>
           </div>
-          <div class="body">
-            <h3>Câmara Municipal realiza sessão especial no dia 25 de junho</h3>
-            <p>Evento institucional marca a programação da semana antes da Festa dos Pescadores.</p>
-            <div class="meta"><span>Hoje</span> · TV Piúma</div>
+        </div>
+      </div>
+
+      <div class="vod-card" onclick="openVod('https://player.castr.com/vod/meEHkRlMhN7IUfuS')">
+        <div class="vod-thumb">
+          <img src="https://raw.githubusercontent.com/Raulgrecco/twitch-marataizes/main/clima/Porto%20da%20Barra%20do%20Rio%20Itapemirim.png" alt="Procissão São Pedro"/>
+          <div class="vod-overlay">
+            <div class="vod-title">Procissão Marítima de São Pedro — Piúma</div>
+            <span class="vod-btn">▶ Assistir</span>
           </div>
-        </a>
-        <a href="#" class="news-card">
-          <div class="thumb">
-            <img src="https://raw.githubusercontent.com/Raulgrecco/twitch-marataizes/main/clima/Praia%20da%20Gamboa.png" alt="Turismo Piúma"/>
-            <span class="cat">Turismo</span>
+        </div>
+      </div>
+
+      <div class="vod-card" onclick="openVod('https://player.castr.com/vod/WKrOtRolJ34I50iz')">
+        <div class="vod-thumb">
+          <img src="https://raw.githubusercontent.com/Raulgrecco/twitch-marataizes/main/clima/PRAIA%20DE%20ITAOCA.png" alt="Praias de Piúma"/>
+          <div class="vod-overlay">
+            <div class="vod-title">Praias de Piúma — O melhor do litoral sul capixaba</div>
+            <span class="vod-btn">▶ Assistir</span>
           </div>
-          <div class="body">
-            <h3>Piúma espera recorde de turistas no feriado de São Pedro</h3>
-            <p>Hotelaria e comércio se preparam para o maior movimento do ano na Cidade das Conchas.</p>
-            <div class="meta"><span>Ontem</span> · TV Piúma</div>
+        </div>
+      </div>
+
+      <div class="vod-card" onclick="openVod('https://player.castr.com/vod/meEHkRlMhN7IUfuS')">
+        <div class="vod-thumb">
+          <img src="https://raw.githubusercontent.com/Raulgrecco/twitch-marataizes/main/clima/plantacaoabacaxi.png" alt="Artesanato Conchas"/>
+          <div class="vod-overlay">
+            <div class="vod-title">Artesanato em Conchas — A tradição de Piúma</div>
+            <span class="vod-btn">▶ Assistir</span>
           </div>
-        </a>
+        </div>
+      </div>
+
+      <div class="vod-card" onclick="openVod('https://player.castr.com/vod/WKrOtRolJ34I50iz')">
+        <div class="vod-thumb">
+          <img src="https://raw.githubusercontent.com/Raulgrecco/twitch-marataizes/main/clima/Igreja%20Nossa%20Senhora%20dos%20Navegantes.png" alt="Câmara Municipal"/>
+          <div class="vod-overlay">
+            <div class="vod-title">Câmara Municipal de Piúma — Sessão ao vivo</div>
+            <span class="vod-btn">▶ Assistir</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="vod-card" onclick="openVod('https://player.castr.com/vod/meEHkRlMhN7IUfuS')">
+        <div class="vod-thumb">
+          <img src="https://raw.githubusercontent.com/Raulgrecco/twitch-marataizes/main/clima/Ilha%20dos%20Franceses.png" alt="Ilha do Gambá"/>
+          <div class="vod-overlay">
+            <div class="vod-title">Ilha do Gambá — O cartão-postal de Piúma</div>
+            <span class="vod-btn">▶ Assistir</span>
+          </div>
+        </div>
       </div>
 
     </div>
-
-    <!-- LINHA SECUNDÁRIA -->
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px;">
-      <a href="#" class="news-card">
-        <div class="body" style="padding:16px;">
-          <span style="font-size:10px;font-weight:800;color:var(--accent);letter-spacing:1px;text-transform:uppercase;">Esporte</span>
-          <h3 style="font-size:14px;margin-top:6px;">Final do Campeonato Municipal de Futebol agita o fim de semana</h3>
-          <div class="meta" style="margin-top:8px;"><span>25 Jun</span> · Estádio Florêncio Serafim</div>
-        </div>
-      </a>
-      <a href="#" class="news-card">
-        <div class="body" style="padding:16px;">
-          <span style="font-size:10px;font-weight:800;color:var(--accent);letter-spacing:1px;text-transform:uppercase;">Cultura</span>
-          <h3 style="font-size:14px;margin-top:6px;">Quadrilha Pipoqueira comemora 20 anos na Festa dos Pescadores</h3>
-          <div class="meta" style="margin-top:8px;"><span>28 Jun</span> · Praça Oenes Taylor</div>
-        </div>
-      </a>
-      <a href="#" class="news-card">
-        <div class="body" style="padding:16px;">
-          <span style="font-size:10px;font-weight:800;color:var(--accent);letter-spacing:1px;text-transform:uppercase;">Economia</span>
-          <h3 style="font-size:14px;margin-top:6px;">Artesanato de conchas movimenta economia local na alta temporada</h3>
-          <div class="meta" style="margin-top:8px;"><span>24 Jun</span> · TV Piúma</div>
-        </div>
-      </a>
-    </div>
+    <button class="vod-arrow next" id="vod-next1">&#8250;</button>
   </div>
-</section>
+</div>
 
-<!-- DESTAQUES DA CIDADE -->
-<section class="dest-section" id="destaques">
-  <div class="container">
-    <div class="sec-head">
-      <h2>Destaques da Cidade</h2>
-      <span class="sec-tag">Coberturas</span>
-    </div>
-    <div class="dest-grid">
-      <a href="#" class="dest-card">
-        <div class="dest-icon">🎭</div>
-        <div class="dest-cat">Cultura</div>
-        <div class="dest-title">Festival Piúma Gastronomia & Arte</div>
-        <div class="dest-text">O Instituto Panela de Barro e a Prefeitura de Piúma unem gastronomia, música e artesanato na Praça Dona Carmem. Entrada gratuita.</div>
-        <span class="dest-link">Ver cobertura completa →</span>
-      </a>
-      <a href="#" class="dest-card">
-        <div class="dest-icon">⚽</div>
-        <div class="dest-cat">Esporte</div>
-        <div class="dest-title">Campeonato Municipal de Futebol 2026</div>
-        <div class="dest-text">A disputa mais esperada do ano entre os times de Piúma. Final marcada para o fim de semana da Festa dos Pescadores.</div>
-        <span class="dest-link">Acompanhar ao vivo →</span>
-      </a>
-      <a href="#" class="dest-card">
-        <div class="dest-icon">🐚</div>
-        <div class="dest-cat">Identidade</div>
-        <div class="dest-title">Piúma — A Cidade das Conchas</div>
-        <div class="dest-text">Artesanato único no Brasil. As conchas coletadas no litoral de Piúma viram arte nas mãos dos artesãos locais. Conheça a tradição.</div>
-        <span class="dest-link">Descobrir a tradição →</span>
-      </a>
-      <a href="#" class="dest-card">
-        <div class="dest-icon">🏛️</div>
-        <div class="dest-cat">Política</div>
-        <div class="dest-title">Câmara Municipal de Piúma</div>
-        <div class="dest-text">Acompanhe as sessões, votações e projetos dos vereadores de Piúma. Transparência e fiscalização para a cidade.</div>
-        <span class="dest-link">Acompanhar →</span>
-      </a>
-      <a href="#" class="dest-card">
-        <div class="dest-icon">🌊</div>
-        <div class="dest-cat">Turismo</div>
-        <div class="dest-title">Ilha do Gambá — O cartão-postal</div>
-        <div class="dest-text">A apenas 200 metros da orla, acessível a pé na maré baixa. Um dos destinos mais fotografados do litoral capixaba.</div>
-        <span class="dest-link">Ver guia completo →</span>
-      </a>
-      <a href="#" class="dest-card">
-        <div class="dest-icon">📚</div>
-        <div class="dest-cat">Educação</div>
-        <div class="dest-title">Projetos educacionais em destaque</div>
-        <div class="dest-text">Iniciativas das escolas municipais de Piúma ganham reconhecimento regional. Tecnologia e inovação nas salas de aula da cidade.</div>
-        <span class="dest-link">Ver reportagem →</span>
-      </a>
-    </div>
+<!-- SEGUNDO CARROSSEL — EVENTOS E COBERTURA -->
+<div class="vod-section" style="margin-top:28px;">
+  <div class="sec-title">
+    Cobertura de Eventos
+    <span class="badge">Piúma ES</span>
   </div>
-</section>
+  <p class="sec-sub">Registros dos principais eventos da Cidade das Conchas.</p>
+  <div class="vod-row-wrap">
+    <button class="vod-arrow prev" id="vod-prev2">&#8249;</button>
+    <div class="vod-row" id="vod-row2">
+
+      <div class="vod-card" onclick="openVod('https://player.castr.com/vod/WKrOtRolJ34I50iz')">
+        <div class="vod-thumb">
+          <img src="https://raw.githubusercontent.com/Raulgrecco/twitch-marataizes/main/clima/Praia%20da%20Gamboa.png" alt="Festival Gastronomia"/>
+          <div class="vod-overlay">
+            <div class="vod-title">Festival Piúma Gastronomia & Arte — Edição 2026</div>
+            <span class="vod-btn">▶ Assistir</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="vod-card" onclick="openVod('https://player.castr.com/vod/meEHkRlMhN7IUfuS')">
+        <div class="vod-thumb">
+          <img src="https://raw.githubusercontent.com/Raulgrecco/twitch-marataizes/main/clima/PRAIA%20DE%20ITAIPAVA.png" alt="Verão Piúma"/>
+          <div class="vod-overlay">
+            <div class="vod-title">Verão em Piúma — Temporada de sol e mar</div>
+            <span class="vod-btn">▶ Assistir</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="vod-card" onclick="openVod('https://player.castr.com/vod/WKrOtRolJ34I50iz')">
+        <div class="vod-thumb">
+          <img src="https://raw.githubusercontent.com/Raulgrecco/twitch-marataizes/main/clima/Lagoa%20Guanandy1.png" alt="Natureza Piúma"/>
+          <div class="vod-overlay">
+            <div class="vod-title">Piúma Natural — Turismo ecológico na Cidade das Conchas</div>
+            <span class="vod-btn">▶ Assistir</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="vod-card" onclick="openVod('https://player.castr.com/vod/meEHkRlMhN7IUfuS')">
+        <div class="vod-thumb">
+          <img src="https://raw.githubusercontent.com/Raulgrecco/twitch-marataizes/main/clima/oquequer.png" alt="O Que Piúma Quer"/>
+          <div class="vod-overlay">
+            <div class="vod-title">O Que Piúma Quer? — Programa especial</div>
+            <span class="vod-btn">▶ Assistir</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="vod-card" onclick="openVod('https://player.castr.com/vod/WKrOtRolJ34I50iz')">
+        <div class="vod-thumb">
+          <img src="https://raw.githubusercontent.com/Raulgrecco/twitch-marataizes/main/clima/Porto%20da%20Barra%20do%20Rio%20Itapemirim.png" alt="Pescadores"/>
+          <div class="vod-overlay">
+            <div class="vod-title">Pescadores de Piúma — Histórias do mar</div>
+            <span class="vod-btn">▶ Assistir</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <button class="vod-arrow next" id="vod-next2">&#8250;</button>
+  </div>
+</div>
 
 <!-- AGENDA -->
-<section class="agenda-section" id="agenda">
-  <div class="container">
-    <div class="sec-head">
-      <h2>Agenda de Piúma</h2>
-      <span class="sec-tag">Junho 2026</span>
+<div class="agenda-section" id="agenda">
+  <div class="sec-title" style="margin-bottom:4px;">Agenda de Piúma <span class="badge">Junho 2026</span></div>
+  <p class="sec-sub" style="margin-bottom:14px;">Eventos confirmados para os próximos dias.</p>
+  <div class="agenda-grid">
+    <div class="agenda-card">
+      <div class="ag-date"><div class="day">25</div><div class="month">Jun</div></div>
+      <div class="ag-info">
+        <div class="ag-title">Sessão Especial — Câmara Municipal</div>
+        <div class="ag-local">📍 Câmara Municipal de Piúma</div>
+        <span class="ag-tag">Institucional</span>
+      </div>
     </div>
-    <div class="agenda-grid">
-      <div class="agenda-card">
-        <div class="agenda-date"><div class="day">25</div><div class="month">Jun</div></div>
-        <div class="agenda-info">
-          <div class="agenda-title">Sessão Especial — Câmara Municipal</div>
-          <div class="agenda-local">📍 Câmara Municipal de Piúma</div>
-          <span class="agenda-tag">Institucional</span>
-        </div>
+    <div class="agenda-card">
+      <div class="ag-date"><div class="day">26</div><div class="month">Jun</div></div>
+      <div class="ag-info">
+        <div class="ag-title">Abertura — Festa dos Pescadores 2026</div>
+        <div class="ag-local">📍 Praça Oenes Taylor</div>
+        <span class="ag-tag">Evento</span>
       </div>
-      <div class="agenda-card">
-        <div class="agenda-date"><div class="day">26</div><div class="month">Jun</div></div>
-        <div class="agenda-info">
-          <div class="agenda-title">Abertura — Festa dos Pescadores 2026</div>
-          <div class="agenda-local">📍 Praça Oenes Taylor</div>
-          <span class="agenda-tag">Evento</span>
-        </div>
+    </div>
+    <div class="agenda-card">
+      <div class="ag-date"><div class="day">27</div><div class="month">Jun</div></div>
+      <div class="ag-info">
+        <div class="ag-title">Show: Brenno e Matheus</div>
+        <div class="ag-local">📍 Praça Oenes Taylor · 22h</div>
+        <span class="ag-tag">Show Nacional</span>
       </div>
-      <div class="agenda-card">
-        <div class="agenda-date"><div class="day">27</div><div class="month">Jun</div></div>
-        <div class="agenda-info">
-          <div class="agenda-title">Show — Brenno e Matheus</div>
-          <div class="agenda-local">📍 Praça Oenes Taylor · 22h</div>
-          <span class="agenda-tag">Show Nacional</span>
-        </div>
+    </div>
+    <div class="agenda-card">
+      <div class="ag-date"><div class="day">28</div><div class="month">Jun</div></div>
+      <div class="ag-info">
+        <div class="ag-title">Show: Danilo e Davi</div>
+        <div class="ag-local">📍 Praça Oenes Taylor · 22h</div>
+        <span class="ag-tag">Show Nacional</span>
       </div>
-      <div class="agenda-card">
-        <div class="agenda-date"><div class="day">28</div><div class="month">Jun</div></div>
-        <div class="agenda-info">
-          <div class="agenda-title">Show — Danilo e Davi</div>
-          <div class="agenda-local">📍 Praça Oenes Taylor · 22h</div>
-          <span class="agenda-tag">Show Nacional</span>
-        </div>
+    </div>
+    <div class="agenda-card">
+      <div class="ag-date"><div class="day">29</div><div class="month">Jun</div></div>
+      <div class="ag-info">
+        <div class="ag-title">Procissão Marítima de São Pedro</div>
+        <div class="ag-local">📍 Porto de Piúma · 10h</div>
+        <span class="ag-tag">Tradição</span>
       </div>
-      <div class="agenda-card">
-        <div class="agenda-date"><div class="day">29</div><div class="month">Jun</div></div>
-        <div class="agenda-info">
-          <div class="agenda-title">Procissão Marítima de São Pedro</div>
-          <div class="agenda-local">📍 Mar de Piúma · 10h</div>
-          <span class="agenda-tag">Tradição</span>
-        </div>
-      </div>
-      <div class="agenda-card">
-        <div class="agenda-date" style="background:var(--line);color:var(--muted);"><div class="day">Jul</div><div class="month">2026</div></div>
-        <div class="agenda-info">
-          <div class="agenda-title">Festival Piúma Gastronomia & Arte</div>
-          <div class="agenda-local">📍 Praça Dona Carmem</div>
-          <span class="agenda-tag">Cultura</span>
-        </div>
+    </div>
+    <div class="agenda-card">
+      <div class="ag-date" style="background:#0e1a2e;color:#556;"><div class="day" style="font-size:16px;">Jul</div><div class="month">2026</div></div>
+      <div class="ag-info">
+        <div class="ag-title">Festival Piúma Gastronomia & Arte</div>
+        <div class="ag-local">📍 Praça Dona Carmem</div>
+        <span class="ag-tag">Cultura</span>
       </div>
     </div>
   </div>
-</section>
-
-<!-- GALERIA -->
-<section class="gallery-section" id="galeria">
-  <div class="container">
-    <div class="sec-head">
-      <h2>Piúma em Imagens</h2>
-      <span class="sec-tag">Fotografia</span>
-    </div>
-    <div class="gallery-grid">
-      <div class="gallery-item tall">
-        <img src="https://raw.githubusercontent.com/Raulgrecco/twitch-marataizes/main/clima/Ilha%20dos%20Franceses.png" alt="Ilha do Gambá"/>
-        <div class="caption">Ilha do Gambá</div>
-      </div>
-      <div class="gallery-item">
-        <img src="https://raw.githubusercontent.com/Raulgrecco/twitch-marataizes/main/clima/PRAIA%20DE%20ITAOCA.png" alt="Praias de Piúma"/>
-        <div class="caption">Praias de Piúma</div>
-      </div>
-      <div class="gallery-item">
-        <img src="https://raw.githubusercontent.com/Raulgrecco/twitch-marataizes/main/clima/Porto%20da%20Barra%20do%20Rio%20Itapemirim.png" alt="Porto"/>
-        <div class="caption">Porto dos Pescadores</div>
-      </div>
-      <div class="gallery-item">
-        <img src="https://raw.githubusercontent.com/Raulgrecco/twitch-marataizes/main/clima/Praia%20da%20Gamboa.png" alt="Orla de Piúma"/>
-        <div class="caption">Orla de Piúma</div>
-      </div>
-      <div class="gallery-item">
-        <img src="https://raw.githubusercontent.com/Raulgrecco/twitch-marataizes/main/clima/PRAIA%20DE%20ITAIPAVA.png" alt="Pôr do sol"/>
-        <div class="caption">Pôr do sol</div>
-      </div>
-    </div>
-  </div>
-</section>
+</div>
 
 <!-- GUIA SECUNDÁRIO -->
-<section class="guia-section" id="guia">
-  <div class="container">
-    <div class="sec-head">
-      <h2>Guia de Piúma</h2>
-      <span class="sec-tag">Serviços</span>
-    </div>
-    <div class="guia-grid">
-      <a href="https://wa.me/5528999036141?text=Restaurante+Piuma" class="guia-btn"><span class="ico">🍽️</span> Restaurantes</a>
-      <a href="https://wa.me/5528999036141?text=Pousada+Piuma" class="guia-btn"><span class="ico">🛏️</span> Pousadas</a>
-      <a href="https://wa.me/5528999036141?text=Farmacia+Piuma" class="guia-btn"><span class="ico">💊</span> Farmácias</a>
-      <a href="https://wa.me/5528999036141?text=Imoveis+Piuma" class="guia-btn"><span class="ico">🏠</span> Imóveis</a>
-      <a href="https://wa.me/5528999036141?text=Artesanato+Piuma" class="guia-btn"><span class="ico">🐚</span> Artesanato</a>
-      <a href="https://wa.me/5528999036141?text=Servicos+Piuma" class="guia-btn"><span class="ico">🔧</span> Serviços</a>
-      <a href="https://wa.me/5528999036141?text=Turismo+Piuma" class="guia-btn"><span class="ico">🌊</span> Turismo</a>
-      <a href="https://wa.me/5528999036141?text=Anunciar+Piuma" class="guia-btn" style="border-color:var(--accent);color:#fff;background:#0D1B3E;"><span class="ico">📲</span> Anunciar aqui</a>
-    </div>
+<div class="guia-section" id="guia">
+  <div class="sec-title" style="margin-bottom:4px;">Guia de Piúma <span class="badge">Cidade das Conchas</span></div>
+  <p class="sec-sub" style="margin-bottom:14px;">Restaurantes, pousadas e serviços de Piúma.</p>
+  <div class="guia-grid">
+    <a href="https://wa.me/5528999036141?text=Restaurante+Piuma" class="guia-btn"><span class="ico">🍽️</span> Restaurantes</a>
+    <a href="https://wa.me/5528999036141?text=Pousada+Piuma" class="guia-btn"><span class="ico">🛏️</span> Pousadas</a>
+    <a href="https://wa.me/5528999036141?text=Farmacia+Piuma" class="guia-btn"><span class="ico">💊</span> Farmácias</a>
+    <a href="https://wa.me/5528999036141?text=Imoveis+Piuma" class="guia-btn"><span class="ico">🏠</span> Imóveis</a>
+    <a href="https://wa.me/5528999036141?text=Artesanato+Piuma" class="guia-btn"><span class="ico">🐚</span> Artesanato</a>
+    <a href="https://wa.me/5528999036141?text=Anunciar+TV+Piuma" class="guia-btn" style="border-color:var(--accent);color:var(--accent);"><span class="ico">📲</span> Anunciar aqui</a>
   </div>
-</section>
+</div>
 
 <!-- FOOTER -->
-<footer class="site-footer">
+<footer>
   <div class="footer-logo">
     <img src="Logo_Tv_Piuma.png" alt="TV Piúma" onerror="this.style.display='none'"/>
     <strong>TV PIÚMA</strong>
   </div>
-  <p class="footer-tagline">A Cidade ao Vivo · Piúma ES · Portal de Notícias e TV Digital</p>
+  <p class="footer-tagline">A Cidade ao Vivo · Piúma ES · Cidade das Conchas</p>
   <div class="footer-links">
     <a href="https://tvmarataizes.digital">📺 TV Marataízes</a>
     <a href="https://tvsulcapixaba.com.br">🌊 TV Sul Capixaba</a>
     <a href="https://www.macucaproducoes.com.br">🚀 Macuca Produções</a>
-    <a href="https://wa.me/5528999036141">📲 Contato</a>
+    <a href="https://wa.me/5528999036141">📲 (28) 99903-6141</a>
   </div>
   <p class="footer-copy">© 2026 TV Piúma · Macuca Produções · Piúma, Espírito Santo</p>
 </footer>
 
 <!-- FLOAT BTN -->
-<a href="#noticias" class="float-btn" id="float-btn">📰 Notícias</a>
+<a href="#" id="float-btn" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">📺 Assistir ao vivo</a>
 
 <script>
 (function(){
+  // Carrosséis
+  function initCarousel(rowId,prevId,nextId){
+    var row=document.getElementById(rowId);
+    var prev=document.getElementById(prevId);
+    var next=document.getElementById(nextId);
+    if(!row)return;
+    var amt=function(){var c=row.querySelector('.vod-card');return c?c.offsetWidth+12:220;};
+    if(next)next.addEventListener('click',function(){row.scrollBy({left:amt()*2,behavior:'smooth'});});
+    if(prev)prev.addEventListener('click',function(){row.scrollBy({left:-amt()*2,behavior:'smooth'});});
+    row.addEventListener('touchstart',function(e){this._sx=e.touches[0].clientX;},{passive:true});
+    row.addEventListener('touchend',function(e){var dx=this._sx-e.changedTouches[0].clientX;if(Math.abs(dx)>40)row.scrollBy({left:dx*2,behavior:'smooth'});},{passive:true});
+  }
+  // Float btn
   var btn=document.getElementById('float-btn');
   window.addEventListener('scroll',function(){
-    var show=window.scrollY>400;
+    var show=window.scrollY>500;
     btn.style.opacity=show?'1':'0';
     btn.style.pointerEvents=show?'auto':'none';
   },{passive:true});
+  document.addEventListener('DOMContentLoaded',function(){
+    initCarousel('vod-row1','vod-prev1','vod-next1');
+    initCarousel('vod-row2','vod-prev2','vod-next2');
+  });
 })();
 </script>
 
