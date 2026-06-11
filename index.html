@@ -200,6 +200,19 @@ function closeVod(){
 document.getElementById('vod-modal').addEventListener('click',function(e){if(e.target===this)closeVod();});
 </script>
 
+<!-- ESTILOS CARD EM BREVE -->
+<style>
+.vod-card.em-breve{cursor:default;opacity:.88;}
+.vod-card.em-breve:hover{transform:none;box-shadow:none;}
+.vod-card.em-breve .vod-thumb img{filter:brightness(.35) saturate(.4);}
+.eb-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;z-index:3;padding:10px;}
+.eb-logo{width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid rgba(0,174,239,.5);opacity:.9;}
+.eb-play{width:36px;height:36px;border-radius:50%;background:rgba(0,174,239,.18);border:2px solid rgba(0,174,239,.5);display:flex;align-items:center;justify-content:center;}
+.eb-play svg{margin-left:3px;}
+.eb-tag{background:rgba(0,174,239,.15);border:1px solid rgba(0,174,239,.4);color:var(--accent);font-size:10px;font-weight:900;letter-spacing:1.5px;padding:4px 11px;border-radius:20px;text-transform:uppercase;}
+.eb-title{font-size:11px;font-weight:700;color:rgba(255,255,255,.6);text-align:center;line-height:1.35;padding:0 6px;}
+</style>
+
 <!-- PROGRAMAS VOD -->
 <div class="vod-section" id="programas">
   <div class="sec-title">
@@ -211,62 +224,74 @@ document.getElementById('vod-modal').addEventListener('click',function(e){if(e.t
     <button class="vod-arrow prev" id="vod-prev1">&#8249;</button>
     <div class="vod-row" id="vod-row1">
 
-      <div class="vod-card" onclick="openVod('https://player.castr.com/vod/WKrOtRolJ34I50iz')">
-        <div class="vod-thumb">
-          <img src="https://raw.githubusercontent.com/Raulgrecco/twitch-marataizes/main/clima/Ilha%20dos%20Franceses.png" alt="Festa dos Pescadores"/>
-          <div class="vod-overlay">
-            <div class="vod-title">Festa dos Pescadores 2026 — Cobertura completa</div>
-            <span class="vod-btn">▶ Assistir</span>
-          </div>
+      <!-- ✅ Card 1 — Vídeo 1 Piúma embed direto -->
+      <div class="vod-card" style="cursor:default;">
+        <div class="vod-thumb" style="position:relative;aspect-ratio:16/9;">
+          <iframe src="https://player.castr.com/vod/cNHxhB2QuvIL748m" allow="autoplay;fullscreen" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:10px;"></iframe>
+        </div>
+        <div style="padding:8px 10px 10px;background:#000;">
+          <div class="vod-title" style="font-size:12px;font-weight:800;color:#fff;">Vídeo 1 Piúma</div>
         </div>
       </div>
 
-      <div class="vod-card" onclick="openVod('https://player.castr.com/vod/meEHkRlMhN7IUfuS')">
-        <div class="vod-thumb">
-          <img src="https://raw.githubusercontent.com/Raulgrecco/twitch-marataizes/main/clima/Porto%20da%20Barra%20do%20Rio%20Itapemirim.png" alt="Procissão São Pedro"/>
-          <div class="vod-overlay">
-            <div class="vod-title">Procissão Marítima de São Pedro — Piúma</div>
-            <span class="vod-btn">▶ Assistir</span>
-          </div>
+      <!-- ✅ Card 2 — Vídeo 2 Piúma embed direto -->
+      <div class="vod-card" style="cursor:default;">
+        <div class="vod-thumb" style="position:relative;aspect-ratio:16/9;">
+          <iframe src="https://player.castr.com/vod/3zAxXxFIqCvqAATy" allow="autoplay;fullscreen" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:10px;"></iframe>
+        </div>
+        <div style="padding:8px 10px 10px;background:#000;">
+          <div class="vod-title" style="font-size:12px;font-weight:800;color:#fff;">Vídeo 2 Piúma</div>
         </div>
       </div>
 
-      <div class="vod-card" onclick="openVod('https://player.castr.com/vod/WKrOtRolJ34I50iz')">
+      <!-- 🔒 Em Breve -->
+      <div class="vod-card em-breve">
         <div class="vod-thumb">
           <img src="https://raw.githubusercontent.com/Raulgrecco/twitch-marataizes/main/clima/PRAIA%20DE%20ITAOCA.png" alt="Praias de Piúma"/>
-          <div class="vod-overlay">
-            <div class="vod-title">Praias de Piúma — O melhor do litoral sul capixaba</div>
-            <span class="vod-btn">▶ Assistir</span>
+          <div class="eb-overlay">
+            <img src="Logo_Tv_Piuma.png" alt="TV Piúma" class="eb-logo" onerror="this.style.display='none'"/>
+            <div class="eb-play"><svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(0,174,239,.7)"><polygon points="6,3 20,12 6,21"/></svg></div>
+            <span class="eb-tag">Em Breve</span>
+            <div class="eb-title">Praias de Piúma — O melhor do litoral sul capixaba</div>
           </div>
         </div>
       </div>
 
-      <div class="vod-card" onclick="openVod('https://player.castr.com/vod/meEHkRlMhN7IUfuS')">
+      <!-- 🔒 Em Breve -->
+      <div class="vod-card em-breve">
         <div class="vod-thumb">
           <img src="https://raw.githubusercontent.com/Raulgrecco/twitch-marataizes/main/clima/plantacaoabacaxi.png" alt="Artesanato Conchas"/>
-          <div class="vod-overlay">
-            <div class="vod-title">Artesanato em Conchas — A tradição de Piúma</div>
-            <span class="vod-btn">▶ Assistir</span>
+          <div class="eb-overlay">
+            <img src="Logo_Tv_Piuma.png" alt="TV Piúma" class="eb-logo" onerror="this.style.display='none'"/>
+            <div class="eb-play"><svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(0,174,239,.7)"><polygon points="6,3 20,12 6,21"/></svg></div>
+            <span class="eb-tag">Em Breve</span>
+            <div class="eb-title">Artesanato em Conchas — A tradição de Piúma</div>
           </div>
         </div>
       </div>
 
-      <div class="vod-card" onclick="openVod('https://player.castr.com/vod/WKrOtRolJ34I50iz')">
+      <!-- 🔒 Em Breve -->
+      <div class="vod-card em-breve">
         <div class="vod-thumb">
           <img src="https://raw.githubusercontent.com/Raulgrecco/twitch-marataizes/main/clima/Igreja%20Nossa%20Senhora%20dos%20Navegantes.png" alt="Câmara Municipal"/>
-          <div class="vod-overlay">
-            <div class="vod-title">Câmara Municipal de Piúma — Sessão ao vivo</div>
-            <span class="vod-btn">▶ Assistir</span>
+          <div class="eb-overlay">
+            <img src="Logo_Tv_Piuma.png" alt="TV Piúma" class="eb-logo" onerror="this.style.display='none'"/>
+            <div class="eb-play"><svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(0,174,239,.7)"><polygon points="6,3 20,12 6,21"/></svg></div>
+            <span class="eb-tag">Em Breve</span>
+            <div class="eb-title">Câmara Municipal de Piúma — Sessão ao vivo</div>
           </div>
         </div>
       </div>
 
-      <div class="vod-card" onclick="openVod('https://player.castr.com/vod/meEHkRlMhN7IUfuS')">
+      <!-- 🔒 Em Breve -->
+      <div class="vod-card em-breve">
         <div class="vod-thumb">
           <img src="https://raw.githubusercontent.com/Raulgrecco/twitch-marataizes/main/clima/Ilha%20dos%20Franceses.png" alt="Ilha do Gambá"/>
-          <div class="vod-overlay">
-            <div class="vod-title">Ilha do Gambá — O cartão-postal de Piúma</div>
-            <span class="vod-btn">▶ Assistir</span>
+          <div class="eb-overlay">
+            <img src="Logo_Tv_Piuma.png" alt="TV Piúma" class="eb-logo" onerror="this.style.display='none'"/>
+            <div class="eb-play"><svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(0,174,239,.7)"><polygon points="6,3 20,12 6,21"/></svg></div>
+            <span class="eb-tag">Em Breve</span>
+            <div class="eb-title">Ilha do Gambá — O cartão-postal de Piúma</div>
           </div>
         </div>
       </div>
@@ -287,52 +312,61 @@ document.getElementById('vod-modal').addEventListener('click',function(e){if(e.t
     <button class="vod-arrow prev" id="vod-prev2">&#8249;</button>
     <div class="vod-row" id="vod-row2">
 
-      <div class="vod-card" onclick="openVod('https://player.castr.com/vod/WKrOtRolJ34I50iz')">
-        <div class="vod-thumb">
-          <img src="https://raw.githubusercontent.com/Raulgrecco/twitch-marataizes/main/clima/Praia%20da%20Gamboa.png" alt="Festival Gastronomia"/>
-          <div class="vod-overlay">
-            <div class="vod-title">Festival Piúma Gastronomia & Arte — Edição 2026</div>
-            <span class="vod-btn">▶ Assistir</span>
-          </div>
+      <!-- ✅ Card 1 — Vídeo 1 Piúma embed direto -->
+      <div class="vod-card" style="cursor:default;">
+        <div class="vod-thumb" style="position:relative;aspect-ratio:16/9;">
+          <iframe src="https://player.castr.com/vod/cNHxhB2QuvIL748m" allow="autoplay;fullscreen" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:10px;"></iframe>
+        </div>
+        <div style="padding:8px 10px 10px;background:#000;">
+          <div class="vod-title" style="font-size:12px;font-weight:800;color:#fff;">Vídeo 1 Piúma</div>
         </div>
       </div>
 
-      <div class="vod-card" onclick="openVod('https://player.castr.com/vod/meEHkRlMhN7IUfuS')">
-        <div class="vod-thumb">
-          <img src="https://raw.githubusercontent.com/Raulgrecco/twitch-marataizes/main/clima/PRAIA%20DE%20ITAIPAVA.png" alt="Verão Piúma"/>
-          <div class="vod-overlay">
-            <div class="vod-title">Verão em Piúma — Temporada de sol e mar</div>
-            <span class="vod-btn">▶ Assistir</span>
-          </div>
+      <!-- ✅ Card 2 — Vídeo 2 Piúma embed direto -->
+      <div class="vod-card" style="cursor:default;">
+        <div class="vod-thumb" style="position:relative;aspect-ratio:16/9;">
+          <iframe src="https://player.castr.com/vod/3zAxXxFIqCvqAATy" allow="autoplay;fullscreen" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:10px;"></iframe>
+        </div>
+        <div style="padding:8px 10px 10px;background:#000;">
+          <div class="vod-title" style="font-size:12px;font-weight:800;color:#fff;">Vídeo 2 Piúma</div>
         </div>
       </div>
 
-      <div class="vod-card" onclick="openVod('https://player.castr.com/vod/WKrOtRolJ34I50iz')">
+      <!-- 🔒 Em Breve -->
+      <div class="vod-card em-breve">
         <div class="vod-thumb">
           <img src="https://raw.githubusercontent.com/Raulgrecco/twitch-marataizes/main/clima/Lagoa%20Guanandy1.png" alt="Natureza Piúma"/>
-          <div class="vod-overlay">
-            <div class="vod-title">Piúma Natural — Turismo ecológico na Cidade das Conchas</div>
-            <span class="vod-btn">▶ Assistir</span>
+          <div class="eb-overlay">
+            <img src="Logo_Tv_Piuma.png" alt="TV Piúma" class="eb-logo" onerror="this.style.display='none'"/>
+            <div class="eb-play"><svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(0,174,239,.7)"><polygon points="6,3 20,12 6,21"/></svg></div>
+            <span class="eb-tag">Em Breve</span>
+            <div class="eb-title">Piúma Natural — Turismo ecológico na Cidade das Conchas</div>
           </div>
         </div>
       </div>
 
-      <div class="vod-card" onclick="openVod('https://player.castr.com/vod/meEHkRlMhN7IUfuS')">
+      <!-- 🔒 Em Breve -->
+      <div class="vod-card em-breve">
         <div class="vod-thumb">
           <img src="https://raw.githubusercontent.com/Raulgrecco/twitch-marataizes/main/clima/oquequer.png" alt="O Que Piúma Quer"/>
-          <div class="vod-overlay">
-            <div class="vod-title">O Que Piúma Quer? — Programa especial</div>
-            <span class="vod-btn">▶ Assistir</span>
+          <div class="eb-overlay">
+            <img src="Logo_Tv_Piuma.png" alt="TV Piúma" class="eb-logo" onerror="this.style.display='none'"/>
+            <div class="eb-play"><svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(0,174,239,.7)"><polygon points="6,3 20,12 6,21"/></svg></div>
+            <span class="eb-tag">Em Breve</span>
+            <div class="eb-title">O Que Piúma Quer? — Programa especial</div>
           </div>
         </div>
       </div>
 
-      <div class="vod-card" onclick="openVod('https://player.castr.com/vod/WKrOtRolJ34I50iz')">
+      <!-- 🔒 Em Breve -->
+      <div class="vod-card em-breve">
         <div class="vod-thumb">
           <img src="https://raw.githubusercontent.com/Raulgrecco/twitch-marataizes/main/clima/Porto%20da%20Barra%20do%20Rio%20Itapemirim.png" alt="Pescadores"/>
-          <div class="vod-overlay">
-            <div class="vod-title">Pescadores de Piúma — Histórias do mar</div>
-            <span class="vod-btn">▶ Assistir</span>
+          <div class="eb-overlay">
+            <img src="Logo_Tv_Piuma.png" alt="TV Piúma" class="eb-logo" onerror="this.style.display='none'"/>
+            <div class="eb-play"><svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(0,174,239,.7)"><polygon points="6,3 20,12 6,21"/></svg></div>
+            <span class="eb-tag">Em Breve</span>
+            <div class="eb-title">Pescadores de Piúma — Histórias do mar</div>
           </div>
         </div>
       </div>
@@ -398,18 +432,145 @@ document.getElementById('vod-modal').addEventListener('click',function(e){if(e.t
   </div>
 </div>
 
-<!-- GUIA SECUNDÁRIO -->
+<!-- GUIA EXPANDIDO -->
+<style>
+.neg-list-p{display:flex;flex-direction:column;gap:8px;margin-top:10px;}
+.neg-item-p{display:flex;align-items:flex-start;gap:12px;background:#07101F;border:1px solid #1a2a3a;border-radius:8px;padding:12px 14px;text-decoration:none;color:inherit;transition:border-color .2s,background .2s;}
+.neg-item-p:hover{border-color:var(--accent);background:#0d1c2f;}
+.neg-ico-p{font-size:22px;flex-shrink:0;margin-top:1px;}
+.neg-name-p{font-size:13px;font-weight:800;color:#fff;margin-bottom:3px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+.neg-desc-p{font-size:11px;color:#556;line-height:1.5;}
+.neg-link-p{font-size:11px;color:var(--accent);font-weight:700;margin-top:3px;display:block;}
+.badge-p{font-size:9px;font-weight:900;padding:2px 7px;border-radius:3px;letter-spacing:.5px;}
+.badge-dest{background:rgba(0,174,239,.15);color:var(--accent);border:1px solid rgba(0,174,239,.3);}
+.badge-vaga{background:rgba(255,111,0,.12);color:#FF6F00;border:1px solid rgba(255,111,0,.3);}
+.card-destaque-p{display:block;background:linear-gradient(135deg,#03243d 0%,#071525 100%);border-radius:8px;padding:16px;margin-bottom:8px;text-decoration:none;border:2px solid var(--accent);position:relative;overflow:hidden;transition:box-shadow .2s;}
+.card-destaque-p:hover{box-shadow:0 6px 24px rgba(0,174,239,.25);}
+.card-destaque-p .badge-top{position:absolute;top:0;right:0;background:var(--accent);color:#07101F;font-size:9px;font-weight:900;padding:4px 12px;border-radius:0 6px 0 8px;letter-spacing:.5px;text-transform:uppercase;}
+.card-destaque-p .cd-inner{display:flex;gap:14px;align-items:flex-start;margin-top:6px;}
+.card-destaque-p .cd-ico{font-size:32px;flex-shrink:0;}
+.card-destaque-p .cd-nome{font-size:14px;font-weight:900;color:#fff;margin-bottom:4px;}
+.card-destaque-p .cd-desc{font-size:11px;color:rgba(255,255,255,.7);margin-bottom:10px;line-height:1.6;}
+.card-destaque-p .cd-btn{display:inline-flex;align-items:center;gap:5px;background:var(--accent);color:#07101F;font-size:11px;font-weight:900;padding:6px 14px;border-radius:4px;}
+.cta-guia-p{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#FF6F00,#e86000);border-radius:8px;padding:14px 16px;margin-top:12px;text-decoration:none;color:#fff;transition:opacity .2s;}
+.cta-guia-p:hover{opacity:.9;}
+.cta-guia-p .cta-main{font-size:13px;font-weight:900;color:#fff;}
+.cta-guia-p .cta-sub{font-size:11px;color:rgba(255,255,255,.8);margin-top:2px;}
+.cta-guia-p .cta-seta{margin-left:auto;background:rgba(255,255,255,.2);padding:8px 14px;border-radius:4px;font-size:12px;font-weight:900;white-space:nowrap;flex-shrink:0;}
+.guia-sec-box{background:#07101F;border-radius:10px;padding:16px 16px 14px;border:1px solid #1a2a3a;margin-bottom:12px;}
+.guia-sec-title{font-size:14px;font-weight:900;color:#fff;margin-bottom:10px;display:flex;align-items:center;gap:7px;}
+</style>
 <div class="guia-section" id="guia">
   <div class="sec-title" style="margin-bottom:4px;">Guia de Piúma <span class="badge">Cidade das Conchas</span></div>
-  <p class="sec-sub" style="margin-bottom:14px;">Restaurantes, pousadas e serviços de Piúma.</p>
-  <div class="guia-grid">
-    <a href="https://wa.me/5528999036141?text=Restaurante+Piuma" class="guia-btn"><span class="ico">🍽️</span> Restaurantes</a>
-    <a href="https://wa.me/5528999036141?text=Pousada+Piuma" class="guia-btn"><span class="ico">🛏️</span> Pousadas</a>
-    <a href="https://wa.me/5528999036141?text=Farmacia+Piuma" class="guia-btn"><span class="ico">💊</span> Farmácias</a>
-    <a href="https://wa.me/5528999036141?text=Imoveis+Piuma" class="guia-btn"><span class="ico">🏠</span> Imóveis</a>
-    <a href="https://wa.me/5528999036141?text=Artesanato+Piuma" class="guia-btn"><span class="ico">🐚</span> Artesanato</a>
-    <a href="https://wa.me/5528999036141?text=Anunciar+TV+Piuma" class="guia-btn" style="border-color:var(--accent);color:var(--accent);"><span class="ico">📲</span> Anunciar aqui</a>
+  <p class="sec-sub" style="margin-bottom:18px;">Restaurantes, pousadas e serviços de Piúma — clique para conhecer.</p>
+
+  <!-- RESTAURANTES -->
+  <div class="guia-sec-box">
+    <div class="guia-sec-title">🍽️ Restaurantes em Piúma</div>
+    <div class="neg-list-p">
+      <a class="neg-item-p" href="https://wa.me/5528999036141?text=Quero+entrar+no+guia+-+Restaurante+Piuma" target="_blank" rel="noopener">
+        <div class="neg-ico-p">📲</div>
+        <div><div class="neg-name-p">Seu restaurante aqui <span class="badge-p badge-vaga">Vaga disponível</span></div><div class="neg-desc-p">Piúma · Apareça no portal da TV Piúma e seja encontrado por quem já está procurando onde comer</div><span class="neg-link-p">Fale pelo WhatsApp →</span></div>
+      </a>
+    </div>
+    <a href="https://wa.me/5528999036141?text=Quero+anunciar+restaurante+na+TV+Piuma" target="_blank" class="cta-guia-p"><span style="font-size:22px;flex-shrink:0">📺</span><div><div class="cta-main">Anuncie seu restaurante na TV Piúma</div><div class="cta-sub">Apareça quando o cliente pesquisar "restaurante em Piúma"</div></div><span class="cta-seta">🔥 Falar agora</span></a>
   </div>
+
+  <!-- POUSADAS -->
+  <div class="guia-sec-box">
+    <div class="guia-sec-title">🛏️ Pousadas em Piúma</div>
+    <div class="neg-list-p">
+      <a class="neg-item-p" href="https://wa.me/5528999036141?text=Quero+entrar+no+guia+-+Pousada+Piuma" target="_blank" rel="noopener">
+        <div class="neg-ico-p">📲</div>
+        <div><div class="neg-name-p">Sua pousada aqui <span class="badge-p badge-vaga">Vaga disponível</span></div><div class="neg-desc-p">Piúma · Alcance turistas buscando hospedagem na Cidade das Conchas</div><span class="neg-link-p">Fale pelo WhatsApp →</span></div>
+      </a>
+    </div>
+    <a href="https://wa.me/5528999036141?text=Quero+anunciar+pousada+na+TV+Piuma" target="_blank" class="cta-guia-p"><span style="font-size:22px;flex-shrink:0">📺</span><div><div class="cta-main">Anuncie sua pousada na TV Piúma</div><div class="cta-sub">Visibilidade para quem planeja visitar Piúma</div></div><span class="cta-seta">🔥 Falar agora</span></a>
+  </div>
+
+  <!-- FARMÁCIAS -->
+  <div class="guia-sec-box">
+    <div class="guia-sec-title">💊 Farmácias em Piúma</div>
+    <div class="neg-list-p">
+      <a class="neg-item-p" href="https://wa.me/5528999036141?text=Quero+entrar+no+guia+-+Farmacia+Piuma" target="_blank" rel="noopener">
+        <div class="neg-ico-p">📲</div>
+        <div><div class="neg-name-p">Sua farmácia aqui <span class="badge-p badge-vaga">Vaga disponível</span></div><div class="neg-desc-p">Piúma · Destaque sua farmácia no maior portal local da cidade</div><span class="neg-link-p">Fale pelo WhatsApp →</span></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- IMÓVEIS -->
+  <div class="guia-sec-box">
+    <div class="guia-sec-title">🏠 Imóveis em Piúma</div>
+    <div class="neg-list-p">
+      <a class="neg-item-p" href="https://wa.me/5528999036141?text=Quero+entrar+no+guia+-+Imoveis+Piuma" target="_blank" rel="noopener">
+        <div class="neg-ico-p">📲</div>
+        <div><div class="neg-name-p">Sua imobiliária aqui <span class="badge-p badge-vaga">Vaga disponível</span></div><div class="neg-desc-p">Piúma · Alcance compradores e locatários que buscam imóveis à beira-mar</div><span class="neg-link-p">Fale pelo WhatsApp →</span></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- ARTESANATO -->
+  <div class="guia-sec-box">
+    <div class="guia-sec-title">🐚 Artesanato em Conchas</div>
+    <div class="neg-list-p">
+      <a class="neg-item-p" href="https://wa.me/5528999036141?text=Quero+entrar+no+guia+-+Artesanato+Piuma" target="_blank" rel="noopener">
+        <div class="neg-ico-p">📲</div>
+        <div><div class="neg-name-p">Seu artesanato aqui <span class="badge-p badge-vaga">Vaga disponível</span></div><div class="neg-desc-p">Piúma · Mostre sua arte em conchas para turistas de todo o Espírito Santo</div><span class="neg-link-p">Fale pelo WhatsApp →</span></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- PUBLICIDADE E PRODUÇÃO — DESTAQUE MACUCA + CLAP + CINE K -->
+  <div class="guia-sec-box">
+    <div class="guia-sec-title">🎬 Publicidade, Produção e Cultura em Piúma</div>
+
+    <a href="https://www.macucaproducoes.com.br" target="_blank" rel="noopener" class="card-destaque-p">
+      <span class="badge-top">⭐ Quem faz o portal funcionar</span>
+      <div class="cd-inner">
+        <div class="cd-ico">📺</div>
+        <div>
+          <div class="cd-nome">Macuca Produções</div>
+          <div class="cd-desc">TV Marataízes · TV Piúma · Canal 300 Soul TV · Publicidade · Produção audiovisual · Conteúdo para TV, Google e redes sociais · Marataízes ES · (28) 99903-6141</div>
+          <span class="cd-btn">🚀 Ver como aparecer →</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://agenciaclap.com.br" target="_blank" rel="noopener" class="card-destaque-p" style="margin-top:8px;">
+      <span class="badge-top">🎯 Agência Digital</span>
+      <div class="cd-inner">
+        <div class="cd-ico">🎯</div>
+        <div>
+          <div class="cd-nome">Agência Clap</div>
+          <div class="cd-desc">Criação de sites · Gestão de redes sociais · Identidade visual · Tráfego pago · Google · Instagram · Sul do Espírito Santo</div>
+          <span class="cd-btn">🔗 Conhecer a Agência Clap →</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://tvmarataizes.digital/cinek/" target="_blank" rel="noopener" class="card-destaque-p" style="margin-top:8px;">
+      <span class="badge-top">🎥 Cinema em Piúma</span>
+      <div class="cd-inner">
+        <div class="cd-ico">🎥</div>
+        <div>
+          <div class="cd-nome">Cine K — Piúma</div>
+          <div class="cd-desc">Cinema local · Sessões · Cultura audiovisual · Piúma ES · Sul do Espírito Santo</div>
+          <span class="cd-btn">🎬 Ver programação →</span>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- CTA FINAL ANUNCIE -->
+  <a href="https://wa.me/5528999036141?text=Quero+anunciar+minha+empresa+no+portal+da+TV+Piuma" target="_blank" rel="noopener" class="cta-guia-p" style="background:linear-gradient(135deg,#00AEEF,#0077b6);margin-top:4px;">
+    <span style="font-size:26px;flex-shrink:0">📲</span>
+    <div>
+      <div class="cta-main">Anuncie sua empresa no portal da TV Piúma</div>
+      <div class="cta-sub">Apareça para quem pesquisa produtos e serviços em Piúma · Vagas limitadas por segmento</div>
+    </div>
+    <span class="cta-seta">💬 Falar agora</span>
+  </a>
 </div>
 
 <!-- FOOTER -->
