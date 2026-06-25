@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Diagnóstico de Comunicação Institucional — Macuca Produções</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d1f3c;
+    --white: #ffffff;
+    --gray-100: #f7f8fa;
+    --gray-200: #eef0f4;
+    --gray-400: #7a8194;
+    --gray-600: #4a5260;
+    --gray-700: #2e3440;
+    --gold: #b8976a;
+    --gold-light: #d4b896;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--navy); -webkit-font-smoothing: antialiased; }
+  .doc { max-width: 900px; margin: 0 auto; background: var(--white); }
+
+  /* CAPA */
+  .cover { background: var(--navy); min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between; padding: 64px 72px; position: relative; overflow: hidden; }
+  .cover::before { content: ''; position: absolute; top: -140px; right: -140px; width: 520px; height: 520px; border-radius: 50%; border: 1px solid rgba(184,151,106,0.12); pointer-events: none; }
+  .cover::after { content: ''; position: absolute; top: -90px; right: -90px; width: 340px; height: 340px; border-radius: 50%; border: 1px solid rgba(184,151,106,0.08); pointer-events: none; }
+  .cover-top { display: flex; justify-content: space-between; align-items: flex-start; position: relative; z-index: 1; }
+  .cover-logo { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); }
+  .cover-tag { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.3); }
+  .cover-body { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 80px 0 60px; position: relative; z-index: 1; }
+  .cover-eyebrow { font-size: 10px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 28px; }
+  .cover-title { font-family: 'Playfair Display', serif; font-size: clamp(34px, 5.5vw, 54px); font-weight: 400; color: var(--white); line-height: 1.15; max-width: 580px; margin-bottom: 32px; }
+  .cover-title em { color: var(--gold); font-style: normal; }
+  .cover-divider { width: 48px; height: 1px; background: var(--gold); margin-bottom: 32px; }
+  .cover-sub { font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.55); line-height: 1.75; max-width: 440px; }
+  .cover-bottom { display: flex; justify-content: space-between; align-items: flex-end; position: relative; z-index: 1; }
+  .cover-recipient { font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 1px; }
+  .cover-recipient strong { display: block; font-size: 15px; font-weight: 500; color: rgba(255,255,255,0.85); margin-bottom: 4px; letter-spacing: 0; }
+  .cover-date { font-size: 11px; color: rgba(255,255,255,0.25); text-align: right; letter-spacing: 1px; line-height: 1.8; }
+
+  /* SEÇÕES */
+  .section { padding: 88px 72px; border-bottom: 1px solid var(--gray-200); }
+  .section-alt { background: var(--gray-100); }
+  .section-dark { background: var(--navy); }
+  .section-label { font-size: 9px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+  .section-dark .section-label { color: var(--gold-light); }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3.8vw, 38px); font-weight: 400; line-height: 1.2; margin-bottom: 24px; color: var(--navy); }
+  .section-dark .section-title { color: var(--white); }
+  .section-body { font-size: 15px; font-weight: 300; line-height: 1.85; color: var(--gray-600); max-width: 600px; }
+  .section-dark .section-body { color: rgba(255,255,255,0.6); }
+  .mt20 { margin-top: 20px; }
+  .mt48 { margin-top: 48px; }
+
+  /* IMPACTO */
+  .impact-section { background: var(--navy); padding: 120px 72px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; min-height: 60vh; }
+  .impact-quote { font-family: 'Playfair Display', serif; font-size: clamp(26px, 4.5vw, 48px); font-weight: 400; color: var(--white); line-height: 1.3; max-width: 680px; margin-bottom: 40px; }
+  .impact-quote em { color: var(--gold); font-style: normal; }
+  .impact-attr { font-size: 10px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.3); }
+
+  /* 5 SEGUNDOS */
+  .cinco-grid { margin-top: 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--gray-200); }
+  .cinco-item { background: var(--white); padding: 40px 32px; }
+  .cinco-question { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 400; color: var(--navy); margin-bottom: 12px; line-height: 1.3; }
+  .cinco-answer { font-size: 12px; font-weight: 300; color: var(--gray-600); line-height: 1.7; }
+
+  /* CUSTO DO INVISÍVEL */
+  .invisivel-list { margin-top: 48px; }
+  .invisivel-item { display: flex; gap: 28px; padding: 32px 0; border-bottom: 1px solid rgba(255,255,255,0.07); align-items: flex-start; }
+  .invisivel-item:last-child { border-bottom: none; }
+  .invisivel-icon { font-family: 'Playfair Display', serif; font-size: 32px; color: rgba(184,151,106,0.2); line-height: 1; min-width: 40px; }
+  .invisivel-title { font-size: 15px; font-weight: 600; color: var(--white); margin-bottom: 8px; }
+  .invisivel-desc { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.75; }
+
+  /* ANTES X DEPOIS */
+  .antesdepois { margin-top: 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--gray-200); }
+  .ad-col { padding: 40px 36px; }
+  .ad-col-antes { background: var(--gray-100); }
+  .ad-col-depois { background: var(--navy); }
+  .ad-label { font-size: 9px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 32px; }
+  .ad-label-antes { color: var(--gray-400); }
+  .ad-label-depois { color: var(--gold); }
+  .ad-item { display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid rgba(0,0,0,0.06); font-size: 13px; font-weight: 400; color: var(--gray-600); line-height: 1.5; }
+  .ad-col-depois .ad-item { border-color: rgba(255,255,255,0.07); color: rgba(255,255,255,0.75); }
+  .ad-item:last-child { border-bottom: none; }
+  .ad-marker-antes { color: var(--gray-400); font-size: 11px; margin-top: 2px; }
+  .ad-marker-depois { color: var(--gold); font-size: 11px; margin-top: 2px; }
+
+  /* AMOSTRAS */
+  .amostras { margin-top: 48px; display: flex; flex-direction: column; gap: 2px; background: var(--gray-200); }
+  .amostra-item { background: var(--white); padding: 32px 36px; border-left: 3px solid transparent; transition: border-color 0.3s; }
+  .amostra-item:hover { border-color: var(--gold); }
+  .amostra-tag { font-size: 9px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+  .amostra-text { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 400; color: var(--navy); line-height: 1.55; font-style: italic; }
+
+  /* NÃO ESTÁ COMPRANDO */
+  .nao-grid { margin-top: 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+  .nao-col-label { font-size: 9px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gray-400); margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--gray-200); }
+  .nao-col-label.sim { color: var(--gold); border-color: var(--gold-light); }
+  .nao-item { display: flex; gap: 12px; align-items: flex-start; font-size: 13px; font-weight: 300; color: var(--gray-600); padding: 10px 0; border-bottom: 1px solid var(--gray-200); line-height: 1.5; }
+  .nao-item:last-child { border-bottom: none; }
+  .nao-mark-nao { color: #c0c8d4; font-size: 12px; margin-top: 1px; }
+  .nao-mark-sim { color: var(--gold); font-size: 12px; margin-top: 1px; }
+
+  /* DIFERENCIAL */
+  .dif-grid { margin-top: 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+  .dif-col-label { font-size: 9px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gray-400); margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--gray-200); }
+  .dif-col-label.sim { color: var(--gold); border-color: var(--gold-light); }
+  .dif-item { display: flex; gap: 12px; align-items: flex-start; font-size: 13px; font-weight: 300; color: var(--gray-600); padding: 10px 0; border-bottom: 1px solid var(--gray-200); line-height: 1.5; }
+  .dif-item:last-child { border-bottom: none; }
+  .dif-mark-nao { color: #c0c8d4; font-size: 12px; margin-top: 1px; }
+  .dif-mark-sim { color: var(--gold); font-size: 12px; margin-top: 1px; }
+
+  /* TV BOX */
+  .tv-box { margin-top: 48px; border: 1px solid rgba(255,255,255,0.1); padding: 48px 40px; background: rgba(255,255,255,0.03); }
+  .tv-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 400; color: var(--white); margin-bottom: 20px; line-height: 1.35; }
+  .tv-body { font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.55); line-height: 1.85; max-width: 540px; }
+  .tv-stat { margin-top: 36px; padding-top: 36px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; gap: 48px; }
+  .tv-stat-num { font-family: 'Playfair Display', serif; font-size: 13px; color: var(--gold-light); line-height: 1; margin-bottom: 8px; font-weight: 600; letter-spacing: 1px; }
+  .tv-stat-label { font-size: 12px; font-weight: 300; color: rgba(255,255,255,0.45); line-height: 1.6; }
+
+  /* CUSTO DE CONTINUAR IGUAL */
+  .custo-section { background: #080f1c; padding: 100px 72px; }
+  .custo-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 42px); font-weight: 400; color: var(--white); line-height: 1.2; margin-bottom: 40px; }
+  .custo-title em { color: var(--gold); font-style: normal; }
+  .custo-intro { font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.85; max-width: 520px; margin-bottom: 48px; }
+  .custo-list { display: flex; flex-direction: column; gap: 0; border: 1px solid rgba(255,255,255,0.08); }
+  .custo-item { padding: 20px 28px; border-bottom: 1px solid rgba(255,255,255,0.07); font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.6); display: flex; gap: 16px; align-items: center; line-height: 1.5; }
+  .custo-item:last-child { border-bottom: none; }
+  .custo-mark { color: rgba(184,151,106,0.4); font-size: 11px; }
+  .custo-close { margin-top: 40px; font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; color: rgba(255,255,255,0.75); line-height: 1.5; font-style: italic; padding-left: 20px; border-left: 2px solid var(--gold); }
+
+  /* PLANOS */
+  .planos { margin-top: 48px; display: flex; flex-direction: column; gap: 2px; background: var(--gray-200); }
+  .plano-item { background: var(--white); padding: 40px 40px; position: relative; }
+  .plano-item.destaque { background: var(--navy); }
+  .plano-badge { position: absolute; top: 28px; right: 28px; font-size: 9px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold); padding: 4px 10px; }
+  .plano-label { font-size: 9px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+  .plano-item.destaque .plano-label { color: var(--gold-light); }
+  .plano-title { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 400; color: var(--navy); margin-bottom: 8px; }
+  .plano-item.destaque .plano-title { color: var(--white); }
+  .plano-price { font-family: 'Playfair Display', serif; font-size: 40px; color: var(--gold); line-height: 1; margin-bottom: 6px; }
+  .plano-price-label { font-size: 11px; font-weight: 300; color: var(--gray-400); letter-spacing: 1px; margin-bottom: 32px; }
+  .plano-item.destaque .plano-price-label { color: rgba(255,255,255,0.35); }
+  .plano-list { display: flex; flex-direction: column; gap: 0; }
+  .plano-row { display: flex; gap: 12px; align-items: flex-start; font-size: 13px; font-weight: 300; color: var(--gray-600); padding: 9px 0; border-bottom: 1px solid var(--gray-200); line-height: 1.5; }
+  .plano-row:last-child { border-bottom: none; }
+  .plano-item.destaque .plano-row { color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.08); }
+  .plano-mark { color: var(--gold); font-size: 11px; margin-top: 1px; flex-shrink: 0; }
+
+  /* PRÓXIMOS PASSOS */
+  .steps-timeline { margin-top: 48px; }
+  .step-item { display: flex; gap: 24px; padding: 24px 0; border-bottom: 1px solid var(--gray-200); align-items: flex-start; }
+  .step-item:last-child { border-bottom: none; }
+  .step-circle { width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--gold); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 11px; font-weight: 600; color: var(--gold); }
+  .step-title { font-size: 14px; font-weight: 600; color: var(--navy); margin-bottom: 5px; }
+  .step-desc { font-size: 13px; font-weight: 300; color: var(--gray-600); line-height: 1.65; }
+
+  /* CTA */
+  .cta-section { background: var(--navy); padding: 120px 72px; text-align: center; }
+  .cta-eyebrow { font-size: 9px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; }
+  .cta-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 44px); font-weight: 400; color: var(--white); line-height: 1.2; margin-bottom: 16px; }
+  .cta-sub { font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.5); margin-bottom: 24px; }
+  .cta-btn { display: inline-block; background: transparent; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; padding: 18px 52px; transition: all 0.3s ease; }
+  .cta-btn:hover { background: var(--gold); color: var(--navy); }
+
+  /* RODAPÉ */
+  .footer { background: #080f1c; padding: 40px 72px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(184,151,106,0.15); }
+  .footer-brand { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); }
+  .footer-contact { font-size: 11px; font-weight: 300; color: rgba(255,255,255,0.35); text-align: right; line-height: 1.8; }
+
+  @media (max-width: 680px) {
+    .cover, .section, .footer, .cta-section, .impact-section, .custo-section { padding: 52px 28px; }
+    .cover-bottom, .cover-top { flex-direction: column; gap: 16px; }
+    .cinco-grid, .antesdepois, .nao-grid, .dif-grid { grid-template-columns: 1fr; }
+    .invest-header { flex-direction: column; gap: 20px; text-align: center; }
+    .footer { flex-direction: column; gap: 16px; text-align: center; }
+    .footer-contact { text-align: center; }
+    .tv-stat { flex-direction: column; gap: 24px; }
+  }
+</style>
+</head>
+<body>
+<div class="doc">
+
+  <!-- CAPA -->
+  <div class="cover">
+    <div class="cover-top">
+      <div class="cover-logo">Macuca Produções</div>
+      <div class="cover-tag">Comunicação Institucional · 2026</div>
+    </div>
+    <div class="cover-body">
+      <div class="cover-eyebrow">Proposta Estratégica · Confidencial</div>
+      <h1 class="cover-title">Diagnóstico de<br><em>Comunicação Institucional</em><br>e Autoridade Digital</h1>
+      <div class="cover-divider"></div>
+      <p class="cover-sub">Como a Presidência da Câmara de Piúma pode transformar comunicação em confiança pública — e tornar-se referência regional em transparência institucional.</p>
+    </div>
+    <div class="cover-bottom">
+      <div class="cover-recipient">
+        <strong>Eliezer Dias</strong>
+        Presidente da Câmara Municipal de Piúma / ES
+      </div>
+      <div class="cover-date">Junho · 2026<br>Confidencial</div>
+    </div>
+  </div>
+
+  <!-- IMPACTO 1 -->
+  <div class="impact-section">
+    <div class="impact-quote">
+      O cidadão não analisa projetos.<br>
+      Não lê atas de sessão.<br>
+      Não acompanha indicações.<br><br>
+      Ele forma uma opinião<br>em <em>cinco segundos.</em><br><br>
+      Se a comunicação não traduz o trabalho<br>
+      para a linguagem do cidadão,<br>
+      o trabalho continua existindo —<br>
+      mas deixa de ser <em>percebido.</em>
+    </div>
+    <div class="impact-attr">O princípio que define a percepção pública</div>
+  </div>
+
+  <!-- 5 SEGUNDOS -->
+  <div class="section">
+    <div class="section-label">Percepção Instantânea</div>
+    <h2 class="section-title">O que o cidadão decide<br>antes de ler uma palavra</h2>
+    <p class="section-body">Antes de qualquer análise racional, o cérebro já respondeu a perguntas fundamentais. Essas respostas constroem — ou destroem — a percepção de liderança. E elas acontecem em segundos.</p>
+    <div class="cinco-grid">
+      <div class="cinco-item">
+        <div class="cinco-question">Esse perfil transmite confiança?</div>
+        <div class="cinco-answer">A consistência visual, o tom da comunicação e a frequência de publicação respondem a essa pergunta antes de qualquer palavra ser lida.</div>
+      </div>
+      <div class="cinco-item">
+        <div class="cinco-question">Parece organizado e preparado?</div>
+        <div class="cinco-answer">Identidade visual fragmentada comunica desorganização — mesmo que o mandato seja altamente eficiente. A percepção precede a realidade.</div>
+      </div>
+      <div class="cinco-item">
+        <div class="cinco-question">Parece liderança ou apenas presença?</div>
+        <div class="cinco-answer">Existem mandatos que aparecem. E existem mandatos que lideram. A diferença está na narrativa — não na quantidade de posts.</div>
+      </div>
+      <div class="cinco-item">
+        <div class="cinco-question">Esse mandato está do meu lado?</div>
+        <div class="cinco-answer">Quando a comunicação mostra conquistas concretas para o cidadão, a resposta é sim. Quando mostra apenas eventos e protocolos, a resposta é silêncio.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CUSTO DO INVISÍVEL -->
+  <div class="section section-dark">
+    <div class="section-label">O Custo do Invisível</div>
+    <h2 class="section-title">O que acontece quando<br>o trabalho não é comunicado</h2>
+    <p class="section-body">Comunicação não cria trabalho. Ela revela o trabalho que já existe. Cada conquista sem narrativa é uma oportunidade de confiança desperdiçada.</p>
+    <div class="invisivel-list">
+      <div class="invisivel-item">
+        <div class="invisivel-icon">I</div>
+        <div>
+          <div class="invisivel-title">Cada sessão não comunicada</div>
+          <div class="invisivel-desc">é uma oportunidade perdida de mostrar ao cidadão que a câmara está funcionando — e trabalhando por ele.</div>
+        </div>
+      </div>
+      <div class="invisivel-item">
+        <div class="invisivel-icon">II</div>
+        <div>
+          <div class="invisivel-title">Cada indicação atendida sem história</div>
+          <div class="invisivel-desc">deixa de fortalecer a imagem institucional. O cidadão não sabe quem lutou pela rua, pela praça, pelo serviço que chegou ao seu bairro.</div>
+        </div>
+      </div>
+      <div class="invisivel-item">
+        <div class="invisivel-icon">III</div>
+        <div>
+          <div class="invisivel-title">Cada conquista sem narrativa</div>
+          <div class="invisivel-desc">reduz a percepção de valor do mandato. O trabalho existe — mas para quem não vê, é como se não existisse.</div>
+        </div>
+      </div>
+      <div class="invisivel-item">
+        <div class="invisivel-icon">IV</div>
+        <div>
+          <div class="invisivel-title">Cada cobertura da TV sem aproveitamento</div>
+          <div class="invisivel-desc">é credibilidade jornalística que se dispersa. A imprensa regional já cobre o mandato. Transformar essa cobertura em autoridade digital é uma estratégia que pouquíssimas câmaras municipais do Brasil exploram.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ANTES X DEPOIS -->
+  <div class="section section-alt">
+    <div class="section-label">Cenário</div>
+    <h2 class="section-title">A distância entre<br>presença e autoridade</h2>
+    <div class="antesdepois mt48">
+      <div class="ad-col ad-col-antes">
+        <div class="ad-label ad-label-antes">Comunicação Atual</div>
+        <div class="ad-item"><span class="ad-marker-antes">—</span> Feed sem identidade visual consistente</div>
+        <div class="ad-item"><span class="ad-marker-antes">—</span> Narrativa fragmentada entre posts</div>
+        <div class="ad-item"><span class="ad-marker-antes">—</span> Reels subutilizados</div>
+        <div class="ad-item"><span class="ad-marker-antes">—</span> TV e digital atuando separados</div>
+        <div class="ad-item"><span class="ad-marker-antes">—</span> Cidadão não percebe facilmente o que foi feito</div>
+        <div class="ad-item"><span class="ad-marker-antes">—</span> Alcance limitado ao público já fiel</div>
+      </div>
+      <div class="ad-col ad-col-depois">
+        <div class="ad-label ad-label-depois">Comunicação Estratégica</div>
+        <div class="ad-item"><span class="ad-marker-depois">→</span> Identidade visual que comunica autoridade</div>
+        <div class="ad-item"><span class="ad-marker-depois">→</span> Narrativa única e reconhecível</div>
+        <div class="ad-item"><span class="ad-marker-depois">→</span> Reels com alcance orgânico crescente</div>
+        <div class="ad-item"><span class="ad-marker-depois">→</span> TV e digital integrados e amplificados</div>
+        <div class="ad-item"><span class="ad-marker-depois">→</span> Cada conquista vira prova pública visível</div>
+        <div class="ad-item"><span class="ad-marker-depois">→</span> Câmara percebida como referência regional</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AMOSTRAS -->
+  <div class="section">
+    <div class="section-label">Prévia do Diagnóstico</div>
+    <h2 class="section-title">O que a análise<br>já identificou</h2>
+    <p class="section-body">O diagnóstico completo será entregue após a contratação. Mas algumas das observações centrais já foram mapeadas.</p>
+    <div class="amostras mt48">
+      <div class="amostra-item">
+        <div class="amostra-tag">Percepção de Autoridade</div>
+        <div class="amostra-text">"O perfil transmite presença e consistência de publicação — porém ainda não comunica autoridade institucional de forma consolidada."</div>
+      </div>
+      <div class="amostra-item">
+        <div class="amostra-tag">Identidade Visual</div>
+        <div class="amostra-text">"A ausência de um sistema visual coerente reduz o reconhecimento da comunicação. Cada post parece produzido de forma independente."</div>
+      </div>
+      <div class="amostra-item">
+        <div class="amostra-tag">Integração com Imprensa</div>
+        <div class="amostra-text">"Existe potencial significativo não explorado na integração entre comunicação institucional e cobertura jornalística regional."</div>
+      </div>
+      <div class="amostra-item">
+        <div class="amostra-tag">Alcance Orgânico</div>
+        <div class="amostra-text">"O formato predominante — foto estática — é o de menor alcance no algoritmo atual. A migração estratégica para vídeo pode multiplicar a audiência sem investimento em mídia paga."</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- O QUE NÃO ESTÁ COMPRANDO -->
+  <div class="section section-alt">
+    <div class="section-label">Clareza</div>
+    <h2 class="section-title">O que você não<br>está comprando</h2>
+    <div class="nao-grid mt48">
+      <div class="nao-col">
+        <div class="nao-col-label">Não é</div>
+        <div class="nao-item"><span class="nao-mark-nao">✕</span> Um relatório de Instagram</div>
+        <div class="nao-item"><span class="nao-mark-nao">✕</span> Um calendário de posts</div>
+        <div class="nao-item"><span class="nao-mark-nao">✕</span> Uma contratação de social media</div>
+        <div class="nao-item"><span class="nao-mark-nao">✕</span> Uma análise automática por ferramenta</div>
+        <div class="nao-item"><span class="nao-mark-nao">✕</span> Uma consultoria genérica desconectada da realidade local</div>
+      </div>
+      <div class="nao-col">
+        <div class="nao-col-label sim">É</div>
+        <div class="nao-item"><span class="nao-mark-sim">✓</span> Clareza institucional</div>
+        <div class="nao-item"><span class="nao-mark-sim">✓</span> Percepção de liderança</div>
+        <div class="nao-item"><span class="nao-mark-sim">✓</span> Comunicação estratégica</div>
+        <div class="nao-item"><span class="nao-mark-sim">✓</span> Um plano para transformar ações em confiança pública</div>
+        <div class="nao-item"><span class="nao-mark-sim">✓</span> Desenvolvido por uma equipe que acompanha a rotina da Câmara, produz conteúdo jornalístico regional e conhece a percepção da população sobre a instituição./div>
+      </div>
+    </div>
+  </div>
+
+  <!-- POR QUE É DIFERENTE -->
+  <div class="section section-dark">
+    <div class="section-label">Vantagem Estratégica</div>
+    <h2 class="section-title">A oportunidade que<br>poucas câmaras têm</h2>
+    <p class="section-body">Câmaras municipais com cobertura frequente de TV regional são raras. Câmaras que sabem transformar essa cobertura em autoridade digital são ainda mais raras.</p>
+    <div class="tv-box">
+      <div class="tv-title">A TV Piúma já gera credibilidade.<br>O diagnóstico mostrará como transformá-la em autoridade.</div>
+      <div class="tv-body">Cobertura jornalística tem um peso que a autopublicação nunca alcança: ela é percebida como mais imparcial, porque é produzida por terceiros. Quando o cidadão vê uma matéria sobre a câmara — e não um post da câmara sobre si mesma — a percepção de credibilidade é radicalmente diferente.<br><br>O diagnóstico incluirá uma estratégia específica para integrar TV Piúma, TV Marataízes e portal regional à comunicação institucional — sem transformar jornalismo em propaganda e sem comprometer a independência editorial.</div>
+      <div class="tv-stat">
+        <div>
+          <div class="tv-stat-num">Estratégia</div>
+          <div class="tv-stat-label">Planejamento e posicionamento<br>institucional</div>
+        </div>
+        <div>
+          <div class="tv-stat-num">Produção</div>
+          <div class="tv-stat-label">Conteúdo audiovisual<br>e digital</div>
+        </div>
+        <div>
+          <div class="tv-stat-num">Cobertura</div>
+          <div class="tv-stat-label">Jornalismo regional<br>com credibilidade</div>
+        </div>
+        <div>
+          <div class="tv-stat-num">Distribuição</div>
+          <div class="tv-stat-label">TV, portal e redes<br>integrados</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CUSTO DE CONTINUAR IGUAL -->
+  <div class="custo-section">
+    <div class="section-label" style="color:var(--gold-light);">Reflexão</div>
+    <h2 class="custo-title">Quanto custa<br><em>continuar igual?</em></h2>
+    <p class="custo-intro">Continuar publicando sem estratégia também tem um custo. Ele não aparece na fatura — mas aparece na percepção do cidadão.</p>
+    <div class="custo-list">
+      <div class="custo-item"><span class="custo-mark">—</span> O cidadão não percebe o trabalho realizado pelo mandato</div>
+      <div class="custo-item"><span class="custo-mark">—</span> A comunicação perde força e alcance progressivamente</div>
+      <div class="custo-item"><span class="custo-mark">—</span> Oportunidades de conexão com a população deixam de acontecer</div>
+      <div class="custo-item"><span class="custo-mark">—</span> A instituição não comunica seu papel com clareza</div>
+      <div class="custo-item"><span class="custo-mark">—</span> A cobertura jornalística da TV continua subutilizada</div>
+    </div>
+    <div class="custo-close">O diagnóstico existe para reduzir esse custo — e transformar o que já funciona em algo que o cidadão vê, entende e confia.</div>
+  </div>
+
+  <!-- PLANOS -->
+  <div class="section">
+    <div class="section-label">Investimento</div>
+    <h2 class="section-title">Estrutura de contratação</h2>
+    <p class="section-body" style="font-family:'Playfair Display',serif;font-size:18px;font-style:italic;color:var(--navy);font-weight:400;margin-bottom:24px;">Toda instituição comunica. Poucas constroem autoridade. A diferença está na estratégia.</p><p class="section-body">Dois caminhos. O primeiro entrega clareza e direção. O segundo constrói, mês a mês, a autoridade institucional da Presidência.</p>
+    <div class="planos mt48">
+
+      <div class="plano-item">
+        <div class="plano-badge">Início recomendado</div>
+        <div class="plano-label">Fase 1</div>
+        <div class="plano-title">Diagnóstico Estratégico</div>
+        <div class="plano-price">R$ 2.500</div>
+        <div class="plano-price-label">pagamento único</div>
+        <div class="plano-list">
+          <div class="plano-row"><span class="plano-mark">✓</span> Análise completa da comunicação digital do mandato</div>
+          <div class="plano-row"><span class="plano-mark">✓</span> Relatório executivo visual (12–15 páginas)</div>
+          <div class="plano-row"><span class="plano-mark">✓</span> Mapa de posicionamento institucional</div>
+          <div class="plano-row"><span class="plano-mark">✓</span> Plano de ação para 90 dias + calendário editorial</div>
+          <div class="plano-row"><span class="plano-mark">✓</span> Diretrizes de identidade visual</div>
+          <div class="plano-row"><span class="plano-mark">✓</span> 50 ideias de conteúdo categorizadas</div>
+          <div class="plano-row"><span class="plano-mark">✓</span> Estratégia de integração com TV Piúma e portal regional</div>
+          <div class="plano-row"><span class="plano-mark">✓</span> Reunião presencial de apresentação em Piúma</div>
+        </div>
+      </div>
+
+      <div class="plano-item destaque">
+        <div class="plano-label">Fase 2 — Opção A</div>
+        <div class="plano-title">Comunicação Institucional</div>
+        <div class="plano-price">R$ 2.500<span style="font-size:18px;color:var(--gold-light)">/mês</span></div>
+        <div class="plano-price-label">planejamento · estratégia · consultoria</div>
+        <div class="plano-list">
+          <div class="plano-row"><span class="plano-mark">✓</span> Planejamento editorial mensal</div>
+          <div class="plano-row"><span class="plano-mark">✓</span> Estratégia de conteúdo e posicionamento</div>
+          <div class="plano-row"><span class="plano-mark">✓</span> Aproveitamento estratégico de matérias jornalísticas</div>
+          <div class="plano-row"><span class="plano-mark">✓</span> Integração com TV Piúma e TV Marataízes</div>
+          <div class="plano-row"><span class="plano-mark">✓</span> Consultoria de posicionamento contínua</div>
+          <div class="plano-row"><span class="plano-mark">✓</span> Relatório mensal de resultados</div>
+          <div class="plano-row"><span class="plano-mark">✓</span> Reunião estratégica mensal</div>
+        </div>
+      </div>
+
+      <div class="plano-item">
+        <div class="plano-label">Fase 2 — Opção B</div>
+        <div class="plano-title">Programa de Autoridade Institucional</div>
+        <div class="plano-price">R$ 5.000<span style="font-size:18px;color:var(--gold)">/mês</span></div>
+        <div class="plano-price-label">Estratégia · Produção · Cobertura · Distribuição</div>
+        <div class="plano-list">
+          <div class="plano-row"><span class="plano-mark">✓</span> Tudo da Comunicação Institucional</div>
+          <div class="plano-row"><span class="plano-mark">✓</span> Produção audiovisual semanal</div>
+          <div class="plano-row"><span class="plano-mark">✓</span> Reels semanais produzidos e publicados</div>
+          <div class="plano-row"><span class="plano-mark">✓</span> Cobertura jornalística pela TV Piúma</div>
+          <div class="plano-row"><span class="plano-mark">✓</span> Entrevistas e reportagens sobre o mandato</div>
+          <div class="plano-row"><span class="plano-mark">✓</span> Gestão completa da imagem digital</div>
+          <div class="plano-row"><span class="plano-mark">✓</span> Monitoramento de reputação e alcance</div>
+          <div class="plano-row"><span class="plano-mark">✓</span> Distribuição em TV, portal e redes integrados</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PRÓXIMOS PASSOS -->
+  <div class="section section-alt">
+    <div class="section-label">Próximos Passos</div>
+    <h2 class="section-title">Como começamos</h2>
+    <div class="steps-timeline">
+      <div class="step-item">
+        <div class="step-circle">1</div>
+        <div class="step-content">
+          <div class="step-title">Aprovação da proposta</div>
+          <div class="step-desc">Confirmação do interesse e alinhamento sobre o escopo estratégico do trabalho.</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-circle">2</div>
+        <div class="step-content">
+          <div class="step-title">Início do diagnóstico</div>
+          <div class="step-desc">Acesso aos canais digitais, coleta de dados e início da análise. Prazo de até 5 dias úteis após aprovação.</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-circle">3</div>
+        <div class="step-content">
+          <div class="step-title">Entrega do relatório</div>
+          <div class="step-desc">Documento executivo entregue em formato digital. Prazo de até 10 dias úteis após o início.</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-circle">4</div>
+        <div class="step-content">
+          <div class="step-title">Reunião presencial em Piúma</div>
+          <div class="step-desc">Apresentação completa dos resultados, alinhamento estratégico e definição do próximo nível de contratação.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="cta-eyebrow">Pronto para começar</div>
+    <h2 class="cta-title">O próximo passo<br>é uma conversa.</h2><p class="cta-middle" style="font-family:'Playfair Display',serif;font-size:18px;font-style:italic;color:rgba(255,255,255,0.6);line-height:1.6;max-width:520px;margin:0 auto 52px;padding-top:0;">Instituições fortes não dependem apenas de boas decisões. Dependem também de uma comunicação capaz de fazer essas decisões chegarem às pessoas.</p>
+    <p class="cta-sub">Entre em contato para aprovar a proposta ou esclarecer qualquer dúvida.</p>
+    <a href="https://wa.me/5528999036141?text=Ol%C3%A1%20Raul%2C%20vi%20a%20proposta%20e%20quero%20conversar." class="cta-btn" target="_blank">Falar pelo WhatsApp</a>
+  </div>
+
+  <!-- RODAPÉ -->
+  <div class="footer">
+    <div class="footer-brand">Macuca Produções</div>
+    <div class="footer-contact">TV Marataízes · TV Piúma · TV Sul Capixaba<br>Marataízes, Espírito Santo</div>
+  </div>
+
+</div>
+</body>
+</html>
