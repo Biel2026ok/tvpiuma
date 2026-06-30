@@ -304,6 +304,67 @@ document.getElementById('vod-modal').addEventListener('click',function(e){if(e.t
   </div>
 </div>
 
+<!-- ENTREVISTAS COMPLETAS -->
+<div class="vod-section" style="margin-top:28px;" id="entrevistas">
+  <div class="sec-title">
+    🎙️ Entrevistas Completas
+    <span class="badge">TV PIÚMA</span>
+  </div>
+  <p class="sec-sub">Conversas completas com quem faz parte da história de Piúma — autoridades, personalidades e lideranças da cidade.</p>
+  <div class="vod-row-wrap">
+    <button class="vod-arrow prev" id="vod-prev-ent">&#8249;</button>
+    <div class="vod-row" id="vod-row-ent">
+
+      <!-- ENTREVISTA 1 — Paulo Cola, Prefeito de Piúma -->
+      <div class="vod-card" onclick="window.open('prefeito/','_self')">
+        <div class="vod-thumb">
+          <img src="https://raw.githubusercontent.com/Biel2026ok/tvpiuma/main/fotospiuma/Prefeitopiuma.png" alt="Paulo Cola — Prefeito de Piúma"/>
+          <div class="vod-overlay">
+            <div class="vod-title">Paulo Cola — Prefeito de Piúma</div>
+            <span class="vod-btn">▶ Assistir</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ENTREVISTA 2 — Eliezer Dias Freire, Presidente da Câmara -->
+      <div class="vod-card" onclick="window.open('presidentedacamara/','_self')">
+        <div class="vod-thumb">
+          <img src="https://raw.githubusercontent.com/Biel2026ok/tvpiuma/main/fotospiuma/Eliezer.png" alt="Eliezer Dias Freire — Presidente da Câmara Municipal"/>
+          <div class="vod-overlay">
+            <div class="vod-title">Eliezer Dias Freire — Presidente da Câmara</div>
+            <span class="vod-btn">▶ Assistir</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ENTREVISTA 3 — Secretário de Turismo (em breve) -->
+      <div class="vod-card em-breve">
+        <div class="vod-thumb">
+          <img src="https://raw.githubusercontent.com/Biel2026ok/tvpiuma/main/fotospiuma/Eliezer.png" alt="Em breve" style="filter:brightness(.2) saturate(0);"/>
+          <div class="eb-overlay">
+            <div class="eb-tag">AMANHÃ</div>
+            <div class="eb-title">Entrevista completa com o Secretário de Turismo de Piúma</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ENTREVISTA 4 — Secretária de Cultura (em breve) -->
+      <div class="vod-card em-breve">
+        <div class="vod-thumb">
+          <img src="https://raw.githubusercontent.com/Biel2026ok/tvpiuma/main/fotospiuma/Eliezer.png" alt="Em breve" style="filter:brightness(.2) saturate(0);"/>
+          <div class="eb-overlay">
+            <div class="eb-tag">AMANHÃ</div>
+            <div class="eb-title">Entrevista completa com a Secretária de Cultura de Piúma</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <button class="vod-arrow next" id="vod-next-ent">&#8250;</button>
+  </div>
+</div>
+<!-- FIM ENTREVISTAS COMPLETAS -->
+
 <!-- SEGUNDO CARROSSEL — EVENTOS E COBERTURA -->
 <div class="vod-section" style="margin-top:28px;">
   <div class="sec-title">
@@ -719,6 +780,7 @@ document.getElementById('vod-modal').addEventListener('click',function(e){if(e.t
   },{passive:true});
   document.addEventListener('DOMContentLoaded',function(){
     initCarousel('vod-row1','vod-prev1','vod-next1');
+    initCarousel('vod-row-ent','vod-prev-ent','vod-next-ent');
     initCarousel('vod-row2','vod-prev2','vod-next2');
     initCarousel('vod-row3','vod-prev3','vod-next3');
   });
