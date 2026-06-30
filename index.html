@@ -206,20 +206,32 @@ function openVod(src, titulo, credito){
   m.style.display='flex';
 }
 function openEntrevista(vodUrl, titulo, pageUrl){
-  var shareText = encodeURIComponent('📺 ' + titulo + ' — Entrevista completa na TV Piúma. Assista: ' + pageUrl);
   var m = document.getElementById('vod-modal');
   var w = document.getElementById('vod-player-wrap');
   w.innerHTML = '<iframe src="' + vodUrl + '?autoplay=1" allow="autoplay;fullscreen" allowfullscreen style="width:100%;height:100%;border:0;border-radius:8px;"></iframe>';
   var infoEl = document.getElementById('vod-modal-info');
-  if(infoEl) infoEl.innerHTML =
-    '<div style="padding:8px 0 10px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;">' +
-    '<span style="font-size:13px;font-weight:800;color:#fff;">🎙️ ' + titulo + '</span>' +
-    '<div style="display:flex;gap:6px;flex-wrap:wrap;">' +
-    '<a href="https://wa.me/?text=' + shareText + '" target="_blank" rel="noopener" style="background:#25D366;color:#fff;font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;text-decoration:none;">🟢 WhatsApp</a>' +
-    '<a href="https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(pageUrl) + '" target="_blank" rel="noopener" style="background:#1877F2;color:#fff;font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;text-decoration:none;">🔵 Facebook</a>' +
-    '<button onclick="navigator.clipboard.writeText(\'' + pageUrl + '\').then(function(){var b=document.getElementById(\\'ent-copy\\');b.textContent=\\'✅ Copiado!\\';setTimeout(function(){b.textContent=\\'🔗 Copiar link\\';},2000);})" id="ent-copy" style="background:#444;color:#fff;border:none;font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;cursor:pointer;">🔗 Copiar link</button>' +
-    '<a href="' + pageUrl + '" target="_blank" rel="noopener" style="background:#07101F;color:#00AEEF;border:1px solid #1a2a3a;font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;text-decoration:none;">📋 Ver página completa</a>' +
-    '</div></div>';
+  if(infoEl){
+    var shareText = encodeURIComponent('📺 ' + titulo + ' — Entrevista completa na TV Piúma. Assista: ' + pageUrl);
+    var d = document.createElement('div');
+    d.style.cssText = 'padding:8px 0 10px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;';
+    d.innerHTML =
+      '<span style="font-size:13px;font-weight:800;color:#fff;">🎙️ ' + titulo + '</span>' +
+      '<div style="display:flex;gap:6px;flex-wrap:wrap;">' +
+      '<a href="https://wa.me/?text=' + shareText + '" target="_blank" rel="noopener" style="background:#25D366;color:#fff;font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;text-decoration:none;">🟢 WhatsApp</a>' +
+      '<a href="https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(pageUrl) + '" target="_blank" rel="noopener" style="background:#1877F2;color:#fff;font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;text-decoration:none;">🔵 Facebook</a>' +
+      '<button id="ent-copy" style="background:#444;color:#fff;border:none;font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;cursor:pointer;">🔗 Copiar link</button>' +
+      '<a href="' + pageUrl + '" target="_blank" rel="noopener" style="background:#07101F;color:#00AEEF;border:1px solid #1a2a3a;font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;text-decoration:none;">📋 Ver página completa</a>' +
+      '</div>';
+    infoEl.innerHTML = '';
+    infoEl.appendChild(d);
+    var copyBtn = document.getElementById('ent-copy');
+    if(copyBtn) copyBtn.addEventListener('click', function(){
+      navigator.clipboard.writeText(pageUrl).then(function(){
+        copyBtn.textContent = '✅ Copiado!';
+        setTimeout(function(){ copyBtn.textContent = '🔗 Copiar link'; }, 2000);
+      });
+    });
+  }
   m.style.display = 'flex';
 }
 function openJornal(){
@@ -333,7 +345,7 @@ document.getElementById('vod-modal').addEventListener('click',function(e){if(e.t
     <div class="vod-row" id="vod-row-ent">
 
       <!-- ENTREVISTA 1 — Paulo Cola, Prefeito de Piúma -->
-      <div class="vod-card" onclick="openEntrevista('https://player.castr.com/vod/zfDuIzGeig2rtIrQ','Paulo Cola — Prefeito de Piúma','https://www.tvpiuma.digital/Prefeito/')">
+      <div class="vod-card" onclick="openEntrevista('https://player.castr.com/vod/zfDuIzGeig2rtIrQ','Paulo Cola - Prefeito de Piuma','https://www.tvpiuma.digital/Prefeito/')">
         <div class="vod-thumb">
           <img src="https://raw.githubusercontent.com/Biel2026ok/tvpiuma/main/fotospiuma/Prefeitopiuma.png" alt="Paulo Cola — Prefeito de Piúma"/>
           <div class="vod-overlay">
@@ -344,7 +356,7 @@ document.getElementById('vod-modal').addEventListener('click',function(e){if(e.t
       </div>
 
       <!-- ENTREVISTA 2 — Eliezer Dias Freire, Presidente da Câmara -->
-      <div class="vod-card" onclick="openEntrevista('https://player.castr.com/vod/l3RbvrRpJLgsxWae','Eliezer Dias Freire — Presidente da Câmara','https://www.tvpiuma.digital/Presidentedacamara/')">
+      <div class="vod-card" onclick="openEntrevista('https://player.castr.com/vod/l3RbvrRpJLgsxWae','Eliezer Dias Freire - Presidente da Camara','https://www.tvpiuma.digital/Presidentedacamara/')">
         <div class="vod-thumb">
           <img src="https://raw.githubusercontent.com/Biel2026ok/tvpiuma/main/fotospiuma/Eliezer.png" alt="Eliezer Dias Freire — Presidente da Câmara Municipal"/>
           <div class="vod-overlay">
