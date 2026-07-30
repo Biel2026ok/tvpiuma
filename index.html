@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>TV Piúma — A Cidade ao Vivo · Piúma ES</title>
-<meta name="description" content="Assista à TV Piúma ao vivo. Cobertura local, eventos, cultura e turismo de Piúma — Cidade das Conchas, Sul do Espírito Santo."/>
+<title>TV Piúma — Integrante da Rede TV Sul Capixaba</title>
+<meta name="description" content="TV Piúma, integrante da Rede TV Sul Capixaba. Assista ao vivo, veja produções locais e conheça como sua empresa pode aparecer em toda a região."/>
 <meta name="theme-color" content="#0B1829"/>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TVPIUMA2026"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TVPIUMA2026');</script>
@@ -79,33 +79,78 @@ header{background:#07101F;border-bottom:2px solid var(--accent);padding:0 14px;}
 #vod-modal .modal-inner{position:relative;width:90%;max-width:960px;aspect-ratio:16/9;}
 #vod-modal .close-btn{position:absolute;top:-44px;right:0;background:none;border:none;color:#fff;font-size:32px;cursor:pointer;opacity:.85;}
 
-/* AGENDA */
-.agenda-section{max-width:var(--max);margin:32px auto 0;padding:0 14px;}
-.agenda-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;}
-.agenda-card{background:#07101F;border-radius:10px;padding:16px;border:1px solid #1a2a3a;display:flex;gap:14px;align-items:flex-start;}
-.ag-date{display:flex;flex-direction:column;align-items:center;background:var(--accent);color:#07101F;border-radius:8px;min-width:50px;padding:8px 6px;text-align:center;flex-shrink:0;}
-.ag-date .day{font-size:24px;font-weight:900;line-height:1;}
-.ag-date .month{font-size:9px;font-weight:800;letter-spacing:1px;text-transform:uppercase;}
-.ag-info .ag-title{font-size:14px;font-weight:800;color:#fff;margin-bottom:4px;line-height:1.3;}
-.ag-info .ag-local{font-size:11px;color:#556;}
-.ag-tag{display:inline-block;margin-top:6px;font-size:10px;font-weight:700;color:var(--accent);background:rgba(0,174,239,.1);padding:2px 8px;border-radius:3px;}
 
-/* GUIA */
-.guia-section{max-width:var(--max);margin:32px auto 0;padding:0 14px;}
-.guia-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;}
-.guia-btn{background:#07101F;border:1px solid #1a2a3a;border-radius:8px;padding:14px;display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;color:#556;transition:all .2s;}
-.guia-btn:hover{border-color:var(--accent);color:#fff;}
-.guia-btn .ico{font-size:20px;}
+/* TOP BAR — pertencimento à Rede */
+.topbar{background:#050C16;border-bottom:1px solid #1a2a3a;}
+.topbar-inner{max-width:var(--max);margin:0 auto;padding:8px 14px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+.topbar-inner .tb-you{font-size:11.5px;color:#8a99ab;font-weight:600;}
+.topbar-inner .tb-you strong{color:#fff;font-weight:800;}
+.topbar-inner .tb-you .tb-net{color:var(--accent);font-weight:800;}
+.topbar-inner .tb-cities{font-size:11px;color:#556;font-weight:600;}
+@media(max-width:760px){.topbar-inner .tb-cities{display:none;}}
+
+/* HERO GRID */
+.hero-section{max-width:var(--max);margin:22px auto 0;padding:0 14px;}
+.hero-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:36px;align-items:center;}
+.hero-copy h1{font-size:38px;line-height:1.12;font-weight:900;letter-spacing:-.5px;margin:0 0 14px;color:#fff;}
+.hero-copy h1 .hl{color:var(--accent);}
+.hero-copy p.lead{font-size:15px;color:#8a99ab;line-height:1.6;margin:0 0 24px;max-width:460px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-solid{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#07101F;font-weight:900;font-size:14px;padding:13px 22px;border-radius:8px;transition:filter .2s;}
+.btn-solid:hover{filter:brightness(1.08);}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:transparent;color:#fff;font-weight:800;font-size:14px;padding:13px 22px;border-radius:8px;border:1px solid #294057;transition:border-color .2s,background .2s;}
+.btn-ghost:hover{border-color:var(--accent);background:rgba(0,174,239,.06);}
+.hero-grid .player-outer{max-width:none;margin:0;padding:0;}
+@media(max-width:880px){.hero-grid{grid-template-columns:1fr;gap:22px;}.hero-copy h1{font-size:29px;}}
+
+/* BLOCO COMERCIAL — Rede */
+.comercial-block{max-width:var(--max);margin:30px auto 0;padding:0 14px;}
+.comercial-inner{background:linear-gradient(120deg,#0a1c33 0%,#07101F 70%);border:1px solid #1a2a3a;border-radius:14px;padding:22px 24px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
+.com-msg{flex:1 1 300px;min-width:240px;}
+.com-msg .com-title{font-size:17px;font-weight:900;color:#fff;line-height:1.35;margin-bottom:2px;}
+.com-msg .com-title .hl{color:var(--accent);}
+.com-benefits{display:flex;gap:22px;flex-wrap:wrap;}
+.com-benefit{display:flex;flex-direction:column;gap:2px;min-width:110px;}
+.com-benefit .cb-ico{font-size:15px;color:var(--accent);}
+.com-benefit .cb-label{font-size:12.5px;font-weight:800;color:#fff;}
+.com-benefit .cb-sub{font-size:10.5px;color:#556;}
+.com-cta{flex-shrink:0;}
+.com-cta a{display:inline-flex;align-items:center;gap:6px;background:var(--accent);color:#07101F;font-weight:900;font-size:13px;padding:12px 20px;border-radius:8px;white-space:nowrap;transition:filter .2s;}
+.com-cta a:hover{filter:brightness(1.08);}
+@media(max-width:760px){.comercial-inner{padding:20px;}.com-benefits{gap:14px;}}
+
+/* A REDE — cartões das TVs municipais */
+.rede-section{max-width:var(--max);margin:36px auto 0;padding:0 14px;}
+.rede-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px;margin-top:14px;}
+.rede-card{background:#07101F;border:1px solid #1a2a3a;border-radius:10px;padding:16px 14px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;transition:border-color .2s,transform .2s;}
+.rede-card:not(.rede-soon):hover{border-color:var(--accent);transform:translateY(-2px);}
+.rede-badge{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;color:#07101F;letter-spacing:.5px;}
+.rede-badge.rede-badge-img{background:#000;overflow:hidden;padding:0;}
+.rede-badge.rede-badge-img img{width:100%;height:100%;object-fit:cover;}
+.rede-name{font-size:13.5px;font-weight:900;color:#fff;}
+.rede-city{font-size:11px;color:#556;margin-top:-4px;}
+.rede-card.rede-current{border-color:var(--accent);background:rgba(0,174,239,.06);}
+.rede-btn{margin-top:2px;font-size:11px;font-weight:800;padding:6px 14px;border-radius:20px;background:rgba(0,174,239,.12);color:var(--accent);border:1px solid rgba(0,174,239,.35);}
+.rede-btn.disabled{background:rgba(255,255,255,.04);color:#556;border-color:#1a2a3a;}
+.rede-here{font-size:10.5px;font-weight:800;color:var(--accent);letter-spacing:.5px;text-transform:uppercase;}
 
 /* FOOTER */
-footer{text-align:center;padding:48px 20px 36px;background:#07101F;border-top:1px solid #1a2a3a;margin-top:48px;}
-.footer-logo{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:10px;}
-.footer-logo img{height:44px;width:44px;border-radius:50%;}
-.footer-logo strong{font-size:20px;font-weight:900;}
-.footer-tagline{font-size:13px;color:#556;margin-bottom:18px;}
-.footer-links{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:18px;}
-.footer-links a{font-size:12px;font-weight:700;color:#556;background:#0e0e0e;border:1px solid #1a2a3a;padding:7px 16px;border-radius:20px;transition:all .2s;}
-.footer-links a:hover{color:#fff;border-color:var(--accent);}
+footer{padding:44px 20px 30px;background:#07101F;border-top:1px solid #1a2a3a;margin-top:48px;}
+.footer-inner{max-width:var(--max);margin:0 auto;}
+.footer-top{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;margin-bottom:28px;}
+.footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.footer-logo .flogo-full{height:52px;width:auto;display:block;}
+.footer-logo strong{font-size:16px;font-weight:900;display:block;line-height:1.25;}
+.footer-logo span{font-size:9.5px;color:var(--accent);letter-spacing:1.5px;text-transform:uppercase;font-weight:800;}
+.footer-tagline{font-size:12.5px;color:#556;max-width:280px;line-height:1.6;}
+.footer-cols{display:flex;gap:48px;flex-wrap:wrap;}
+.footer-col h4{font-size:11px;font-weight:900;color:#8a99ab;letter-spacing:1px;text-transform:uppercase;margin:0 0 12px;}
+.footer-col a{display:block;font-size:13px;color:#8a99ab;margin-bottom:9px;font-weight:600;transition:color .2s;}
+.footer-col a:hover{color:#fff;}
+.footer-social{display:flex;gap:10px;}
+.footer-social a{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#0e1c2e;border:1px solid #1a2a3a;font-size:15px;transition:border-color .2s;}
+.footer-social a:hover{border-color:var(--accent);}
+.footer-bottom{border-top:1px solid #1a2a3a;padding-top:18px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center;}
 .footer-copy{font-size:11px;color:#334;}
 
 /* FLOAT */
@@ -113,12 +158,12 @@ footer{text-align:center;padding:48px 20px 36px;background:#07101F;border-top:1p
 </style>
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.tvpiuma.digital/">
-<meta property="og:title" content="TV Piúma — A Cidade ao Vivo">
-<meta property="og:description" content="Portal de notícias, TV ao vivo e cobertura local de Piúma ES — Cidade das Conchas.">
-<meta property="og:site_name" content="TV Piúma">
+<meta property="og:title" content="TV Piúma — Integrante da Rede TV Sul Capixaba">
+<meta property="og:description" content="A TV de Piúma, conectada com todo o Sul Capixaba. Assista ao vivo e saiba como sua empresa pode aparecer em toda a rede.">
+<meta property="og:site_name" content="TV Piúma · Rede TV Sul Capixaba">
 <link rel="canonical" href="https://www.tvpiuma.digital/">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"NewsMediaOrganization","@id":"https://www.tvpiuma.digital/#organization","name":"TV Piúma","url":"https://www.tvpiuma.digital","telephone":"+55-28-99903-6141","areaServed":["Piúma"]},{"@type":"WebSite","@id":"https://www.tvpiuma.digital/#website","url":"https://www.tvpiuma.digital","name":"TV Piúma"}]}
+{"@context":"https://schema.org","@graph":[{"@type":"NewsMediaOrganization","@id":"https://www.tvpiuma.digital/#organization","name":"TV Piúma","url":"https://www.tvpiuma.digital","telephone":"+55-28-99903-6141","areaServed":["Piúma"],"parentOrganization":{"@type":"Organization","name":"Rede TV Sul Capixaba","url":"https://tvsulcapixaba.com.br"},"memberOf":{"@type":"Organization","name":"Rede TV Sul Capixaba","url":"https://tvsulcapixaba.com.br"}},{"@type":"WebSite","@id":"https://www.tvpiuma.digital/#website","url":"https://www.tvpiuma.digital","name":"TV Piúma"}]}
 </script>
 </head>
 <body>
@@ -135,9 +180,9 @@ footer{text-align:center;padding:48px 20px 36px;background:#07101F;border-top:1p
     </div>
     <nav class="nav">
       <a href="#programas">Programas</a>
+      <a href="#entrevistas">Entrevistas</a>
       <a href="#producoes">Produções</a>
-      <a href="#agenda">Agenda</a>
-      <a href="#guia">Guia</a>
+      <a href="#rede">A Rede</a>
     </nav>
     <div class="live-pill">
       <span class="live-dot"></span>
@@ -145,6 +190,14 @@ footer{text-align:center;padding:48px 20px 36px;background:#07101F;border-top:1p
     </div>
   </div>
 </header>
+
+<!-- BARRA DE PERTENCIMENTO À REDE -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="tb-you">Você está em: <strong>TV Piúma</strong> <span class="tb-net">· integrante da Rede TV Sul Capixaba</span></div>
+    <div class="tb-cities">Marataízes · Piúma · Itapemirim · Anchieta · Presidente Kennedy · e mais municípios do Sul</div>
+  </div>
+</div>
 
 <!-- BREAKING -->
 <div class="breaking">
@@ -156,19 +209,51 @@ footer{text-align:center;padding:48px 20px 36px;background:#07101F;border-top:1p
   </div>
 </div>
 
-<!-- PLAYER AO VIVO -->
-<div class="player-outer">
-  <div class="player-label">Transmissão ao vivo</div>
-  <div class="player" id="player-wrapper" onclick="loadLivePlayer()">
-    <div class="player-overlay" id="player-overlay">
-      <div class="play-btn">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="#07101F"><polygon points="6,3 20,12 6,21"/></svg>
+<!-- HERO -->
+<div class="hero-section">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <h1>A TV DE PIÚMA,<br>CONECTADA COM<br><span class="hl">TODO O SUL CAPIXABA.</span></h1>
+      <p class="lead">Notícias, cultura e cobertura da nossa cidade, com a força da maior rede de comunicação do Sul do Espírito Santo.</p>
+      <div class="hero-btns">
+        <a href="#player-wrapper" class="btn-solid" onclick="loadLivePlayer()">▶ Assistir ao Vivo</a>
+        <a href="#rede" class="btn-ghost">Conheça a Rede</a>
       </div>
-      <h2>TV Piúma — Ao Vivo</h2>
-      <p>Clique para assistir</p>
+    </div>
+
+    <!-- PLAYER AO VIVO -->
+    <div class="player-outer">
+      <div class="player-label">Transmissão ao vivo</div>
+      <div class="player" id="player-wrapper" onclick="loadLivePlayer()">
+        <div class="player-overlay" id="player-overlay">
+          <div class="play-btn">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="#07101F"><polygon points="6,3 20,12 6,21"/></svg>
+          </div>
+          <h2>TV Piúma — Ao Vivo</h2>
+          <p>Clique para assistir</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
+<!-- BLOCO COMERCIAL — REDE -->
+<div class="comercial-block">
+  <div class="comercial-inner">
+    <div class="com-msg">
+      <div class="com-title">Sua empresa aparece em toda a <span class="hl">Rede TV Sul Capixaba</span>,<br>com destaque em Piúma.</div>
+    </div>
+    <div class="com-benefits">
+      <div class="com-benefit"><span class="cb-ico">👁</span><span class="cb-label">Mais visibilidade</span><span class="cb-sub">Sua marca vista em toda a região</span></div>
+      <div class="com-benefit"><span class="cb-ico">🔗</span><span class="cb-label">Mais conexões</span><span class="cb-sub">Atinja novos clientes todos os dias</span></div>
+      <div class="com-benefit"><span class="cb-ico">📈</span><span class="cb-label">Mais resultados</span><span class="cb-sub">Presença digital que gera negócios</span></div>
+    </div>
+    <div class="com-cta">
+      <a href="https://wa.me/5528999036141?text=Quero+anunciar+minha+empresa+na+Rede+TV+Sul+Capixaba+com+destaque+em+Piuma" target="_blank" rel="noopener">QUERO ANUNCIAR</a>
+    </div>
+  </div>
+</div>
+
 <script>
 /* ════════════════════════════════════════════════════
    CONFIGURAÇÃO DA TRANSMISSÃO AO VIVO
@@ -287,26 +372,6 @@ function openEntrevista(vodUrl, titulo, pageUrl){
       });
     });
   }
-  m.style.display = 'flex';
-}
-function openJornal(){
-  pauseLiveForVod();
-  var JORNAL_URL = 'https://player.castr.com/vod/NSfzkzLI4856K2ey';
-  var SHARE_URL  = 'https://tvsulcapixaba.com.br/jornal-da-rede/';
-  var SHARE_TEXT = encodeURIComponent('📻 Jornal da Rede — TV Sul Capixaba\nAs principais notícias do Sul do ES. Ouça agora: ' + SHARE_URL);
-  var m = document.getElementById('vod-modal');
-  var w = document.getElementById('vod-player-wrap');
-  w.innerHTML = '<iframe src="' + JORNAL_URL + '?autoplay=1" allow="autoplay;fullscreen" allowfullscreen style="width:100%;height:100%;border:0;border-radius:8px;"></iframe>';
-  var infoEl = document.getElementById('vod-modal-info');
-  if(infoEl) infoEl.innerHTML =
-    '<div style="padding:8px 0 10px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;">' +
-    '<span style="font-size:13px;font-weight:800;color:#fff;">🎙️ Jornal da Rede — Sul Capixaba</span>' +
-    '<div style="display:flex;gap:6px;flex-wrap:wrap;">' +
-    '<a href="https://wa.me/?text=' + SHARE_TEXT + '" target="_blank" rel="noopener" style="background:#25D366;color:#fff;font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;text-decoration:none;">🟢 WhatsApp</a>' +
-    '<a href="https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(SHARE_URL) + '" target="_blank" rel="noopener" style="background:#1877F2;color:#fff;font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;text-decoration:none;">🔵 Facebook</a>' +
-    '<button onclick="navigator.clipboard.writeText(\'' + SHARE_URL + '\').then(function(){var b=document.getElementById(\'jr-copy\');b.textContent=\'✅ Copiado!\';setTimeout(function(){b.textContent=\'🔗 Copiar link\';},2000);})" id="jr-copy" style="background:#444;color:#fff;border:none;font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;cursor:pointer;">🔗 Copiar link</button>' +
-    '<a href="' + SHARE_URL + '" target="_blank" rel="noopener" style="background:#07101F;color:#00AEEF;border:1px solid #1a2a3a;font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;text-decoration:none;">📋 Edições anteriores</a>' +
-    '</div></div>';
   m.style.display = 'flex';
 }
 function closeVod(){
@@ -641,203 +706,95 @@ document.getElementById('vod-modal').addEventListener('click',function(e){if(e.t
   </div>
 </div>
 
-<!-- ════════════════════════════════════════════════════
-     INÍCIO JORNAL DA REDE
-     Atualizar diariamente: data abaixo.
-════════════════════════════════════════════════════ -->
-<div class="vod-section" style="margin-top:28px;">
-  <div style="background:#0e0e0e;border-radius:12px;border:1px solid #1a2a3a;overflow:hidden;">
-    <div style="background:#E8370D;color:#fff;padding:10px 14px;display:flex;align-items:center;gap:8px;">
-      <span style="font-size:15px;">🎙️</span>
-      <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;">Jornal da Rede</span>
-      <span style="font-size:10px;opacity:.75;margin-left:auto;">TV Sul Capixaba</span>
+<!-- Jornal da Rede, Agenda e Guia Comercial removidos: SEO comercial e agenda regional
+     ficam concentrados em tvsulcapixaba.com.br, evitando seções vazias/abandonadas neste site. -->
+
+<!-- A REDE -->
+<div class="rede-section" id="rede">
+  <div class="sec-title" style="margin-bottom:4px;"><img src="data:image/jpeg;base64,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" alt="" style="width:24px;height:24px;border-radius:6px;object-fit:cover;" onerror="this.style.display='none'"/> A Rede TV Sul Capixaba <span class="badge">Municípios do Sul do ES</span></div>
+  <p class="sec-sub" style="margin-bottom:4px;">Uma rede de TVs locais, conectando cidades, pessoas e oportunidades em todo o Sul do Espírito Santo.</p>
+  <div class="rede-grid">
+
+    <div class="rede-card">
+      <div class="rede-badge" style="background:#FF8A00;">TV</div>
+      <div class="rede-name">TV Marataízes</div>
+      <div class="rede-city">Marataízes</div>
+      <a href="https://tvmarataizes.digital" target="_blank" rel="noopener" class="rede-btn">Acessar</a>
     </div>
-    <div style="display:flex;gap:0;align-items:stretch;">
-      <a onclick="openJornal()" style="flex:0 0 42%;max-width:42%;display:block;position:relative;background:#000;text-decoration:none;min-height:140px;cursor:pointer;">
-        <img src="https://raw.githubusercontent.com/Biel2026ok/tvpiuma/main/fotospiuma/radio.png" alt="Jornal da Rede" style="width:100%;height:100%;object-fit:cover;display:block;">
-        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.3);">
-          <div style="width:36px;height:36px;background:#E8370D;border-radius:50%;display:flex;align-items:center;justify-content:center;">
-            <svg viewBox="0 0 24 24" width="15" height="15" fill="#fff" style="margin-left:3px;"><polygon points="5,3 19,12 5,21"/></svg>
-          </div>
-        </div>
-      </a>
-      <div style="flex:1;padding:16px 18px;display:flex;flex-direction:column;justify-content:center;gap:10px;background:#0e0e0e;">
-        <div style="font-size:15px;font-weight:800;color:#fff;line-height:1.3;">As notícias mais importantes da região, todos os dias, em poucos minutos.</div>
-        <!-- DATA DA EDIÇÃO — atualizar diariamente -->
-        <div style="font-size:11px;color:#778;">📅 Jornal da Rede — 29 de junho de 2026</div>
-        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
-          <button onclick="openJornal()" style="display:inline-flex;align-items:center;gap:6px;background:#E8370D;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:12px;font-weight:700;cursor:pointer;letter-spacing:.4px;font-family:inherit;">▶ Assistir edição de hoje</button>
-          <a href="https://tvsulcapixaba.com.br/jornal-da-rede/" target="_blank" rel="noopener" style="font-size:11px;color:#778;text-decoration:none;">Edições anteriores →</a>
-        </div>
-      </div>
+
+    <div class="rede-card rede-current">
+      <div class="rede-badge" style="background:var(--accent);">TV</div>
+      <div class="rede-name">TV Piúma</div>
+      <div class="rede-city">Piúma</div>
+      <span class="rede-here">Você está aqui</span>
     </div>
+
+    <div class="rede-card rede-soon">
+      <div class="rede-badge" style="background:#2FA84F;">TV</div>
+      <div class="rede-name">TV Itapemirim</div>
+      <div class="rede-city">Itapemirim</div>
+      <span class="rede-btn disabled">Em implantação</span>
+    </div>
+
+    <div class="rede-card rede-soon">
+      <div class="rede-badge" style="background:#3B82F6;">TV</div>
+      <div class="rede-name">TV Anchieta</div>
+      <div class="rede-city">Anchieta</div>
+      <span class="rede-btn disabled">Em implantação</span>
+    </div>
+
+    <div class="rede-card rede-soon">
+      <div class="rede-badge" style="background:#8B5CF6;">TV</div>
+      <div class="rede-name">TV Presidente Kennedy</div>
+      <div class="rede-city">Presidente Kennedy</div>
+      <span class="rede-btn disabled">Em implantação</span>
+    </div>
+
+    <div class="rede-card">
+      <div class="rede-badge rede-badge-img"><img src="data:image/jpeg;base64,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" alt="Rede TV Sul Capixaba" onerror="this.parentElement.outerHTML='&lt;div class=&quot;rede-badge&quot; style=&quot;background:#E8370D;&quot;&gt;TVS&lt;/div&gt;'"/></div>
+      <div class="rede-name">TV Sul Capixaba</div>
+      <div class="rede-city">E mais municípios do Sul</div>
+      <a href="https://tvsulcapixaba.com.br" target="_blank" rel="noopener" class="rede-btn">Acessar</a>
+    </div>
+
   </div>
-</div>
-<!-- ════════════════════════════════════════════════════
-     FIM JORNAL DA REDE
-════════════════════════════════════════════════════ -->
-
-<!-- AGENDA -->
-<div class="agenda-section" id="agenda">
-  <div class="sec-title" style="margin-bottom:4px;">Agenda de Piúma <span class="badge">Julho 2026</span></div>
-  <p class="sec-sub" style="margin-bottom:14px;">Agenda em breve.</p>
-</div>
-
-<!-- GUIA EXPANDIDO -->
-<style>
-.neg-list-p{display:flex;flex-direction:column;gap:8px;margin-top:10px;}
-.neg-item-p{display:flex;align-items:flex-start;gap:12px;background:#07101F;border:1px solid #1a2a3a;border-radius:8px;padding:12px 14px;text-decoration:none;color:inherit;transition:border-color .2s,background .2s;}
-.neg-item-p:hover{border-color:var(--accent);background:#0d1c2f;}
-.neg-ico-p{font-size:22px;flex-shrink:0;margin-top:1px;}
-.neg-name-p{font-size:13px;font-weight:800;color:#fff;margin-bottom:3px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
-.neg-desc-p{font-size:11px;color:#556;line-height:1.5;}
-.neg-link-p{font-size:11px;color:var(--accent);font-weight:700;margin-top:3px;display:block;}
-.badge-p{font-size:9px;font-weight:900;padding:2px 7px;border-radius:3px;letter-spacing:.5px;}
-.badge-dest{background:rgba(0,174,239,.15);color:var(--accent);border:1px solid rgba(0,174,239,.3);}
-.badge-vaga{background:rgba(255,111,0,.12);color:#FF6F00;border:1px solid rgba(255,111,0,.3);}
-.card-destaque-p{display:block;background:linear-gradient(135deg,#03243d 0%,#071525 100%);border-radius:8px;padding:16px;margin-bottom:8px;text-decoration:none;border:2px solid var(--accent);position:relative;overflow:hidden;transition:box-shadow .2s;}
-.card-destaque-p:hover{box-shadow:0 6px 24px rgba(0,174,239,.25);}
-.card-destaque-p .badge-top{position:absolute;top:0;right:0;background:var(--accent);color:#07101F;font-size:9px;font-weight:900;padding:4px 12px;border-radius:0 6px 0 8px;letter-spacing:.5px;text-transform:uppercase;}
-.card-destaque-p .cd-inner{display:flex;gap:14px;align-items:flex-start;margin-top:6px;}
-.card-destaque-p .cd-ico{font-size:32px;flex-shrink:0;}
-.card-destaque-p .cd-nome{font-size:14px;font-weight:900;color:#fff;margin-bottom:4px;}
-.card-destaque-p .cd-desc{font-size:11px;color:rgba(255,255,255,.7);margin-bottom:10px;line-height:1.6;}
-.card-destaque-p .cd-btn{display:inline-flex;align-items:center;gap:5px;background:var(--accent);color:#07101F;font-size:11px;font-weight:900;padding:6px 14px;border-radius:4px;}
-.cta-guia-p{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#FF6F00,#e86000);border-radius:8px;padding:14px 16px;margin-top:12px;text-decoration:none;color:#fff;transition:opacity .2s;}
-.cta-guia-p:hover{opacity:.9;}
-.cta-guia-p .cta-main{font-size:13px;font-weight:900;color:#fff;}
-.cta-guia-p .cta-sub{font-size:11px;color:rgba(255,255,255,.8);margin-top:2px;}
-.cta-guia-p .cta-seta{margin-left:auto;background:rgba(255,255,255,.2);padding:8px 14px;border-radius:4px;font-size:12px;font-weight:900;white-space:nowrap;flex-shrink:0;}
-.guia-sec-box{background:#07101F;border-radius:10px;padding:16px 16px 14px;border:1px solid #1a2a3a;margin-bottom:12px;}
-.guia-sec-title{font-size:14px;font-weight:900;color:#fff;margin-bottom:10px;display:flex;align-items:center;gap:7px;}
-</style>
-<div class="guia-section" id="guia">
-  <div class="sec-title" style="margin-bottom:4px;">Guia de Piúma <span class="badge">Cidade das Conchas</span></div>
-  <p class="sec-sub" style="margin-bottom:18px;">Restaurantes, pousadas e serviços de Piúma — clique para conhecer.</p>
-
-  <!-- RESTAURANTES -->
-  <div class="guia-sec-box">
-    <div class="guia-sec-title">🍽️ Restaurantes em Piúma</div>
-    <div class="neg-list-p">
-      <a class="neg-item-p" href="https://wa.me/5528999036141?text=Quero+entrar+no+guia+-+Restaurante+Piuma" target="_blank" rel="noopener">
-        <div class="neg-ico-p">📲</div>
-        <div><div class="neg-name-p">Seu restaurante aqui <span class="badge-p badge-vaga">Vaga disponível</span></div><div class="neg-desc-p">Piúma · Apareça no portal da TV Piúma e seja encontrado por quem já está procurando onde comer</div><span class="neg-link-p">Fale pelo WhatsApp →</span></div>
-      </a>
-    </div>
-    <a href="https://wa.me/5528999036141?text=Quero+anunciar+restaurante+na+TV+Piuma" target="_blank" class="cta-guia-p"><span style="font-size:22px;flex-shrink:0">📺</span><div><div class="cta-main">Anuncie seu restaurante na TV Piúma</div><div class="cta-sub">Apareça quando o cliente pesquisar "restaurante em Piúma"</div></div><span class="cta-seta">🔥 Falar agora</span></a>
-  </div>
-
-  <!-- POUSADAS -->
-  <div class="guia-sec-box">
-    <div class="guia-sec-title">🛏️ Pousadas em Piúma</div>
-    <div class="neg-list-p">
-      <a class="neg-item-p" href="https://wa.me/5528999036141?text=Quero+entrar+no+guia+-+Pousada+Piuma" target="_blank" rel="noopener">
-        <div class="neg-ico-p">📲</div>
-        <div><div class="neg-name-p">Sua pousada aqui <span class="badge-p badge-vaga">Vaga disponível</span></div><div class="neg-desc-p">Piúma · Alcance turistas buscando hospedagem na Cidade das Conchas</div><span class="neg-link-p">Fale pelo WhatsApp →</span></div>
-      </a>
-    </div>
-    <a href="https://wa.me/5528999036141?text=Quero+anunciar+pousada+na+TV+Piuma" target="_blank" class="cta-guia-p"><span style="font-size:22px;flex-shrink:0">📺</span><div><div class="cta-main">Anuncie sua pousada na TV Piúma</div><div class="cta-sub">Visibilidade para quem planeja visitar Piúma</div></div><span class="cta-seta">🔥 Falar agora</span></a>
-  </div>
-
-  <!-- FARMÁCIAS -->
-  <div class="guia-sec-box">
-    <div class="guia-sec-title">💊 Farmácias em Piúma</div>
-    <div class="neg-list-p">
-      <a class="neg-item-p" href="https://wa.me/5528999036141?text=Quero+entrar+no+guia+-+Farmacia+Piuma" target="_blank" rel="noopener">
-        <div class="neg-ico-p">📲</div>
-        <div><div class="neg-name-p">Sua farmácia aqui <span class="badge-p badge-vaga">Vaga disponível</span></div><div class="neg-desc-p">Piúma · Destaque sua farmácia no maior portal local da cidade</div><span class="neg-link-p">Fale pelo WhatsApp →</span></div>
-      </a>
-    </div>
-  </div>
-
-  <!-- IMÓVEIS -->
-  <div class="guia-sec-box">
-    <div class="guia-sec-title">🏠 Imóveis em Piúma</div>
-    <div class="neg-list-p">
-      <a class="neg-item-p" href="https://wa.me/5528999036141?text=Quero+entrar+no+guia+-+Imoveis+Piuma" target="_blank" rel="noopener">
-        <div class="neg-ico-p">📲</div>
-        <div><div class="neg-name-p">Sua imobiliária aqui <span class="badge-p badge-vaga">Vaga disponível</span></div><div class="neg-desc-p">Piúma · Alcance compradores e locatários que buscam imóveis à beira-mar</div><span class="neg-link-p">Fale pelo WhatsApp →</span></div>
-      </a>
-    </div>
-  </div>
-
-  <!-- ARTESANATO -->
-  <div class="guia-sec-box">
-    <div class="guia-sec-title">🐚 Artesanato em Conchas</div>
-    <div class="neg-list-p">
-      <a class="neg-item-p" href="https://wa.me/5528999036141?text=Quero+entrar+no+guia+-+Artesanato+Piuma" target="_blank" rel="noopener">
-        <div class="neg-ico-p">📲</div>
-        <div><div class="neg-name-p">Seu artesanato aqui <span class="badge-p badge-vaga">Vaga disponível</span></div><div class="neg-desc-p">Piúma · Mostre sua arte em conchas para turistas de todo o Espírito Santo</div><span class="neg-link-p">Fale pelo WhatsApp →</span></div>
-      </a>
-    </div>
-  </div>
-
-  <!-- PUBLICIDADE E PRODUÇÃO — DESTAQUE MACUCA + CLAP + CINE K -->
-  <div class="guia-sec-box">
-    <div class="guia-sec-title">🎬 Publicidade, Produção e Cultura em Piúma</div>
-
-    <a href="https://www.macucaproducoes.com.br" target="_blank" rel="noopener" class="card-destaque-p">
-      <span class="badge-top">⭐ Quem faz o portal funcionar</span>
-      <div class="cd-inner">
-        <div class="cd-ico">📺</div>
-        <div>
-          <div class="cd-nome">Macuca Produções</div>
-          <div class="cd-desc">TV Marataízes · TV Piúma · Canal 300 Soul TV · Publicidade · Produção audiovisual · Conteúdo para TV, Google e redes sociais · Marataízes ES · (28) 99903-6141</div>
-          <span class="cd-btn">🚀 Ver como aparecer →</span>
-        </div>
-      </div>
-    </a>
-
-    <a href="https://agenciaclap.com.br" target="_blank" rel="noopener" class="card-destaque-p" style="margin-top:8px;">
-      <span class="badge-top">🎯 Agência Digital</span>
-      <div class="cd-inner">
-        <div class="cd-ico">🎯</div>
-        <div>
-          <div class="cd-nome">Agência Clap</div>
-          <div class="cd-desc">Criação de sites · Gestão de redes sociais · Identidade visual · Tráfego pago · Google · Instagram · Sul do Espírito Santo</div>
-          <span class="cd-btn">🔗 Conhecer a Agência Clap →</span>
-        </div>
-      </div>
-    </a>
-
-    <a href="https://tvmarataizes.digital/cinek/" target="_blank" rel="noopener" class="card-destaque-p" style="margin-top:8px;">
-      <span class="badge-top">🎥 Cinema em Piúma</span>
-      <div class="cd-inner">
-        <div class="cd-ico">🎥</div>
-        <div>
-          <div class="cd-nome">Cine K — Piúma</div>
-          <div class="cd-desc">Cinema local · Sessões · Cultura audiovisual · Piúma ES · Sul do Espírito Santo</div>
-          <span class="cd-btn">🎬 Ver programação →</span>
-        </div>
-      </div>
-    </a>
-  </div>
-
-  <!-- CTA FINAL ANUNCIE -->
-  <a href="https://wa.me/5528999036141?text=Quero+anunciar+minha+empresa+no+portal+da+TV+Piuma" target="_blank" rel="noopener" class="cta-guia-p" style="background:linear-gradient(135deg,#00AEEF,#0077b6);margin-top:4px;">
-    <span style="font-size:26px;flex-shrink:0">📲</span>
-    <div>
-      <div class="cta-main">Anuncie sua empresa no portal da TV Piúma</div>
-      <div class="cta-sub">Apareça para quem pesquisa produtos e serviços em Piúma · Vagas limitadas por segmento</div>
-    </div>
-    <span class="cta-seta">💬 Falar agora</span>
-  </a>
 </div>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">
-    <img src="Logo_Tv_Piuma.png" alt="TV Piúma" onerror="this.style.display='none'"/>
-    <strong>TV PIÚMA</strong>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">
+          <img class="flogo-full" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAQDAwMDAgQDAwMEBAQFBgoGBgUFBgwICQcKDgwPDg4MDQ0PERYTDxAVEQ0NExoTFRcYGRkZDxIbHRsYHRYYGRj/2wBDAQQEBAYFBgsGBgsYEA0QGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBj/wAARCACgAZADASIAAhEBAxEB/8QAHQAAAAYDAQAAAAAAAAAAAAAAAAEEBQYIAgMHCf/EAFoQAAECBQIDBQUBCwcFDAsBAAECAwAEBQYREiEHMUEIEyJRYRQycYGRFRYjQlKClKGxwdHSCSQzVmJykjZGo6TwGCU0NURTY4OzwuHxF0NFVWRzdHaEorTT/8QAHAEAAgMBAQEBAAAAAAAAAAAAAAECAwQFBgcI/8QAPBEAAgECAwQGCAMHBQAAAAAAAAECAxEEITEFEkFREyJxgZHRBhQyYZKh0vAHQsEVIzRDU1SxM0RiwuH/2gAMAwEAAhEDEQA/AKE9IHygD4wfXEaSgLkfSD3+UFyMH6iAAtukDEH0z9Yn9q8EOLt7yCZ61uHNxVGTXuiaRJqQyv8AuuL0pPyMJ5Bm9CAQOcTm7uDPFWw5Izt38P7gpMmnYzb8oosJ+LicpHzMQfB8oazDQKDG0FAgEZDlBxj1jIQxNAgQIEOwgQIECGAIECBAAcFBwOUMAoECD6QwCg4ED4wADEH0goA3hACBB4gQxBYgCDghAAMQPSDgusAAxBQcCEAUHiBA6wDCgQIEAAgQIERYBHEDMCNzaH0qKksk7bgp5iBK4N2NON8EEHyjMMuk4Da8/CFxaSVha0HUMHfYj4xmBzIjQsPzZQ63IayCDggj4wUObjaVpwsZH6oROy6m8qTlSPPy+MVzpOJZCopGmDG8DEGIqLLgEayStfLbpGSz+APnBYAGBDfIaC5iBjzg+fP6wYHQ4+PnEQC5eojJKSpQCASScAAZJ9Ix5DIHxEdt7J9pyl09p6juVGWRNSdFZerbkusZDqmE5aSR1BdU1kQN2Glcsn2eOy1LWtJStxXdQpOqXatKH1s1JvvZSghQCkI7rk/NlJCiFeFvIzvjVZuqUuYmZfu6hMPz2OsyrUPkkAJHwAAjoNLpDdMorcrnvHRlbrp5uOqOpaz6lRJ+nlDdUZZOk5AjPKRppRu0jlC25mkFw0552UCwUrQ0ctOAjBC2jlChg8iIrbxZ7N1kXo89VrQMjZVyukqMqrKKPUFnok7mTcPkctk8sRbGtyqEtrJAjllwOJQHEKAUgggpUMgjyI6iOdVxkqLueuwGwIbQju6Pmjzdu2zLosW6H7du6iTdJqTPvS8yjGodFJVyWk9FJJB84YovvcLlGrNvptq7aKzcdvIJLck+5omJEn8KTmPeaP8AYOUHl4RFdr+7PdQptLnLq4bTz1223LeKaaDWipUseUzLjcp/6RGUnntGzC7QpYnKLz5HI216MY7ZHWrQvB6SWn/j9z7rnEYAg8bZH1go3HnTKBBAxlDQgoEHBfMQwBB9YG3mPrAynzH1hoAQMQMp/GB+cDKfx0/WGAIOCHn09IOAQILrBnAGSQB6mCyj8dH+IQAg4ECDAzAAUCFkhTKhVJ0SdMkZqdmFcmZVlTqz+SkEw7VKxL1o0oZqsWfcFPYAyXZumvtI/wASkAQCI7AgyNsggjzBgthuogD1OIBggQMo6LQfyhAgAEFmD2AySB8TiCynPvpPwUIABAMHlI2Kkj4kCDGk8lJPwIMAGOIHKDIgQAEfjBQcFERiiUZQ6tWtOQB8ocNJ59fSG1l19P3tpRGTyAzvDxgHI5Y2BG2Y3YZJxsjHXbUszSRnnvAKCMYG0bSjHUfDrGAXgBJGfWL922pTfka8ApjUvwnbbHWFZSMZ2MaFpT84jOORKMkI1spWcpwhXlyB/dGhQ7pJKh4hsAfOFiWluOpabGVqUEpHmScCNNQdS7PqbaILTI7pBHUJ6/M5PzjDUSSvxNUJNvdEiRtk84PrBmBiKC+4QHlv6QOQ/ZAwRuNx5iDznY/WAAjsMiLN9hIa+0nVE9Db7w/1mXishBH74tH2BA2e07VS6oJQm3JhaleQD7BJ+giE9CcD0yue7Lbs6guVe6K1KUqSSdPezK9Oo/ipHNR9ACY4/MdprgzOT/srd0uIB275yTdS39cfsir/ABir1x8SOIk1XKi66ZRKlNyEqVeCWZzsAOWojdR5knyAjnjFsumYHtAVozuAecV9Gmsy2FZwldF7p64qTW6SJ+i1KVn5NewflnA4nPltyPod45Bds+Ulzx8oqtXb5uDg/wAQZJyiTK2ZGoSLT7ss0cZ6HUDsrJBOFfIpO8dJl+J1Kv2iGaknECYSkd6lBICT6g7pPocjyUqPO7Vw9SCckro+tegu0sHiK8aFSW7N6J8exmmu1t1Dyg2v5RHJS6K3R66zWqPU5mnVFj+imZVehaR1GeqT1Scg9RCWfeU5MKyTgHENLy9jHlI1Jb94uzR+hK+FoRw7o1IKSas01dPuJZWqNwy4wuKNeMhw+vRzlXZVkppNRX/8Wyn/AIOsnm6jw9VARwm/uGl58MriTR7xorsi46nvJaYSQ5LzjfRxh1PhcSRg5B26gROH3TEmtninPUKgLtG5aVJ3fZb6tT9u1UktoP48s570s5ucKRtnmOset2ftidlCvn7z8++ln4f0FKVfZfV/4PTuf6PxK6dYGQIsXcvZvl7ssxfEPgBPzVyUYFXtluTekVamLAypvSNpgDmCnxEEHCucV3eZdYeWy82ptxCihaFggpI2IIO4I8o9LCamt6LPkFajOjN06is0W2/k/ZRue4z3Yl2XbdQmhJP3xAUAfaW/MR6FppdPRsqnyXzl0fujxp4ecU7z4VVaoVGzagZKYn5b2V5YKknSFBQIKSDkEfD0iTO9p/j242pCeJ1wNA59ybVn6nMVyTbGtD13TIU3rTZI/GXR+6FCadSiN6ZI/m6P3Qw2jMPTNgUGZfmHH3XaZKuOPOr1KcUplBKlHqSSST6xSDtd8auKHDftLu0e0rwqklTXqPKP+xpfUGm1qCgpSEgjBOkZ9YikO5YnteVBNodmKauehyMk1PU6r02ZbUmXQN0TSFAHbkSkAjqDHWrOn7ZvKwKLdlNpdOVKVWSanGsSzfhC0glPLocj5R5A3Vxx4t3xbszQbrvus1WlTBSpySmnytslKgpJweoIBEXr7AvEJVw8BZ+yZx7VNW3OHuQTk+zPZWn5BYWPmIdgTOFdvXh41a/Hun3fTpRDEhckiFLDaAlAmWMNuYA2GUFlX1iqEepnbXshN49lifqzDOuetqYRVWiB4u6/o3x8NC9X5EeWSjjOekX05dUqmsy638npw+lKzed137VJFqYl6dLIpkqHmwtJddOtwgEYyEISPy4t7xyrts8Mez9dF6KotJTNSkmpuTCpRrKplz720Pd38SgfgDEY7ItjqsDso25LTTPc1CrJVWZsEYOp7BQD8Gw2I4V/KIcQwmRtXhhJzHicUqsz6En8EZbYB+JLivkIp9qRZ7KKFqJKiVHJ6nzPnHdey7wCVxz4lvs1R5+UtikIQ/U32NnHSo4QwhX4KlYUSrolJ6kRwgnAj0n/AJP1Eoz2a6tMNJSJl6uul5XUgNNhOfln9MXTlZZFUFd5loLNsezrAoDVEsu26fRZJAA7uTZCVL9Vq95av7SiSYkOW3EKGQtJ2IzqHzitfbJY4n1Hs59zwzFScWieSurNUvV7QuUCFZ0hPiUkL0lQTvj0Bjz04ccb+IvDW8JWYkrinZdlqYSZlpY1EJCvEFJPMYyCk/oO8Z7XLrnoP2ieyPZvEy2J6vWVR5KhXmy2p1lcogMsVBQGe6eQPDqVyDgAIJGcjaK49gOiyszx0ueWq9FYfclqaWlpm5cLLJ7wZThQODlOD18MSS4/5R+oOPKbtHhtLso3Afqc4p1R8joQEgfUwn7Ct2TN0dpfiHXp9iVl5usy66i61Kt6G0rU9qUEjJwMrO0TTe7ZkWle5brjZbtuy3Zrv99ig0ttxu355SVolGwUnuF7ghOx9Y8aVfsj2h44uhXZj4hAH/Nye/7BUeLquQidHRkKmqLa/wAn9I0ipcdq6zU6bKTh+yVBv2llLunxpJwFAgch9Iu1x3tm25Tsw8QZmVoFKZebt6dUhxuTbSpJDKtwQnYxS3+TxU0OOle1Ed59mEpHpnf9kXi4+LB7LHEb/wC3J7/sVRVN5lkdDgfYJotv1TgBUXZ2gU6YeFQJW+/LIcUskKGcqBOwCR8odO3dQqHTOyomZp1Gp8q99tyie8Ylm21YIcyMpAPSC7Akw1/uan20ABaJ5Ws+ZJWR+iFnb4WFdkoY/wDfsn+p2Gn17h+Wx5fKzmCgzAxGozGJgAQZEFiAYrMnOS6krSg6gdtHiIPrC9kqUwhbjehZzkYx154hNTXXA4ppTuU4ylJ3yduX7od0kFvUEg45lW5HwjpYammt6L7jn4io07SEy0HO43xuIJSClvfYk8sdIUjZeUAHPJRGf/KMFjYB0qBGcbZzGl0+JnUxJp9I1rTCzQknkpIAyrMJ1qyrOkBPkBFEo2LoyuFJHROd/t95bcez/dQSP04hkQMIGecPaU4kp8jORLKwR6qSD+gmGYCMGIWaRqw+bk+xffiCB8YMCCJ6CKLGkIZScjaBsR5GAOWP0QeM7g/KEMxOQSD8xFnOwkkr7RNebScFdrTjYPqXGRFZCdsGLMdhJWjtNzic7OUZxv8AxPsiIT0JwLM1SwgNw1jbyiOPWOoZ+9foiz07QEuDGgfSGV22EnIDY+kQUiVjze7UlFTSr7t3AAU7SE6h5FLik/qxHD5GenqVPonadNOy0wj3XG1YPw9R6HYxYPtjam+0CZBR2lZYNhJ6bJP7Yr0QOX+wiW7dC3mnkdKovEOVqgRLVotSM1snvcYYdPr1aP1R/ch8m1YOkgpOkKweoPIjGxB6EZB6GOKqR8ofKHdc9RWxKOtpnqfkn2V0kaCeam1jdtXw2PUGOJi9jU6j36fVl8j6PsH8Rsdg4LD41urT9/tLsfFe59zRMpl5SM6VqHwMNMzUXkHchQ+kODapWtya5ugvqmtCSp2UWMTLI6koHvpH46M+oTEdmV5J3yPSMMMK4PdqI9Hi9uwxVPpcLO6f3mjsvZlvSfonHyXp0s6tqXqzK23RrICXG0lxtwY6jSoZ8lGLS8S+EPDXjawuYrjP2JdOnDdy05kanD0E00MB4f2tljzim3B6SeplfdvV5BS1KBUrKKI/pH1jCseYQ2VE+RWgdYstQuJ8whaUrZZUn+ySmI1NoLC1t2D7R4T0Rq7b2e8TVhe7dno7c/G/uKh8VuEl28IL1NvXTLNKS6gvSVRlSVy081nHeNK/QUnBSeY5EwFwAIPwMek150WncdOC9VsZ2XBq7Eu7VKG8cFTE20gq7sHnpdSFII+B5gR5tujwK2I2Ox6bR6XC4mOJpb8T5LtfZVbZeKeGrd3vR7OWLNhPC62U6s6aRJj/AECIoN28khXaXpr/APzlvy36HXhF0rSqaW7CoTSFeFNNlkj4dyiKTduB4THHehuA5/3gaH+sPxbBdY50tCsZG2I772NeIAsbtPSEhMv93T7gaVS3snAC1eJon8sAflRwTrGUtNzNOqktUZJwtTMs6l5pxPNK0kKSR8wInNZEYPM9tamxIVqhT1FqjQdkp6XclJhs76m3ElCh9FGPI6i8KKlOdqOV4QzaVCYTXDTJhRGMNNrOtz4d2kq+cem1g3xK3zwvoV3SigUVKSbfWAfdcxhxPyWFCITIcKZKU7X1U4vlLREzRmmG0kZImyS06v0PcttjP9tUVJ2LGrne5V6XlpduXlwlmXaQG0DkG0JGAPgAB9I8huPd/q4mdom6LsQ6XJN2bMtI75AlmvvbePiE6vyo9Bu0XxENidm646nLPlqfnGfsuSIOCHX8o1D+6jvFfKPLEAAADptE6SzuQm+AShtFl+yd2jZXhNPu2hcMqpdDqM2HVPtbrZUQE5A64xy6gnqBFaTDrRLOui65r2e2rcqtXdzgpkZRb2PiUjA+cSmrkYM9pqbWqfWaemepU61MskBQW2rdOdxkc0n0IBiJXtwn4Z8RmVJvSyqRVXVDT7Wtnu5lPweRhY+seXdRmeOPBC4KYapN1y3J96WD8oHJjKiyFFOMpUcAFJGgnbbbcR23hR23r4auWTo/ERmXrMhMOJaMy20ll9vJxkKTgK+BG/mIpsW3Hjjb2Hk0OhTl08I56dn25ZCnn6BPEOP6AMky7oA7wgfgKGo9CTtEa7ApU12iKu7lQSKO6COhypHOPQVM4pJBSopI3B6j1iq/CWlUO0/5QjipRqew2yH5dE9LIRsGw6lDziQOg1OHbyh711YLcSxPGmZ19mziAnPO3Z4f6BceN55CPYPiTLTdd4MXdRJFBcmp6izkuygc1rUysJA9ScD5x4+kEJAUCDjcHpFlLiQqcC1PYBW432jampJ8Ao7xV9U4i8nHWaCuzBxDTnnbs8P9CqKR9gmmzx4rXHXUNESctT/Z3HDy1uKBSkHz8OfhFvOPNTbley/xAddWAk0Kab8XmtGgD6qEVy1JrQ5N/J/zZTwPr7alHCKk2APyFmJF27Hg72TCM/8At2S/U7EY7DDbUrwBqDoWCp6o5UM8sJIEOvbceDnZWUkHP+/ckf0OwfmDgebhgdYMpPlA0kDMajMFBQcDEAGSPeESNgHuW1HmtAKsjqREdaSVOBKQVHoAMmJOoAKSNunhTyT6fKOngFqzBjHojHSrBGdgciCLeRgkt53weXyjcoEHYYHQRiCc4BxnntmOi48DApGhaPvWgggg6jq6wmcHmIdi3/My5ndSvF1+G8InGT5RXVpMsp1EJWmyqXnGxk6pVzA88DV/3YY+USdhAbLjy0nS1LuuKOemhQH1JA+cRgDCQMxycVHdaOhhZXcu4B8oxx9YPH1g8DGc4EZLXNgQOR4vrAwRgj5GDGk/Hy/dBbg88gwgCVv8Ysd2HnO77UTYzjXKBH1mGoriRtkRYHsZPd12n6eSfe7lH1mWormTgerhYSekaVSiN/CIXgg84PSIpLjys7cMiZTtPTThGz7IWPklA/ZFa9sYPyMWz/lAGAz2hqY4AMu09Sv9Jj9kVNGSNj8RF8M0Uy1C+POMVJz6RmN+QiWWZw8uC9VvTEmhmSpMqoCcrE8otyst6FWCVrPRtAKj5dYJuMVvSdkSo0qlWap0otyeiWbfcRGVE4ioMmQU8ma7wBksEhevO2nG+c8sbx2uVspSaYxP8TWky1T1BYp8iru5x5PP+dY8DR5b47w9QNjDvTRbNgsqYslt1+pFJQ7cM4gJmV7YIYQCRLoO/IlZ6qHKGV2ZW64VuLKlE5JJjyu0NrqfUoLv8j7T6K/h/LD2xW1XZ/01/wB3+i72tB/eqbT6GWWWWJSVl0d1LyjCSltlGc6UgknmSSSSSSSSSY3Sk8pl1K0L/TEYD+ORhSy/67x5mpSk3vXzPt2Dx9OEFRjFKKystLHf+Dt5GX4sW8hTikNpmgt5XQNhKisn00gxSC4XWH7lqj0qkJYXNvqbCeQSXFEfoxFg6nVHOH/CyZuebUWanWGVydHZUPGpKhhb2OiQOR6/MRWxee7xz2xHtdhUJ0sM3U4u/cfm38UNp4XG7Z3cJpTiot85XbfhdLtTPUi2ZtbNnUhsq92Qlx/okxUDth61cbKQ+teQ5Q2ikeWH3h+yG1XazvxlliXptHo0uw00hrQ60pw+FITkHI8o59xI4kVPidcMlW6vJMS0zLyaZMhknSoBa15x0987ekdqGp85noQ3MYrGUwcAjaLHmVrIu72KL4M5w0rNkTD5L1KmxNyyD/zL3vAfBaSfy4tEJrJ3O8eWXC3ihWuEt5TNwUWUl5tyYk1ya2ZgnQQpSVBW3UFIjqcv2zuJYmiqYo9BcaJ9xthSFf4tR/VFFi65J+2vfKqjeVCsKVeyxTWDUJpIOxed2QD6htOf+siqsP163ZUL54g1a7aolKJqovl5SEnIbGAEoHoEgD5QwZi+KsimTuwFWneL+9kK/JGs8CGrWXNobnqPMLZVLA41IWdaVBPXOVfpigRGRC2h1+t2tWkVWgVF+SmkfhtKxqGc4I6iITROFj1Gv3hxZnE6hN0q8KOmcbZJXLPtrLT0uo8y24NxnAyDkHAyDgRzy1Oydwfta6Jeu+z1irvyziXmGKlNpWyhYOQShCE68EclEjzBivNt9tDiHSmEs12k0ytJSANbgLS/8STv88w/T3bkrjkuU03h/TWnsbOTE44sA/3QB+uKiwu1WLlpVv27O1ytz7UjISTSn5iYdVgIQOZ9T0A5kkAbmPOu3OOEwrtsr4qPpcl5Kp1IpeYVuoSigGkoPqGwn5iIZxD4z8Q+KSkNXTWf97ml941TZRHdS6FfjaRuojzUSREAcQSMiJKOVyLkr2PZCVqDM1Kszkq8HWXUhxtxB2Wk7giORXf2Z+DV5XI9Xp+3ZqRnphwuzKqXOKlkPqJyVKRgpBJ3JSBnnziklmdpbixZUtLScpXPbpOXSEJl55AdSUjkDnc/HY+sdZlO3XXUygTUOH9NffxutmbcaSfkdWPrEVkSLh2XZ9p8PbZRb9nUZil09Ki4pCCVqdWea3FqJUtXqT6DA2iu3bQ4uSEjYo4VUmbQ9U6itt+ppbVn2aXQQtDavJS1BJxz0p394Rx26u2ZxPrsq5KW7I0y2ULGO/lkqfmE/wB1a9kn1CcxX+bm5uennp2fmnpqafWXXn31la3Fk5KlKO5JPUxKMbkZSsXw7ECphngvWVOFXdOVFJbzy2QoH9kd8vSz7Y4h2v8Ac7d1ONQpheRMez98trK0Z0nUgg7ajtnrHnZw87St5cL7Fate2aTSCylanXHpxpTq3Fkk55jAAIGPTMSodtri11ptsn/8Jf8AHCZJFrGeyzwCUcLsQfKozX/+kcR7WXBXhhw24SUatWRbX2ZOzFXTKuumbee1N9y4rThayBukHPPaIMz23eK6HQpdKttSQd0plFDPz1xHOL/aSuTjLZlOt6rUGnU9iTm/bC5LklS1hCkAb8hhStt+kTg5X1ISStocYPPlAgQI0FI9UyUWw2Zl1IStYwgE7gEbn0zDikHQSMBRPMnYCNTLCjJoWrCVBCdSOo2HONo0NL0oBV8eWY79GmoQSWhxKs3OTb1NoT3gxzUOvSAJdwLyBuN+f6vOCPerT4xgY1Hpq/fDvQ5Vt1bq0klSMac9AcxuoUulmooyVanRQcmYNyLqsoLekKwQkncQpRRHHmiUM6tKSd/hEqoVvP1SoNy7DZU4tWAEjfMLbj4gUSzO+o9ry8nUKhpU1NVJ9sOoCuSgylWxHPxkHPQAbntPCUaNPfruyOKsZWrVOiwyvL5LtOU18CnUREln+czel10D8BoboT8VHxfBKfOIiRjpDnWKrM1WpPTk06VuuK1KOAP0DlDZzyTyjwmOqRqVW4aHtsHSlTppS14hY8OSf/GCxqOTsOQ9IP3lbJz5CCOSNzz8usYWa0DT58+nrB758R3gA+HCskenT4QMYAzgg8jBYAjsTzjuvZCX3faWpiwP/Wy3/wDU1HCicjfnHcuyQrT2kaZtzflR/rbUVVNCyB61pXvG0ODENyXMxvSs4zGcuPNHt8Tpmu0bKMYI9nkVN5PXKwr9sVYZYemJpuXYaW4+4sIbbbSVKWonAAA3JJ6CLh9tuiJuTtHSCJV5iSYlZEonp6ZyG2lFeoDYZWrSRhKck+g3jkFFrdHslpbFkSziJ1aSh24JxCfbFAjcMgZEsk/2SVkc19Irr42nho55vkdfZHo9itq1F0fVhxk9O7n3d9gUDhLSrabbqfFDW5PY1NWtJvaHgehnHU/0I/6NOXD10Q9Vm5ZqqNS8s93ErISae7lKdJthqXlk+TbY2Hqo5UeZJMRhVUW5kqWSTuSTkmErs5q5GPJ4zFYjGS/eO0eSPvOwNjbL9H6W9hlvVbZzevdyXuXe2LJiaClkgYHlCRT/AKwkU9qPOJTS7UbRR1XDdk+mh0RACu+eH31/PINIPPPQn5BURo4WU2owV2PaO3aWHg62Imox+9Fx7EN1IplUrtVbptIk3Zuac91tsdPMnkB5k4AiSz9dsThUsisBi7rmRumlsOfzOUV/0y/wyPxcY9OsQe5uML4pj9tcPZRVBoy/C7Mg/wA7mx5rc5j4D5YG0cuSglWpRJJ3JMehwmyYQtKpm/kfJ9uenWKxSdHCN04c/wAz7+C7M/fwJJe183FxEu124bkmkuTCkhtplpOhqXbHJDaeiR9TzOYbqNR5+4LikaFS2e+nZ59Esw3nGpazgZPQb7noIQgARN+DdYk6Fx9tapT60Ny7c6EKWseFBWlSAo/AqBjs+yjwHtM7VO8KuzXw1elbb4m3jWp24X2krfcp5UlmX1cjpQhRSny1EqI3wAY5fxt4XUXhrdMim2Lqla9RanLialVpfbXMMpIBCXQg8iCFJXgBQPIEGHjj9ZV21DjrU63KUWpVGVqimlSzsrLrdGUtIQWzpB0qSUkYPTBiAXnw3uXh8mm/dExKsqqDJdaS0+lak4xqSsc0lJUAemc4JxCjqOWhFYtPwS7NdmX5wZlrhvKr1Kn1itvTLdFbYfS2hSW0HSpSVIJX4kOKOCPAmKy0alTdduKQokgnMzOzCJZrbkpSgM/AZz8oulcExbdGu2wZeW4lUS35eygMUyaUkrmUqbSg6vvgKdTQIzg++TBOXIUVxZSipU2bpVXmqXUGSzNyjy5d9s80OIUUqH1BhVblPlaleFJpk3rEvNzrEu6WzhWhbiUqwehwTHW+09brVP4w/dTIpT7DcTAnQUHKe+SAlzB9fAv8uOU2osN8QaCskgJqMsdv/mpiV8ri42LW3rwc7JthX0zZ11XbelMqUy2hxpaXUutIQ4opSpSwyQBlJznl1jhPHPhK9wd4pKttNT+06fMS6Z2QnCgIU40pRThYGwWlSSDjY7Ec8Du/Gq6OCMnxZYn+IVsVis1tmUacZMso9ytoLWUJUnvEg7hWQRv6xX3jJxVneLfEIXA/JmSlJaXEpJyyl61IbClKJURgFSlKJOBgbAcsxGDdyUkrCLhDatIvjjnbFoV5yZbptTnky8wuVWEOBJST4VEEA5A6GFHGuzaNYHHm5LOt5ybcplOfQ3Lrm3A46UlpCzqUAAd1HoIPgdMmT7RtozSebc+Ff/oqFnaBm1T3aRumbUcl19pRP/UNw07yItdUbuEFN4b1rivT6DxOcqktR6gRLInafMJZMs8ogIU5qQrLZOx2GM56GO5SXY3nkdrGasqrzM5L2HKs/aq63qShSpMkhLWsjSHtSShW2AEKXjGIrFRaFUbluSRoNIY7+enXksMozgFR6k9ABkk9ACYv9U6nKXHw3qHZ8bv+bfutq3G0rn1EAu8hhZ54UAkKHvd2sEknMRlkycc0Uc4it2NL8SqrKcODUXLal3SxJzNQeDrsyE7F3ISkBKjkpGMhOM7xFT5nlC2qUyfotam6RVJRyUnZR1TD7DgwptaTgpPziS8KbQF98YaFbTwPsj0wHJxQ/Bl0eNz6pGPioRZeyK7XZZOh9kG1ar2WmK89U6qjiTO0F2uylMD6AypCVBSEd1o1HKFISTq95YinHdp54Pzj0Yeui3Gu1XT73RxgtqTTT6cq3/uZUtPeDUo6kau82V3ug40/gARTXj7ZaLG4+V6mSrYRT5p77QkgBgBl4lWkf3Va0fkxXDN5k5ZLILgBYVA4mdoKhWRcjs6zTZ8PF1yScDbo0MqWMKKVAbp8osQ3wL7ItX4uTfCSmXxfsnd6Jh6RQJhKFsh9sElIUWglXunG4zjmNo4b2WpoyXartyaBI7tuaO3/ANOuLGSXFEyva2madLcBJBD7tVdlXLuk5RaZsoUSFTKnS3p5bqOdxnfzUm75DilYpvxCsub4fcUq9ZM/Mszb9InVyiphkYQ8B7qwOmUkHHTOIjjMs5MTLcvLtKdedUG220jJUonAAHmSY6Tx8t1q2O0LcdParE5VkuvJnTNzrnePqLyA4Q4rAyoFRGcDIxsIfuy9ZyLo4/yFSnEIVTqAn7Tf17JUtJw0k/FeD8EmLLrduQ42OucWuyJZ1ldm2duW3avVZu9KDKSc7XJF6YQ40htwffSlsICk4OpQJJ8Laop9p0nEeido1a1Khx1varv8XLauGUviWTTjbkq4hTiW20FCEpV3h1ENlwHCRnUTFC71tibsviFWbUnt3qbNrltX46QfAv8AKSUq+cFJ8wqLiMHWHCkp+/urKAcI2URyORy9ecINsbw+SbXcyqEkeI+JW3U9PpiOhhIb078jFiZ2hbmKE4K9942qWvWdkgc/X4RjhOjUOpxkwQO+QmOwnbI5bzHi36Q5cFel6awVM96SC8UFaEYSVb4+Edppll0mSt37Mal2faXG0h2b0nUpwZwrc7DJOw2iN8KWe6tebmtKQXpnTlPMhKRsfmo/WJqK0xJXBIUwy0zMTM65pabl2i4cDmo8gEjMey2Rg6VKgsRV1l8uH32nzr0g2hia2Jlh6DaUOC4tZtvs5aZXIxfk4vhxw/bTJuE1SqFbDcwElJZbCRrUk594hQT5jUSOUV1emFuKKlHnHWuPd50647pkaTSHg9KUllbKnU+648pWVlPmBpSnPXSekcfVtHi9vY118TJRfVWSPeei+DlRwEJ1o2qTzlzz08FZWCJyYxJz8IGSYGcbJ5nmR1jz7Z6ZIIkcgPjA90ajgj9f7oBwnBOFZ3x++McEkcydgMxFjRuwlzPJLnPHRXw9fSMN0kpUOuCOsbtPfrVsEOkklsDAPokdPLHWMMpUjSrZQ2Cj+oxNognwNRHUbiO49k1JPaGkVAHKXZQ/621HECFIJCgQeojrXZsuGVt3jvJzM0sIbcQlQJ82nW3iP8La4pqItgz1sbXvChC9j8IbkOIUkONrC0K8SVJOQoHcEfKFLbkZi88vu1PNVEdsK9mZ51wpRNNqYQpRKUtqYbKdIPLI32jk6JvHWL9drDs21bic5L8QLCZbeuSVYEtO04kINQZTnQpCjt3qASMH3k4AOQAaHzFkXxIVn7JnLPr7E+FaPZV097vCfIJ05PyjkYihebbPoOyNqqFCMYvRGsTJJ5w50elVW4Kj7HSpNyYdA1LKdktp/GWo7JHqYcU2I/bsuahxDfVQJZH/ACNRHtazjOko37s+igVf2esR25eJ83NyJoVoy32FRUn3WfC8+eWpaueT8SfXG0Ro7Pc3eWSL8d6WwoRcaXWn8l2+RL6hW7O4bILf3i57nTyQP+CSSvUEeNQPmPyU845TcVz167qsqoV2fcmXCSUoJwhvPRKenx5nqYaUtxsGwjtUcPCkrRVj5/jto18bU6SvK7+S7FwCCAOkZQIMKA/BBi/Qw66sKMFpJTCuXqCJZSs06UmMjH34KOPhgiFH2y2R/wAR03/Cv+KKJ1Zp2UL+B0aOEw8oqUq6i+VpfoiYUjjpxLo1JRTm6w3NNtpDba5yXS64lIGANZ3OPXMRKu3FXboq6qrcNSfn5tSQkLdOyEjklIGyU78htvGKa00D/wARUw/FC/4o3C42gP8AJqin4sr/AIogqtRfy34rzLngcK1/Ex+Gf0mih12p2zcMtW6QptE7L6i0txoOBJKSnODtnBMa67VqlctwzddrDwfnppfeOuBASCcAAADYAAAYHlC4XM0P816Efiwv+KD+6hv+q9B/N1fxQdLP+m/FeYeo4X+6j8M/pFNav66LktKl25WpliYkqWEplD7OkOIARowVgZPhABzzwPKGCVm5iQqUvPypAfl3UPNlSdQCkqChkddwIdxdLeP8laB85dX8UD7qmv6q2/8Am6v4oOmna3RvxXmHqGGvf1qPwz+kK6bsrt61tFXuJ9t+bSyGAttpLY0gkgYG3NRhlI9DD591TeP8lbf/ADZX8UEbpRn/ACWoH5ur+KGq9Rfy34rzE9n4V/7qPwz+kQ0St1O27llK7SFobnZRetpa0BYBwRkg7HYmNtertUua4ZmuVh1Ds7MlJdWhsIBISEjCRsNkiFP3VNjf7lbf+csr+KD+6pv+qtv/AJsr+KBVql79G/FeYeoYW1vWo/DP6QWneVeseuqq1umVanVNloPvy6XihJPi06gQM4wSN8ZHUxhL3jdEnxCF8M1N0132hU0qaWArUtWdWQdikgkaeWNuUZ/dUj+qtvfmyv4oP7q2/wCqlvfmyv4oTqzf8t+K8xrA4b+6j8M/pMbruys3rcKq7XvZlz620tuOsS6We8CRgFQTsVYwM88AeUbrOvm4rCrT1TtlcsxNvNBlT70ul4pRqCiE6uWSBnzxGsXYj+qlvfmyv4oI3U2f81Lf/N1fxQdNUtbo34rzBYDC3v61H4Z/SMsxMTcxUnKi68tc246X1PfhFZOoqz553iUXtxGuriLMSMzdT8rMPyTammnWZZDStKiCQopHi3Gd+WT5wh+6pv8Aqpb/AObK/igfdU2edq2/+bK/igVWad+jfivMPUMM8vWo/DP6TXat2VyyLrZuK3XWmagyhaG3HWUuhIWnSrwq2zgmJ+72mOND8spgXM00lQxqbkWQU/DwxA/uobP+a1A/N1fxQDdLQ52vQB/1Cv4oTqzefRvxXmNYHC6etR+Gf0jbUajUKvVZip1WcfnJ2ZWXXph9ZWtxR5kk8zEgtXiRd1lUWq0i2ptiSYqiSiadEuhbqxoKMBZGU4ClYx1OYQ/dQ0eVrUD5MK/ijA3I0f8ANmiD4MrH/eiTrVGv9N+K8xLAYVP+Kj8M/pElArNUta6ZC4qG/wCz1CQeS/LulIVpUOWQdj8Idbsu+vX/AHeqv3G7Lu1J9DbTjrDCWgoIGlJITsSBgZ9BCI3A0f8AN2kA+ja/4oTqmhO1FpaJNiWxjKZdJA23zuTFtCcpTScGu9GfGYahSpOVOupPklJf5SN6ZSXQfFrc8s7CHFKxzV7w3z++EmSQkgb+sbEKCV79epjv0rQ0PM1Ly1FzaE6suK0g+f8AttGxYKThICDzTtkEQjDziD4VfuMK5BmZnp5mTlSkOvuBKNRwMnbn0jbTkn1YrMyzW6t6TyJpw1YqLledm25h9qSZGXEpV97dcIwlJHI4BJ+QjrE9VWretGpXHNNIcXLsKaY1/hOOEBCPhqAUfRBhks62PsmRMtJsl99xPePHP9IsJ5AnGB0/SY53xNv52vS8pRJdLTMnJlS1BnOl505GvfcgJ2GfNRwM4j1dSa2ZgN2ftv8AX78Twyoftnam9Bfu42u9Ml5v5HMp11TsypalaiSST5mEZ3POM1r1KJjXz2Aj5tUlvSbPqcI2VgZG4EHjSjKuZ5AftgvCk42Vy/8AKBg+8ogHy/dFZMx31dCo75UYIk6SATvzPnBnJ8OduvrBEjliIMkhQTrBS+dKxsleM6zq31Hrz578o2LCC73LriQsYCXeh35qPMjHIjpGgFSW0hxClowQ3lRATvvj93rG5sawpCEhxsZ0pWQF5PLTjcnrgbHEXJ3KWrZmtQUhKQ62rSRlJO22TuPTnAk52bpNXlqnIPd3MS7iXWnAOSknI2P6usbNIU2tTI71lJ3Q4fGgb4P7yNuWekaVtHu9bZ1oOxHUfEft+kQnC6JwlZnor2dO01bdyWpK23dE4inTMsgNNPvK8DQ5Bp0/gpHJDh8JGEqIUN7RSzofZQ+woPNLGUuNnWlQ8wRsflHiLKzU3T51E3T5p6WmEHKHGllKk/AiJvS+NXEejSJlafX3WEE5JYKmCr492Ug/EiMjiaUz1+r9y0e2KIufrtRZkGQDhTpOpfohAypR9ADFHuOHbNnVCatrh88/KsbtuOJd++uD+2tJ+9j+wg6vxlD3YqjWuKN/3BLuy9RuScUy8nS4lCykuJ/FUr3lD0JxEUS3gZ6QRgDkLKvWarcFQM7Vpxb7m+kHZKB5JSNkj4QjCMcx84z2xyxB7iLVGxW5XCxAgc+cDESIgxvAgQIAJJw+s6e4g8U7fsmm5ExV55qUCwM92lSvGs+iUhSj6COldozhlatk1W37j4fU6rSdp1xmYaYaqmsvImZV9TLoOsZwpPduJz0XttHObC4gV/hrdL1x2wJVFUXJPyTM0+gqXK98jQp1ohQ0uhJISrfGTtDnXuMV/wB3cNhZV4Vp+4ZVuoipS89VnXJmcl1933ZQh1aiQ2pPNGCMgHaK2nvE1axLOAFncO7tcuT7rBIVOuyrLH2LbtQroojNRK1kPH2kg+NCQkpRkatR8oc6jwlt+RXxtTULXrtCmLUp0pOUun1OcS47KqdmG0kLW34HklKzpUMgpIO53jndhcTajYUrU5AWvaty0up92qZp1xU4TTetskoWhQKVoUNR91QBzuDD3LdoDiAzxUrV8ziKJU3K3KCnVGjz0gldOmJVISEMFgEaUICEacEEY57nMWpXJJqwvrXCyRnOHfBX7lJJ5Vw3sJxmZKnVLS48me7hohJ2QAk748iTD92kOENpWDL0SvcP5arN0RyZnKFO/aIWVGelHMKdSVD+jdQQtONsJOIjD3aGvlXFCgXvJ0226e7bsm7JUSlSdP7uQpiHEqBU00FZ15WValEnVgnOBDNVeNHEa4+G8/ZF23DN3LT5qbYnW360+7NTEm60FAFha1+AKCyFDBBHlDSlcG42Hfs/U3h/cnGOlWVflozlbbr07LyErMS1VXJewqUohThSlJ73IKfCSMY57xKbdtrhHfnagmeHMhaM3bUjOSs7Rqcp6suTRTVEFzuJhSylPhUpCUFsgjxc443aF01SyL9o930VEuuoUmbbnZdMygrbK0HI1AEEj0yI1JuOrMXym75R9MvVW5/7TbdaGkNvB3vQUjoArlDcXdsSkrInl52NQ7K7PllTdSkphF7XDMzk+93jqkiVkGllhtBa5aluJcVq54TiOYtMuzEwhhhpTrrighDaBkqUTgAepJAjpFy8cbrvDjbL8Trmo9tVSoMS4lW6ZN0/vaeGwhaAnuFKOd3FL5++cxC7XuGatK96TdEhJyU3NUubbnGGJ1suMqcQrUnWkEZAIBxnpDjdITs2d748cBbc4f8ACSm1e2JaqGrUGdZot1OzJWWnpp6VbeS8xqGA2HO9a8O2QPieZ8D7fsO5uLTNL4h1JiUpnskw7LtTE+KezOTSUZZl3Jkg9yhaua8dMdY3T/aA4q1ugXRQrnueauKmXE13cxJ1d1yYalVd6HUuSySvDKkqG2NgNscoi9kXvVLCuk1qm06j1IOy7kpMyFXkkzctMsrA1IWg74OBukgjHPnEUpbrG7XR3hzgvarvaHZt6oWDV7bpUzak/WEyhraKjLuPMy7q0Oys21/SM5QjZRznIOxAjmf3CUZzse0q/JWUfeuWcvF2hgpdUpK2RJodQgNjbUVq5898RlN9oC/V8Rrdu6ky9CoX3Oyy5KmUelyIbp7Eu5q71otKKisOa1ayoknPMYEbar2gbqqNYtWYkrXs6iUy2ah9rSFBpNMLEiqbyCXnUaypxXhTzVgAYG0K0iV4k64+8B7b4e8LaZVrWlqoKjQ51qh3Q9NFZafm3JVt5LzGrYN6y814dspHxMW7NnD23+It83TI1+2py4vsy2pmqSVLlZ8ySpqZbcaShvvR7oIWob7b56Qwz/H3inXLbue37ouWauKm3ElImJarvOTCJVSXe9SuWSV4ZUFcsbY2xyiMWlfNcslq426K3JqTcFGfoU57Q0V4l3ikrKNxpX4Bg7432h2lu2FdbxZJrgNw6/3WFnWTOUGfkEVWgTNTrFpTFbS69SplDDzjbKptAGkKCG1+IZAVk7GI4eEllV3j5I2/MWyLSodPoE3cFWYo90tXA7NMy6VLKWnkjS24rTp0nOB4uojn8j2gL4k+IVt3u7T6BO1uhUlVFTMzcopft0uWlMj2oBY71YbWUhWxIxnOISr41XDKcRqNe1q21aNo1KltraS3b9LEuxMoXkLS+2pSg4CklJB6H5xG0h3iTG9bDteq8LLa4h2pwpuK0KXPVRqSW89XGapJzLLiiEqySHmniULGko04GcjaJba3Dmm2r2675ptD+2JS07Nl56cnE09wuzipVDKQlhtZBJW444hHmQVDOMxyS6+OFzXRbktbspb1p2tQ2Z9FUXS7bpYk2ZiaRkJddOpSlHBIxqAAxgDAhS/2huJX2teVXpM/LUKq3dOMTlSqVIS5LTKS1kpaZcC8ttknKhuT542h7srBeJ0SscIKU92puJT99TdYnLZt2lvXYe4KWpqpSiw2qWaSrSA2SHUJUrSNOhQAHSG3vavD+4Oz+1xcsC3ahaglK6KBUaLN1FVQaUpbBebeZeUlKuSVBST6Eerc32iOJgu2h3PMzsjPVal0pdEemZ+X9pNWk1qUoszocUQ+PERk4PLfIzGmvccbir0xb8um2bQpVAoU8KlLWzTqWG6a9MZGpb7RUS8VAaTqV7uQMZhpSuJuJzLAhRIpJnNZJCUpOcesZVKeNSrU5UlS0rLKmn1vmXlG+7Za1KKtKEfgoGcAdAAISd66yrW2spPX1+MaIyUWpMoknJNIfEqTggJ3gioBXiIjTr31JGkYBOPURjnBI5COlvnPUBWlQUjCT1ia2FRZioV9qYl0NFMofanlOKAShtO6lqJ5ADr8IgbeNYI3xEtRVRRuHE4lDwS9Ulpl0ISd9CFBbhPpkNj4k+RjpbPqwhN1amkczDjqUqkOii/ay8/kT26uKslJUqo0O22ituYSGVT7mUrUnfUEp/BB2GTvjPLMcMnJgvvqWSd41uzS3FbkxoJ333jLtTa1THSvLQu2Vsijs+G5SWuvvDxnny84xyfdT1/TB5Uo+n6BGJUAMJ+vnHGbOwkGCEbjdf6B/wCMFsMlRyo7+cAeHmAT5HkPjBYJytXU8z+FEbjBgqGQMAQRwBgcvPzgySSBjPQCCJ0+SlH9HrCGbG0KW6AgkK5pAGd/LP7Y3BTjyDghSyoEpSCVrO5Kht9f1RoIC0ED3iSSge7jH/nGY0rSktpKF5xnUAnGBj4HnmLIuxXJXNoLLrhcl1dwtGVNhRxkAE7q6qOw5b+kZq1F1eENsPJGC0d87YOnOw5k46bYMaCtScL1IQtOE6Eo94AcyOR5b55wPAUEstpwk6tDm+x9evTb4+sS3iO6EptCmtaW1JR7pUrkFcwM+oHX1jDuSQSEasHcDc8tyPT15Qp75ZWJlhwqdV4Ftr++EjH6U4HXly9YybVKrWCCtjkFJCsrUNgQg9SfESDgQtxMN9pCQNjGUkHHMHYwNPiwMg+RhWUJU13jmHWwE5ebHiQMAYKds+WT1zuY0YUUAbOIAycc0/u/VvCcLElO5qwM4IwfIwNOFeRjcW+8UEsFTuTgN4yvO5wB1xjnGsbp2wR5RFxsNSuYkZ6YhfIUKsVSRnpynU6YmpeQbQ7NuMp1BhC3EtpUryBWtKc+ahCIAHYEA+Sj+2JPZt8VKyHZ1chJyr6pwMJdRNAqQttDgcLakj3kLGUqB6HbfBiMk7ZE4tXzNX/o+vNMg9OuW/NNsMvKYcU6UIKFJd7pRIUoHQlw6CvGgK2JEKJrhpecnNrkpijLTOpdYZEq2tLq1KeS4tG6CpI8DK1EqIwkZ5bw61Xii5VZaffet2TbqszLTUg3PofcPcSsw+48tsNk4UoF1xAWTnSrcFQCo1McT59qo1GY+xpFxioLZ9qlta0pW0iTdk1NgggjW2+o6uYUBjyiHXJ9UZBYd4LrctSG7fnHZyam25GXaaCXO/eWhK0IQUkhWpKkqBBwQc5hGq16+i33625S3kSDDimVvLKU4UlSUqwknUQlS0AkAgFQBIJiTUziWmgoWzQrVpssyhx52WbmHHJjuVuSwl1LVqPjVo1noApeQBgCM6xxQXWbdrtOetuRacrEyqbcWl1a2Zd1am1LcZZVlLbhU2fEgp8LikkKwnB1gtEgSW1qaW4B4UYz84dqBalw3S6+3QKU9OlgJ7woKUhJUcITlRA1KOQlOcqIOAcQ2NuhMs62Rkr04I6YOYfbeueUpNInaPWLfl63TZmYZnPZnn3GNL7IWlCtTZyUlLq0qT1BGCkjMLrZkpKFo2fDPtu/0sJ5az7nm3gzLUOcdcKGXAlKRnS9nujz/CwcRukLGuqqW/LVun0hczJTL4lWXG3mypx0/gBGrVnrjHLflvEmpfFhdMlaaEWzIuTMsZREw+ZhwCZZlirumwnk2cKAKgSTpGwyrLPT76VRJqSNEo0vLy0lVU1Vll95bxyG0tltS/CSkgHcYIztygvIjaIjpth3fV6cJ+m0GZmGFNJfQpJSC4lRdCdAKgVklh7CUgk92rbaGucolWp9HptVnqfMS8lU0LdkphxOETCULKFlB6gKBBieSnGGdpTHsFFoElKUxLDUq1LrdU6422hM0MpeI1JcKp1xYcTpKSlAGwILJcnECbuS0JC3H6LS5aVpxZ9jcl2yl1tKGAypKlfh69KFEn8JO3MwJyC0SJd0v2fvseDVp+eMw9UuzrjrVvzVbpdN9pkZVxLTzqXm0lCle6NJUFEnOBgb745GGjvh7B3GDnvNefliHOk3HN0ejTshLMMKM0/LTHfODKm1MLUpOByIJVvnygTlmTmqatuvhn2iun2BeFUm3JaSoMwtxtbrawtSGwFtuIaWnKlAZC3W0YzuVpAzmME2LdypKYmzQZttmXZ79xTulvCfvnIKIJV95e8IyrDazjAMTNrjbP0+tKn6Na9JlEuKcedYmCqbQt12bZmXVYcBwkmXQgJ5pBJCtXihBL8V5hqQmpWYoLE2h6Q9gCJibdcbUNT6gt1tWUuqBmCoKICgpCSFDKgS8iFokdXYF6tzs5Jqtep9/JOSrUw0GSVNrmgDLpIHMuAgpAzmG+uW9WbcnW5WtSC5Vx1vvWiVJWhxGSnUlaCUqAUlQOCcEEHcR0FzjzdLj6HFU6mHu3mHkghfj7laSgOHPjCUBTaeRSlasHODELuS5GKzJ0ymU2kNUql01txEvLJeU+rU4vWtSnFYJJOABgABI65JE5XzB7vAYltqQhClYwtOpPwyR+ww7SVp3NUaZIVCQoU9MytQnVU6UdaaKg/MpSlSmkY5qAWk49fjDW66HG2U4P3tGk+viJ/bE/o/FypUW3aXRJe36MuUp3dqa1oUHFuBbpcUtwEKPeJmH0EbYCxjBSDAnKxKpGCl1XlZf4z+Yys8Nr3mKq5Tpe3ph19tDa/A42ULDhIbCFhWlalFKglKSSSlQAJBhK3ZF2OCWV9hTTaJmXbm2XHglpC2VullLmpRACS4koyTsoEHEPtP4g0emAyUtY0iaS3My9Ql5NyefKkTTIUEurcyCsKCyFIASMJTjSck51bizW61ZU/bdQkJJ5mcbYT3ytWtlSHi8tTYzhIdVp1p5eBJGCNy8iNojLUeH130lM+qpUcy3sDvcTAXMM5Q5gK7sALypYBBKU5IzuI2O8Nr5Zq0vS12zO+2TBQhtlOhSitTyGQg4UdK+9dbQUnCgVpBAzDwOK097BWmhS0Mv1GsqrbbjEwpCWXyUkAoKT3iQUggEj1MHL8Tpen3PM1ykWdT5KYnHW5maCZp5wOOpm2prI1Hwp1MhISNwFKypRxgTkFojDJ2BeM7LpmGaBNJYU5MNd88UMthUvo78FS1JA0d62FZOxUBzjEWRdWiXcNEmEtTDImWXllKW1tF/wBn7wOEhOjvfBqzjMTKV44XB7Q05UKZKPpQw+yoSzipdSi+hpLrmfEA4tbRcUrHiU4rYDGGib4m1Gd4fzlnLpcmZB+UalGHFqUtyVCJnvypByBleEpWMYOhB2Iia3uRF7ohc4Y343UJyRNtTS5mSwl9ptbaylZClBvZR1L0pUe7TlWATiGSrW3WqRTZOeqVPclmJ1sOMKcUnK0qSFpJSCSnKFJUAoDKSCMg5iayvFN9NbfqlQt2Rm3RWFV+njvXWkyc4oJGSE/0qPvbZ0qxugb4KgWa47wXcFnUmiv0pllVP/5a46p91YCAjQgq3Q3tq7sEpCj4dKdoluyeqE3FaMjTCw4wE69agNz5RtKsnbrsIayVoWVNqUjpscGNjc++j30NO/30/tGIsjXSykVSot5ofqXLonKtLSjj3dIddS2pf4oJxneEVYnnJupLSWyy00S00wRjukgnCfjzyeZOTGUnWpETLa5ulkBCgr+bPFOrG+CFZ58sgiG+YmHJudemntPePOKcVpGBlRycfMxbVxEZU1GLKKVGXSuUlwMQYG2c84LbEDc8ozXNYeVK28ukD3Rt9YLOOW/rB8tzufIwAFjHvD5QYClr2AyflBAE79OpgicjSNh+v4whh5A2Tudjq5EQQA+A5FWOUGBgAnIScjI33jE778oQG1I1nCBlZ8wN/M/GD94ayvUvO6SMg/7eUYe8nYYI6DrGROoKSsqDhVuOQ+frFiIWDC9DgUzrSU+65yVy6xktKdalAIASB7hOPLO/rAW68HVLdUVOHwqJOQoYxjb5QQ8ISptWoJIVuOSj0wefKG+QveZpU4pzvG1lLuFLUoKCARjpjG5ydvpGZcQ8pWkoYURlaOSFkHbYcuZ9BiNOEuK1BQS7keHlqUT02wANtoMqQ4AHh3SgNlhPPHmBzOesNP7+9CLRu7oBaC1qZmUaClogkrJIwUnz6749MxgVpWNDqe7WkK8aBuo7YChnGBg7jffrBBpRYw3lwZByjcJznY7cziA44teTNBeru0pQcBOAMY2xuMf7GJN2X39+Aks/v78QPMllRVkLQVlCZhGdCyOePPmPrA1hah7SCoZSC4j3gkDAA6eX0gwFtPO+yKXyUglSdKtON8g8toGptxxagpLCichAzoAwepJOc4wN+fMQhrQw7lWgLADgwM6MnSTnY+uxjFKiBjZY/FP+20Z4W04k6VNLwFJPI4IyD9DALgUnDiBsBhSPCcAYAxy8snnCyHmayARzwccj+yCUlSeYI9Y2FvJ8Cu8HpsfpGKSpIISSPMRFrmSuY5PUA/GCwk+YjLIOxSPiNoIhOdlfUQhmOnyIMDcecZaDnbB+BjHceYhWHcEFB5MDPpCGFAgbQIQAgQIEAAgQIEAAgQIEAAgQIEAAgQYgDflDsAMRkAdsDnygAdBzjNKB1UN+h339fM+kTjG5FsJKQT555Y2z+4RsSzkAg5JAOyfD8/3wfNQ1Njfn1zt5eX6BGK3QAAg6lbKJzsFefqf9t4sslmyF29DIrSkePx5GQBzI6E+UaFrUtWpa8ny8vhGJJJypXPeBt6xXKbZKMbBbeRgikc8CMs7+6IGfQfSKyZiE55QeNtziDyT1MDB+HxgsFwsgdMwNzB7DrmBuYABnHL6wPVX0gsgcjv5wMZ5nA8zAACSSBjfoBAOkDfckEY5YMFqwMD5mC+G8K47BqKidSiSTBHxdcCBtzVuYBOeZ2EAH/9k=" alt="Rede TV Sul Capixaba — A sua TV. A sua região." onerror="this.outerHTML='&lt;div class=&quot;flogo-badge&quot; style=&quot;background:var(--accent);height:40px;width:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;color:#07101F;&quot;&gt;TVS&lt;/div&gt;&lt;div&gt;&lt;strong&gt;REDE TV SUL CAPIXABA&lt;/strong&gt;&lt;span&gt;A sua TV. A nossa regi\u00e3o.&lt;/span&gt;&lt;/div&gt;'"/>
+        </div>
+        <p class="footer-tagline">Conectando cidades. Informando pessoas. Gerando oportunidades.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>A Rede</h4>
+          <a href="https://tvmarataizes.digital" target="_blank" rel="noopener">TV Marataízes</a>
+          <a href="https://www.tvpiuma.digital">TV Piúma</a>
+          <a href="#rede">TV Itapemirim</a>
+          <a href="#rede">TV Anchieta</a>
+          <a href="#rede">TV Presidente Kennedy</a>
+          <a href="https://tvsulcapixaba.com.br" target="_blank" rel="noopener">TV Sul Capixaba</a>
+        </div>
+        <div class="footer-col">
+          <h4>Siga a Rede</h4>
+          <div class="footer-social">
+            <a href="https://www.youtube.com/@tvsulcapixaba" target="_blank" rel="noopener" aria-label="YouTube">📺</a>
+            <a href="https://www.instagram.com/tvsulcapixaba" target="_blank" rel="noopener" aria-label="Instagram">📷</a>
+            <a href="https://wa.me/5528999036141" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 Rede TV Sul Capixaba. Todos os direitos reservados.</p>
+      <p class="footer-copy">TV Piúma é integrante da Rede TV Sul Capixaba</p>
+    </div>
   </div>
-  <p class="footer-tagline">A Cidade ao Vivo · Piúma ES · Cidade das Conchas</p>
-  <div class="footer-links">
-    <a href="https://tvmarataizes.digital">📺 TV Marataízes</a>
-    <a href="https://tvsulcapixaba.com.br">🌊 TV Sul Capixaba</a>
-    <a href="https://www.macucaproducoes.com.br">🚀 Macuca Produções</a>
-    <a href="https://wa.me/5528999036141">📲 (28) 99903-6141</a>
-  </div>
-  <p class="footer-copy">© 2026 TV Piúma · Macuca Produções · Piúma, Espírito Santo</p>
 </footer>
 
 <!-- FLOAT BTN -->
