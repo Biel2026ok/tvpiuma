@@ -202,7 +202,7 @@ footer{padding:44px 20px 30px;background:#07101F;border-top:1px solid #1a2a3a;ma
       </div>
     </div>
     <nav class="nav">
-      <a href="#programas">Programas</a>
+      <a href="#grandes-filmes">Programas</a>
       <a href="#entrevistas">Entrevistas</a>
       <a href="#producoes">Produções</a>
       <a href="#rede">A Rede</a>
@@ -833,132 +833,6 @@ document.getElementById('vod-modal').addEventListener('click',function(e){if(e.t
 .eb-title{font-size:11px;font-weight:700;color:rgba(255,255,255,.6);text-align:center;line-height:1.35;padding:0 6px;}
 </style>
 
-<!-- PROGRAMAS VOD -->
-<div class="vod-section" id="programas">
-  <div class="sec-title">
-    Programas da TV Piúma
-    <span class="badge">VOD · Vídeo On Demand</span>
-  </div>
-  <p class="sec-sub">Assista aos programas e coberturas da TV Piúma quando quiser.</p>
-  <div class="vod-row-wrap">
-    <button class="vod-arrow prev" id="vod-prev1">&#8249;</button>
-    <div class="vod-row" id="vod-row1">
-
-      <!-- ✅ Card 1 — Conchinha TV Piúma -->
-      <div class="vod-card" onclick="openVod('https://player.castr.com/vod/cNHxhB2QuvIL748m')">
-        <div class="vod-thumb">
-          <img src="https://raw.githubusercontent.com/Biel2026ok/tvpiuma/main/conchinha%201.png" alt="Oi eu sou a Conchinha da TV Piúma"/>
-          <div class="vod-overlay">
-            <div class="vod-title">Oi eu sou a Conchinha da TV Piúma</div>
-            <span class="vod-btn">▶ Assistir</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- ✅ Card 2 — Experimental TV Piúma -->
-      <div class="vod-card" onclick="openVod('https://player.castr.com/vod/3zAxXxFIqCvqAATy')">
-        <div class="vod-thumb">
-          <img src="https://raw.githubusercontent.com/Biel2026ok/tvpiuma/main/cultura1.png" alt="Experimental TV Piúma"/>
-          <div class="vod-overlay">
-            <div class="vod-title">Experimental TV Piúma</div>
-            <span class="vod-btn">▶ Assistir</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- ✅ Card 3 — Piúma em Movimento -->
-      <div class="vod-card" onclick="openVod('https://player.castr.com/vod/ZdAsGeOWY4SHJcem')">
-        <div class="vod-thumb">
-          <img src="https://raw.githubusercontent.com/Biel2026ok/tvpiuma/main/piuma2.png" alt="Piúma em Movimento"/>
-          <div class="vod-overlay">
-            <div class="vod-title">Piúma em Movimento</div>
-            <span class="vod-btn">▶ Assistir</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- ✅ Card 4 — Trilha no Monte Agha -->
-      <div class="vod-card" onclick="openVod('https://player.castr.com/vod/J395JqzNXT3x7nvf')">
-        <div class="vod-thumb">
-          <img src="https://raw.githubusercontent.com/Biel2026ok/tvpiuma/main/fotospiuma/Monte%20Agha.png" alt="Trilha no Monte Agha"/>
-          <div class="vod-overlay">
-            <div class="vod-title">Trilha no Monte Agha</div>
-            <span class="vod-btn">▶ Assistir</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- ENTREVISTA 1 — Paulo Cola, Prefeito de Piúma -->
-      <div class="vod-card" onclick="location.href='Prefeito/'">
-        <div class="vod-thumb">
-          <img src="https://raw.githubusercontent.com/Biel2026ok/tvpiuma/main/fotospiuma/Prefeitopiuma.png" alt="Paulo Cola — Prefeito de Piúma"/>
-          <div class="vod-overlay">
-            <div class="vod-title">Paulo Cola — Prefeito de Piúma</div>
-            <span class="vod-btn">▶ Assistir</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- ENTREVISTA 2 — Eliezer Dias Freire, Presidente da Câmara -->
-      <div class="vod-card" onclick="location.href='Presidentedacamara/'">
-        <div class="vod-thumb">
-          <img src="https://raw.githubusercontent.com/Biel2026ok/tvpiuma/main/fotospiuma/Eliezer.png" alt="Eliezer Dias Freire — Presidente da Câmara Municipal"/>
-          <div class="vod-overlay">
-            <div class="vod-title">Eliezer Dias Freire — Presidente da Câmara</div>
-            <span class="vod-btn">▶ Assistir</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- ENTREVISTA 3 — Juares Nery Taylor Neto, Secretário de Turismo -->
-      <div class="vod-card" onclick="location.href='Secretariodeturismo/'">
-        <div class="vod-thumb">
-          <img src="https://raw.githubusercontent.com/Biel2026ok/tvpiuma/main/fotospiuma/Juarez.png" alt="Juares Nery Taylor Neto — Secretário de Turismo de Piúma"/>
-          <div class="vod-overlay">
-            <div class="vod-title">Juares Nery Taylor Neto — Secretário de Turismo</div>
-            <span class="vod-btn">▶ Assistir</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- ENTREVISTA 4 — Mateus Teixeira, Secretário de Cultura -->
-      <div class="vod-card" onclick="location.href='Secretariodecultura/'">
-        <div class="vod-thumb">
-          <img src="https://raw.githubusercontent.com/Biel2026ok/tvpiuma/main/fotospiuma/mateus.png" alt="Mateus Teixeira de Oliveira Santos Motta — Secretário de Cultura de Piúma"/>
-          <div class="vod-overlay">
-            <div class="vod-title">Mateus Teixeira — Secretário de Cultura</div>
-            <span class="vod-btn">▶ Assistir</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- ✅ Troca de Figurinhas — Álbum Seleção Brasileira -->
-      <div class="vod-card" onclick="openVod('https://player.castr.com/vod/ZNRBeSvgSG9acX2r')">
-        <div class="vod-thumb">
-          <img src="https://raw.githubusercontent.com/Biel2026ok/tvpiuma/main/fotospiuma/Figurinhas.png" alt="Troca de Figurinhas — Álbum Seleção Brasileira"/>
-          <div class="vod-overlay">
-            <div class="vod-title">Troca de Figurinhas — Álbum Seleção Brasileira</div>
-            <span class="vod-btn">▶ Assistir</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- ✅ Festa dos Pescadores -->
-      <div class="vod-card" onclick="openVod('https://player.castr.com/vod/2zfIHw8blowVhnIP')">
-        <div class="vod-thumb">
-          <img src="https://raw.githubusercontent.com/Biel2026ok/tvpiuma/main/fotospiuma/Festadospescadores.png" alt="Festa dos Pescadores"/>
-          <div class="vod-overlay">
-            <div class="vod-title">Festa dos Pescadores</div>
-            <span class="vod-btn">▶ Assistir</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <button class="vod-arrow next" id="vod-next1">&#8250;</button>
-  </div>
-</div>
-
 <!-- GRANDES FILMES -->
 <div class="vod-section" id="grandes-filmes">
   <div style="text-align:center;margin-bottom:6px;">
@@ -1381,7 +1255,6 @@ document.getElementById('vod-modal').addEventListener('click',function(e){if(e.t
     btn.style.pointerEvents=show?'auto':'none';
   },{passive:true});
   document.addEventListener('DOMContentLoaded',function(){
-    initCarousel('vod-row1','vod-prev1','vod-next1');
     initCarousel('vod-row-ent','vod-prev-ent','vod-next-ent');
     initCarousel('vod-row2','vod-prev2','vod-next2');
     initCarousel('vod-row3','vod-prev3','vod-next3');
